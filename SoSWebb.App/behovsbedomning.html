@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="sv-se">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--metatags end here-->
+    <title>SOS Application</title>
+    <!--Bootstrap and stylesheets-->
+    <link rel="stylesheet" href="Content/mycss/site.css" />
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+</head>
+<body>
+    <div class="container">        
+            <a class="btnHome" href="index.html" value="Till startsida"><img src="Content/icon/iconhome.png" alt="sosIcon"/></a>
+        
+        <div class="row">
+            <div class="col-xs-12 div-starter">
+                <h1>SoS Webbstöd</h1>           
+            </div>
+            <div id="tabs" class="navbar" >
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab-behovsbedomning" data-toggle="tab">Behovsbedömning</a></li>
+                    <li ><a href="#tab-prioritering" data-toggle="tab">Prioritering av delområden</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab-behovsbedomning">
+                    <div class="table-container" style="overflow-x:auto">
+                        <table id="behovsbedomningTable" class="table">
+                            <tr class="trHeader">
+                                <th class="areaTitle">Område</th>
+                                <th class="subareaHeadTitle">Delområden</th>
+                                <th class="options">Inget</th>
+                                <th class="options">Litet</th>
+                                <th class="options">Stort</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="center-block">
+                        <input class="button" id="btn_printChosenSubareas" type="submit" name="printChosenSubareas" value="Skriv ut">
+                        <input class="button" id="btn_submitChosenSubareas" type="submit" name="submitChosenSubareas" value="Nästa">
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-prioritering">
+                    <div class="table-container" style="overflow-x:auto">
+                        <table id="prioriteringsTable" class="table">
+                            <tr class="trHeader">
+                                <th class="chosenSubareaTitle">Delområde</th>
+                                <th class="options gradering_insatskonsekvens">Gradering av konsekvens av om insats(er) uteblir</th>
+                                <th class="options gradering_andelklienter">Gradering för andel klienter som berörs om instast(er) uteblir</th>
+                                <th class="options gradering_kommentar">Beskrivning av VH-specifika omständighet(er)</th>
+                                <th class="options gradering_insatser">Prioritering av nya insatser</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="center-block">
+                        <input class="button" id="btn_printGradedSubareas" type="submit" name="submitSubareas" value="Skriv ut rapport">
+                        <input class="button" id="btn_submitGradedSubareas" type="submit" name="printSubareas" value="Skicka">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="Scripts/jquery-2.2.3.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/underscore-min.js"></script>
+    <script src="myscripts/app.js"></script>
+</body>
+</html>
+

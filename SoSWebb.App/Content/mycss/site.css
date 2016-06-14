@@ -1,0 +1,220 @@
+﻿
+/*Starter page css*/
+
+.container {
+    text-align: center;
+    margin-bottom:5%;
+}
+
+.div-starter {
+    margin-bottom: 10px;
+}
+
+.p-starter {
+    font-size: 15px;
+}
+
+.btn.btn-starterpage {
+    margin-bottom: 10px;
+    background-color: #00263e;
+    color: #fff;
+    white-space: normal;
+}
+
+    .btn.btn-starterpage:hover {
+        background-color: #00263e;
+        color: white;
+        text-decoration: underline;
+    }
+/*behovsbedomning page css*/
+
+.nav.nav-tabs {
+    border-bottom: 2px solid #00263e;
+    margin-left: 20px;
+}
+
+ul.nav.nav-tabs > li {
+    margin-bottom: -3px;
+}
+
+    ul.nav.nav-tabs > li > a {
+        color: black;
+    }
+
+    ul.nav.nav-tabs > li.active a {
+        border: 2px solid #00263e;
+        border-bottom-color: transparent;
+        font-weight: bold;
+        color: #00263e;
+        text-decoration: underline;
+    }
+
+.tab-content {
+    border-top-style: none;
+    margin-left: 20.5px;
+}
+
+.table {
+    border-top-style: hidden;
+    margin-top: 20px;
+}
+
+table.table {
+    margin-bottom: 30px;
+}
+
+.table-container {
+    position: relative;
+    border-left: 2px solid #00263e;
+    border-right: 2px solid #00263e;
+    border-bottom: 2px solid #00263e;
+    bottom: 22px;
+    left: 0.4px;
+}
+
+.trHeader {
+    border-bottom: 1px solid #00263e;
+}
+
+.areaTitle {
+    text-align: left;
+    font-weight: bold;
+    width: 20%;
+    border-top-style: none;
+}
+
+.chosenSubareaTitle {
+    width: 15%;
+    text-align: center;
+}
+
+.areaTdTitle {
+    position: relative;
+    top: 28px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.options {
+    width: 10%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.subareaTdTitle {
+    border-bottom: 1px solid #dedede;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.behovsbedomningTd {
+    border-bottom: 1px solid #dedede;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.button {
+    background-color: #00263e;
+    color: #fff;
+    padding: 9px 35px;
+    border-style: none;
+    border-radius: 5px;
+}
+
+    .button:hover {
+        background-color: #10374f;
+    }
+
+.btnHome {
+    position: relative;
+    font-size: 25px;
+    top: 55px;
+    right: 520px;
+}
+
+    .btnHome > img {
+        width: 45px;
+    }
+
+
+/*prioriteringsTable css*/
+.prioriteringsTableTdTitle {
+    text-align: left;
+    padding-left: 25px;
+    padding-top: 15px;
+    width: 15%;
+}
+
+.prioriteringsTableTd {
+    width: 10%;
+    text-align: left;
+    /*padding-left: 25px;
+    padding-right: 25px;*/
+}
+
+
+@media only screen and (min-width:960px) {
+    /* styles for browsers larger than 960px; */
+}
+
+@media only screen and (min-width:1440px) {
+    /* styles for browsers larger than 1440px; */
+}
+
+@media only screen and (min-width:2000px) {
+    /* for sumo sized (mac) screens */
+}
+
+@media only screen and (max-device-width:480px) {
+    /* styles for mobile browsers smaller than 480px; (iPhone) */
+    .btnHome {
+        top: 12px;
+        right: 0;
+    }
+
+    .nav-tabs > li {
+        width: 100%;
+    }
+
+    ul.nav.nav-tabs {
+        border-bottom-style: none;
+    }
+
+        ul.nav.nav-tabs > li {
+            border-style: none;
+        }
+
+            ul.nav.nav-tabs > li.active a {
+                border-style: none;
+            }
+
+    .table-container {
+        border-top: 2px solid #00263e;
+    }
+
+    .table {
+        margin-top: 2px;
+    }
+
+    td.areaTdTitle {
+        padding-right: 8px;
+    }
+
+    td.subareaTdTitle {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media only screen and (device-width:768px) {
+    /* default iPad screens */
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width:320px) and (max-device-width: 1024px) and (orientation:portrait) {
+    /* For portrait layouts only */
+
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* For landscape layouts only */
+}
