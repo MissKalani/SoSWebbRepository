@@ -53,13 +53,14 @@ $(function () {
         }
         sorted_finalChosenSubAreas_And_totalValue = sortByValue(finalChosenSubAreas_And_totalValue);
         var json = sorted_finalChosenSubAreas_And_totalValue;
-        ////saving jsonData locally
-        //p5.prototype.saveJSON(json, 'data.json');
+        console.log(json);
+        createBehovsbedomningReportTable(json);
+        createPDF();
 
-        //show the finally chosen subareas and their total values
-        var url = 'data:text/json;charset=utf8,' + encodeURIComponent(JSON.stringify(json, null, '\t'));
-        window.open(url, '_blank');
-        window.focus();
+        ////show the finally chosen subareas and their total values
+        //var url = 'data:text/json;charset=utf8,' + encodeURIComponent(JSON.stringify(json, null, '\t'));
+        //window.open(url, '_blank');
+        //window.focus();
     });
 
     function createAreaRow(area) {
@@ -223,4 +224,77 @@ $(function () {
         return finalChosenSubAreas_And_totalValue;
     }
 
+    function createBehovsbedomningReportTable(jsonObjArray) {
+        for (var i = 0; i < jsonObjArray.length; i++) {
+            var obj = jsonObjArray[i];
+            var areaTitle = obj.subarea.subarea.area;
+            var subareaTitle = obj.subarea.subarea.title;
+            var prioriteringRank = i + 1;
+            var konsekvensGrade = obj.subarea.subarea.konsekvensValue;
+            var andelklienterGrade = obj.subarea.subarea.andelklienterValue;
+            var kommentarText = obj.subarea.kommentar;
+            var insatserValue = obj.subarea.subarea.insatserValue;
+
+            var grade = 0;
+            switch (grade) {
+                case 0: konsekvensGrade = 'Oklart';
+                    andelklienterGrade = 'Oklart';
+                    insatserValue = 'Ingen';
+                case 1: konsekvensGrade = 'Alvarliga';
+                    andelklienterGrade = 'Stor andel';
+                    insatserValue = 'Låg';
+                case 2: konsekvensGrade = 'Varierande';
+                    andelklienterGrade = 'Varierande';
+                    insatserValue = 'Hög'
+                case 3: konsekvensGrade = 'Mindre Allvarliga';
+                    andelklienterGrade = 'Liten andel';
+                    insatserValue = 'Mycket hög';
+            };
+
+            var tr = document.createElement('tr');
+            tr.setAttribute('class', 'reportItems');
+
+            var tdAreaTitle = document.createElement('td');
+            tdAreaTitle.innerHTML = areaTitle;
+            var tdSubareaTitle = document.createElement('td');
+            tdSubareaTitle.innerHTML = subareaTitle;
+            var tdPrioriteringRank = document.createElement('td');
+            tdPrioriteringRank.innerHTML = prioriteringRank;
+            var tdKonsekvensgrade = document.createElement('td');
+            tdKonsekvensgrade.innerHTML = konsekvensGrade;
+            var tdAndelKlienterGrade = document.createElement('td');
+            tdAndelKlienterGrade.innerHTML = andelklienterGrade;
+            var tdKommentar = document.createElement('td');
+            tdKommentar.innerHTML = kommentarText;
+            var tdInsatserValue = document.createElement('td');
+            tdInsatserValue.innerHTML = insatserValue;
+            var tdExtraKommentar = document.createElement('td');
+            tdExtraKommentar.innerHTML = '<input type="text"></input>';
+
+            tr.appendChild(tdAreaTitle);
+            tr.appendChild(tdSubareaTitle);
+            tr.appendChild(tdPrioriteringRank);
+            tr.appendChild(tdKonsekvensgrade);
+            tr.appendChild(tdAndelKlienterGrade);
+            tr.appendChild(tdKommentar);
+            tr.appendChild(tdInsatserValue);
+            tr.appendChild(tdExtraKommentar);
+            $('#behovsbedomningReport').find('tbody').append(tr);
+        };
+    }
+
+
+    function createPDF() {
+        html2canvas($('#behovsbedomningReport'), {
+            onrendered: function (canvas) {
+                var myImg = canvas.toDataURL('image/jpg',1.0);
+                var doc = new jsPDF('l','mm','a4');
+                doc.addImage(myImg, 'JPEG', 10, 10, null, null);
+                alert('created PDF!');
+                doc.save('Test.pdf');
+            }
+        });
+
+       
+    }
 });

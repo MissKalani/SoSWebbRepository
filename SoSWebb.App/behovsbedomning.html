@@ -9,6 +9,10 @@
     <!--Bootstrap and stylesheets-->
     <link rel="stylesheet" href="Content/mycss/site.css" />
     <link rel="stylesheet" href="Content/bootstrap.css" />
+    <!--jspdf script-->
+    <
+    <script type="text/javascript" src="Scripts/jspdf.min.js"></script>
+    <script type="text/javascript"src="Scripts/jspdf.debug.js"></script>
 </head>
 <body>
     <div class="container">        
@@ -63,10 +67,31 @@
             </div>
         </div>
 
+        <div id="storage" style="display:block;">
+            <div class="table table-bordered" id="behovsbedomningReport">
+                <table>
+                    <tr class="reportTitle">
+                        <th colspan="8">Behovsbedomning av delområden</th>
+                    </tr>
+                    <tr class="reportColumnHeader">
+                        <th>Område</th>
+                        <th>Delområde</th>
+                        <th>Prioritering</th>
+                        <th>Gradering av konsekvens om insats(er) uteblir </th>
+                        <th>Gradering för andel klienter som berörs om instast(er) uteblir</th>
+                        <th>Beskrivning av VH-specifika omständighet(er)</th>
+                        <th>Prioritering av nya insatser</th>
+                        <th>Kommentar</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
     </div>
     <script src="Scripts/jquery-2.2.3.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/underscore-min.js"></script>
+    <script src="Scripts/html2canvas.js"></script>
     <script src="myscripts/app.js"></script>
 </body>
 </html>

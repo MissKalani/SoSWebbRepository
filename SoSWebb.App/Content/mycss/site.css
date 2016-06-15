@@ -152,6 +152,18 @@ table.table {
     padding-right: 25px;*/
 }
 
+/*behovsbedomningReport css*/
+#behovsbedomningReport{
+    border-color:green;
+}
+.reportTitle th{   
+    text-align:center;
+    background-color:green;
+    color:#fff;
+}
+.reportColumnHeader th{
+    padding: 10px;
+}
 
 @media only screen and (min-width:960px) {
     /* styles for browsers larger than 960px; */
