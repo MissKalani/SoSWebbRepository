@@ -285,16 +285,21 @@ $(function () {
 
 
     function createPDF() {
-        html2canvas($('#behovsbedomningReport'), {
-            onrendered: function (canvas) {
-                var myImg = canvas.toDataURL('image/jpg',1.0);
-                var doc = new jsPDF('l','mm','a4');
-                doc.addImage(myImg, 'JPEG', 10, 10, null, null);
-                alert('created PDF!');
-                doc.save('Test.pdf');
-            }
-        });
+        //html2canvas($('#behovsbedomningReport'), {
+        //    onrendered: function (canvas) {
+        //        var myImg = canvas.toDataURL('image/png',1.0);
+        //        var doc = new jsPDF('l','mm','a4');
+        //        doc.addImage(myImg, 'JPEG', 10, 10, null, null);
+        //        alert('created PDF!');
+        //        doc.save('Test.pdf');
+        //    }
+        //});
 
-       
+        //function jsPDF(orientation, unit, format, compressPdf) { /** String orientation, String unit, String format, Boolean compressed */
+
+        var pdf = new jsPDF('l', 'mm', 'a4');
+        pdf.addHTML($('#behovsbedomningReport')[0], 10, 10, { 'width':800 },function () {
+            pdf.save('Test.pdf');
+        });
     }
 });

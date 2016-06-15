@@ -154,6 +154,7 @@ table.table {
 
 /*behovsbedomningReport css*/
 #behovsbedomningReport{
+    background-color:white;
     border-color:green;
 }
 .reportTitle th{   
