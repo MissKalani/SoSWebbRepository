@@ -1,6 +1,7 @@
 ﻿console.log('Hello');
 $(function () {
     'use strict';
+
     var radioNameCounter = 1;
     //read and load jsonData
     var jsonData = $.getJSON('data/data.json', function (data) {
@@ -8,7 +9,7 @@ $(function () {
             $.each($(this), function (index, subarea) {
                 var areaTitle = area.title;
                 var areaSubarea = area.subarea;
-                var lastItem = areaSubarea.length - 1;
+                //var lastItem = areaSubarea.length - 1;
                 //create area row if table exists
                 if (document.getElementById('behovsbedomningTable')) {
                     createAreaRow(areaTitle);
@@ -28,12 +29,35 @@ $(function () {
         });
     });
 
+    //info icon popover
+    $('[data-toggle="popover"]').popover({
+        container: 'body',
+        placement: 'top',
+        html: true
+    });
+    $('#reportStorage').hide();
+    //array variables
     var chosenSubareas = [];
     var sortedChosenSubareas = [];
     var finalChosenSubareas = [];
     var finalChosenSubAreas_And_totalValue = [];
     var sorted_finalChosenSubAreas_And_totalValue = [];
 
+    //button click functions
+    function hideElements(){
+        $('#prioriteringsTable').hide();
+        $('#tabs').hide();
+        $('#btn_printGradedSubareas').hide();
+        $('#btn_submitGradedSubareas').hide();
+    }
+    $('#btn_printChosenSubareas').click(function (e) {
+        e.preventDefault();
+        createPDF();
+    });
+    $('#btn_printGradedSubareas').click(function (e) {
+        e.preventDefault();
+        createPDF();
+    });
     $('#btn_submitChosenSubareas').click(function (e) {
         e.preventDefault();
         $('.nav a[href="#tab-prioritering"]').tab('show');
@@ -42,10 +66,10 @@ $(function () {
         createPrioriteringsTable();
     });
     $('#btn_submitGradedSubareas').click(function (e) {
+        hideElements();    
         finalChosenSubareas = getFinalChosenSubAreas();
         //get all the finaly chosen subareas together with their total values
-        finalChosenSubAreas_And_totalValue = getFinalChosenSubareasWithTotalValues(finalChosenSubareas);
-        alert("Prioritering av delområde submitted!")
+        finalChosenSubAreas_And_totalValue = getFinalChosenSubareasWithTotalValues(finalChosenSubareas);      
 
         //function for sorting chosen object array by the total value gathered
         var sortByValue = function (array) {
@@ -53,8 +77,13 @@ $(function () {
         }
         sorted_finalChosenSubAreas_And_totalValue = sortByValue(finalChosenSubAreas_And_totalValue);
         var json = sorted_finalChosenSubAreas_And_totalValue;
+        
+        //window.location.href = 'behovsbedomningReport.html';
         console.log(json);
         createBehovsbedomningReportTable(json);
+        //var table = tableToJson($('#behovsbedomningReport').get(0));        
+        //console.log(table);
+        //alert("Prioritering av delområde submitted!")
         createPDF();
 
         ////show the finally chosen subareas and their total values
@@ -63,6 +92,7 @@ $(function () {
         //window.focus();
     });
 
+    //behovsbedomningtable functions
     function createAreaRow(area) {
         var table = document.getElementById('behovsbedomningTable');
         var tr = document.createElement('tr');
@@ -98,6 +128,8 @@ $(function () {
 
 
     };
+
+    //prioriteringstable functions
     function deleteChosenSubareaRows() {
         chosenSubareas.length = 0;
         $("#prioriteringsTable td").parent().remove();
@@ -124,7 +156,8 @@ $(function () {
         return sortedChosenSubareas;
     }
     function createPrioriteringsTable() {
-        for (var i = 0; i < sortedChosenSubareas.length; i++) {
+        for (var i = 0; i < sortedChosenSubareas.length; i++) {       
+
             var tr = document.createElement("tr");
             tr.setAttribute("class", "prioriteringsTableTr");
             var td = document.createElement("td");
@@ -154,17 +187,27 @@ $(function () {
                 + '<input class="insatsergradValue" type="radio" name="insatsergrad' + name + '"  value="1" /> Låg <br/>'
                 + '<input class="insatsergradValue" type="radio" name="insatsergrad' + name + '" value="0" /> Ingen';
 
-            td.innerHTML += sortedChosenSubareas[i].title;
+            td.innerHTML += sortedChosenSubareas[i].title;          
 
-            $('#prioriteringsTable').find('tbody').append(tr);
+     
             tr.appendChild(td);
             tr.appendChild(td2);
             tr.appendChild(td3);
             tr.appendChild(td4);
             tr.appendChild(td5);
-            $('#prioriteringsTable').find('tbody').append(tr);
+
+            if (sortedChosenSubareas[i].value == 2) {
+              $(tr).insertAfter($('.trStortBehov'));
+            } else {
+                $(tr).insertAfter($('.trLitetBehov'));
+            }
+
+
+            //$('#prioriteringsTable').find('tbody').append(tr);
         }
     }
+
+    //functions used for creating the report 
     function getFinalChosenSubAreas() {
         //variable used as counter when looping over table values
         var i = 0;
@@ -223,8 +266,8 @@ $(function () {
         }
         return finalChosenSubAreas_And_totalValue;
     }
-
     function createBehovsbedomningReportTable(jsonObjArray) {
+        $('#reportStorage').show();
         for (var i = 0; i < jsonObjArray.length; i++) {
             var obj = jsonObjArray[i];
             var areaTitle = obj.subarea.subarea.area;
@@ -257,6 +300,7 @@ $(function () {
             var tdAreaTitle = document.createElement('td');
             tdAreaTitle.innerHTML = areaTitle;
             var tdSubareaTitle = document.createElement('td');
+            tdSubareaTitle.setAttribute('class', 'subareaTitleReportTd');
             tdSubareaTitle.innerHTML = subareaTitle;
             var tdPrioriteringRank = document.createElement('td');
             tdPrioriteringRank.innerHTML = prioriteringRank;
@@ -269,6 +313,7 @@ $(function () {
             var tdInsatserValue = document.createElement('td');
             tdInsatserValue.innerHTML = insatserValue;
             var tdExtraKommentar = document.createElement('td');
+            tdExtraKommentar.setAttribute('class', 'extraKommentarReportTd');
             tdExtraKommentar.innerHTML = '<input type="text"></input>';
 
             tr.appendChild(tdAreaTitle);
@@ -281,25 +326,26 @@ $(function () {
             tr.appendChild(tdExtraKommentar);
             $('#behovsbedomningReport').find('tbody').append(tr);
         };
-    }
-
+    }   
 
     function createPDF() {
-        //html2canvas($('#behovsbedomningReport'), {
-        //    onrendered: function (canvas) {
-        //        var myImg = canvas.toDataURL('image/png',1.0);
-        //        var doc = new jsPDF('l','mm','a4');
-        //        doc.addImage(myImg, 'JPEG', 10, 10, null, null);
-        //        alert('created PDF!');
-        //        doc.save('Test.pdf');
-        //    }
-        //});
+        var pdf = new jsPDF({
+            orientation: 'l',
+            unit: 'mm',
+            format: 'a4'
+            });
 
-        //function jsPDF(orientation, unit, format, compressPdf) { /** String orientation, String unit, String format, Boolean compressed */
-
-        var pdf = new jsPDF('l', 'mm', 'a4');
-        pdf.addHTML($('#behovsbedomningReport')[0], 10, 10, { 'width':800 },function () {
-            pdf.save('Test.pdf');
+        var specialElementHandlers = {
+            '#behovsbedomningReport': function (element, renderer) {
+                return true;
+            }
+        };
+  
+        pdf.addHTML($('#behovsbedomningReport')[1], 1, 1, {            
+            //'width':800,
+            'elementHandlers':specialElementHandlers
+        }, function () {
+            pdf.save('test.pdf');
         });
     }
 });

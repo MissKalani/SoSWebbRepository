@@ -1,1 +1,0 @@
-﻿var doc = new jsPDF('landscape')
