@@ -5,32 +5,33 @@
             var areaSubarea = area.subarea;
             for (var prop in areaSubarea) if (areaSubarea.hasOwnProperty(prop)) {
                 var value = areaSubarea[prop];
-                console.log(value.title);
-                $('.dropdown-menu').append('<li><a href="#" data-value="'+value.title+'"> ' + value.title + '</a></li>');
+                var option = document.createElement('option');
+                option.value = value.title;
+                option.textContent = value.title;
+                var select = document.getElementById('menu');
+                select.appendChild(option);
+                //console.log(value.title);
+              
             };
         });
     });
+    
+    var subarea = "";
+    var selectedSubarea = "";
 
-    //$('#dropdownlist').dropdownlist({
-    //    dataTextfield: 'text',
-    //    dataValueField: 'value',
-    //    dataSource: [ text: val]
-    //});
+    $('#btn_Next').click(function (e) {
+        e.preventDefault();
+        subarea = document.getElementById('menu');
+        //get the selected option from the dropdown menu
+        selectedSubarea = subarea.options[subarea.selectedIndex].value;  
+        $('.nav a[href="#tab-insatser"]').tab('show');
+        var chosenDelomrade = document.getElementById('chosenDelomrade');
+        chosenDelomrade.innerHTML = selectedSubarea;
+        
 
-    //$('.dropdown-menu li').click(function (event) {
-    //    alert('hej!');
-    //    var $target = $(event.currentTarget);
+    });
 
-    //    $target.closest('.dropdown')
-    //       .find('[data-bind="label"]').text($target.text())
-    //          .end()
-    //       .children('.dropdown-toggle').dropdown('toggle');
-
-    //    return false;
  
-    //});
-
-
 });
 
 

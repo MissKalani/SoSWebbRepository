@@ -24,23 +24,33 @@
             <div id="tabs" class="navbar">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab-delomrade" data-toggle="tab">Välja delområde</a></li>
-                    <li><a href="#tab-insatsbedomning" data-toggle="tab">Bedömning av insatser</a></li>
+                    <li><a href="#tab-insatser" data-toggle="tab">Bedömning av insatser</a></li>
                 </ul>
             </div>
             <div class="tab-content stepB-tabcontent">
                 <div class="tab-pane active" id="tab-delomrade">
-                    <input id="dropdownlist"/>
+                   <h4>Välj ett (1) delområde med mycket hög prioritering insats eligt steg A</h4> 
                     <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span data-bind="label"> Välj ett (1) delområde med mycket hög prioritering insats eligt steg A </span><span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#" data-value="separated link">Separated link</a></li>
-                        </ul>
-                       
-                        <div id="myDropdown" class="dropdown-content">
-                        </div>
+                        <select id="menu"></select>
                     </div>
+                    <input class="button" id="btn_Next" type="submit" value="Nästa">
+                </div>
+                <div class="tab-pane" id="tab-insatser">
+                    <div class="insatserDiv">
+                        <h4>Bedöm insatsen av vald delområde: <span id="chosenDelomrade" style="font-weight:bold"></span> - centrala rekommendationer</h4>
+                        <select id="insatsen">
+                            <option href="#option1" data-toggle="collapse">Motivations behandling, MET <i class="fa fa-arrow-right" aria-hidden="true"></i></option>
+                            <option>Kognitiv beteendeterapi alt återfallsprevention, KBT</option>
+                            <option>ÅP</option>
+                            <option>Community Reinforcement Approach, CRA</option>
+                            <option>12-steagsbehandling</option>
+                            <option>Social behaviour network therapy, SBNT</option>
+                            <option>Psykodynamiskt terapi</option>
+                            <option>Interaktionell terapi (*)</option>
+                        </select>
+                        
+                    </div>
+                   
                 </div>
 
             </div>
