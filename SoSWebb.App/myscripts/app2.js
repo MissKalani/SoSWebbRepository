@@ -1,19 +1,20 @@
 ﻿$(function () {
     'use strict';
-    var json = $.getJSON('data/data.json', function (data) {
-        $.each(data, function (index, area) {
-            var areaSubarea = area.subarea;
-            for (var prop in areaSubarea) if (areaSubarea.hasOwnProperty(prop)) {
-                var value = areaSubarea[prop];
-                var option = document.createElement('option');
-                option.value = value.title;
-                option.textContent = value.title;
-                var select = document.getElementById('menu');
-                select.appendChild(option);
-                //console.log(value.title);
-              
-            };
+    var json = $.getJSON('data/data2.json', function (data) {
+        //console.log(data[0].area);
+        //console.log(data[1].area);
+        $.each(data, function (index, data) {
+            //console.log(data);
+            //loop through all the areas' subarea titles
+            $.each(data.subareas, function (index, subareas) {
+                console.log(subareas.title);
+                //append subarea titles to step 2's first dropdown menu
+                var subareaTitle = subareas.title;
+                $('#menu').append('<option>' + subareaTitle + '</option>');
+            });
+     
         });
+
     });
     
     var subarea = "";
@@ -26,8 +27,7 @@
         selectedSubarea = subarea.options[subarea.selectedIndex].value;  
         $('.nav a[href="#tab-insatser"]').tab('show');
         var chosenDelomrade = document.getElementById('chosenDelomrade');
-        chosenDelomrade.innerHTML = selectedSubarea;
-        
+        chosenDelomrade.innerHTML = selectedSubarea;     
 
     });
 

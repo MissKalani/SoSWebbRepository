@@ -56,6 +56,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="json\data.json" />
+    <None Include="json\data2.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

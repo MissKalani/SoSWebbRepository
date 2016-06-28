@@ -1,0 +1,2691 @@
+[
+  {
+    "area": "Psykologisk och psykosocial behandling",
+    "subareas": [
+      {
+        "title": "Missbruk eller beroende av alkohol",
+        "insatslist": [
+          {
+            "title": "Motivationshöjande behandling, MET",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Kognitiv beteendeterapi alt återfallsprevention, KBT",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "ÅP",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Community reinforcement approach, CRA",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "12-stegsbehandling",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Social behaviour network therapy, SBNT",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Psykodynamisk terapi",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Interaktionell terapi",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Långvarigt bruk av bensodiazepiner",
+        "insatslist": [
+          {
+            "title": "Kognitiv beteendeterapi alt återfallsprevention, KBT (*)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Missbruk eller beroende av cannabis",
+        "insatslist": [
+          {
+            "title": "KBT + MI/MET",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "ÅP + MI/MET",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Missbruk eller beroende av centralstimulantia",
+        "insatslist": [
+          {
+            "title": "12-stegsbehandling",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "MATRIX",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Community reinforcement approach, CRA",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "ÅP",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "KBT",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Missbruk eller beroende av opiater",
+        "insatslist": [
+          {
+            "title": "KBT (*)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "ÅP (*)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "CRA (*)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Psykodynamisk terapi  (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Nätverks- och parterapi vid alkohol- eller narkotikaproblem",
+        "insatslist": [
+          {
+            "title": "Parterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Nätverksterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "area": "Psykosociala stödinsatser",
+    "subareas": [
+      {
+        "title": "Arbetslivsinriktad rehabilitering",
+        "insatslist": [
+          {
+            "title": "Parterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Nätverksterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Boendeinsatser",
+        "insatslist": [
+          {
+            "title": "Parterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Nätverksterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Samordning i form av Case management",
+        "insatslist": [
+          {
+            "title": "Parterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Nätverksterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Psykosocialt stöd till vuxna anhöriga",
+        "insatslist": [
+          {
+            "title": "Parterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Nätverksterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stöd till anhöriga som vill motivera närstående till behandling",
+        "insatslist": [
+          {
+            "title": "Parterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Nätverksterapi (Û)",
+            "questions": [
+              {
+                "questionstatement": "Kan insatsen möta behoven?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "vilken prioritering har insatsen i NR?",
+                "questionvalues": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "Annan"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är de förväntade oönskade effekterna av insatsen små?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen möjlig att implementera utan anpassning?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              },
+              {
+                "questionstatement": "Är insatsen hållbar på lång sikt?",
+                "questionvalues": [
+                  "Nej",
+                  "Sannolikt inte",
+                  "Osäkert",
+                  "Sannolikt Ja",
+                  "Ja",
+                  "Varierar"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

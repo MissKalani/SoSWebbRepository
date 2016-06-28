@@ -38,16 +38,17 @@
                 <div class="tab-pane" id="tab-insatser">
                     <div class="insatserDiv">
                         <h4>Bedöm insatsen av vald delområde: <span id="chosenDelomrade" style="font-weight:bold"></span> - centrala rekommendationer</h4>
-                        <select id="insatsen">
-                            <option href="#option1" data-toggle="collapse">Motivations behandling, MET <i class="fa fa-arrow-right" aria-hidden="true"></i></option>
-                            <option>Kognitiv beteendeterapi alt återfallsprevention, KBT</option>
-                            <option>ÅP</option>
-                            <option>Community Reinforcement Approach, CRA</option>
-                            <option>12-steagsbehandling</option>
-                            <option>Social behaviour network therapy, SBNT</option>
-                            <option>Psykodynamiskt terapi</option>
-                            <option>Interaktionell terapi (*)</option>
-                        </select>
+                   <div class="dropdown">
+                       <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">Välj insatser <span class="caret"></span></a>
+                       <ul class="dropdown-menu">
+                           <li>
+                               <a id="insatsMenu" class="trigger right-caret">Motivationsbehandling, MET</a>
+                               <ul class="dropdown-menu sub-menu">
+                                   <li><a>Level 2</a></li>
+                               </ul>
+                           </li>
+                       </ul>
+                   </div>
                         
                     </div>
                    

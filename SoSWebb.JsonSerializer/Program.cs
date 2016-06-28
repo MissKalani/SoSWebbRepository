@@ -9,20 +9,393 @@ using System.Threading.Tasks;
 namespace SoSWebb.JsonSerializer
 {
     class Program
-    { 
+    {
         static void Main(string[] args)
         {
             var areaList = createAreas();
+            var areaList2 = new List<Area2>();
+            areaList2.Add(createAreaWithSubareaInsatser_Area2());
+            areaList2.Add(createAreaWithSubareaInsatser_Area3());
+            
 
             var settings = new JsonSerializerSettings();
             settings.ContractResolver = new LowercaseContractResolver();
             var json = JsonConvert.SerializeObject(areaList, Formatting.Indented, settings);
-
+            var json2 = JsonConvert.SerializeObject(areaList2, Formatting.Indented, settings);
 
             File.WriteAllText(@"C:\dev\SoSWebb\SoSWebb.JsonSerializer\json\data.json", json);
+            File.WriteAllText(@"C:\dev\SoSWebb\SoSWebb.JsonSerializer\json\data2.json", json2);
 
         }
 
+        //create areas and subareas with resp. "insatser"
+        private static Area2 createAreaWithSubareaInsatser_Area2()
+        {
+            Area2 area = new Area2();
+            area.Area = "Psykologisk och psykosocial behandling";
+            List<Subarea2> subareaListWithInsatser = new List<Subarea2>();
+            subareaListWithInsatser.Add(createInsatser_Subarea8());
+            subareaListWithInsatser.Add(createInsatser_Subarea9());
+            subareaListWithInsatser.Add(createInsatser_Subarea10());
+            subareaListWithInsatser.Add(createInsatser_Subarea11());
+            subareaListWithInsatser.Add(createInsatser_Subarea12());
+            subareaListWithInsatser.Add(createInsatser_Subarea13());
+            area.Subareas = subareaListWithInsatser;
+
+            return area;
+        }
+        private static Area2 createAreaWithSubareaInsatser_Area3()
+        {
+            Area2 area = new Area2();
+            area.Area = "Psykosociala stödinsatser";
+            List<Subarea2> subareaListWithInsatser = new List<Subarea2>();
+            subareaListWithInsatser.Add(createInsatser_Subarea14());
+            subareaListWithInsatser.Add(createInsatser_Subarea15());
+            subareaListWithInsatser.Add(createInsatser_Subarea16());
+            subareaListWithInsatser.Add(createInsatser_Subarea17());
+            subareaListWithInsatser.Add(createInsatser_Subarea18());
+            area.Subareas = subareaListWithInsatser;
+            return area;
+        }
+
+        //create the list of "insatser" in every subarea
+        private static Subarea2 createInsatser_Subarea8()
+        {
+
+            Subarea2 subarea8 = new Subarea2();
+            subarea8.Title = "Missbruk eller beroende av alkohol";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "Motivationshöjande behandling, MET";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "Kognitiv beteendeterapi alt återfallsprevention, KBT";
+            insats2.Questions = questionList2;
+
+            Insatsen insats3 = new Insatsen();
+            List<Question> questionList3 = createQuestions();
+            insats3.Title = "ÅP";
+            insats3.Questions = questionList3;
+
+            Insatsen insats4 = new Insatsen();
+            List<Question> questionList4 = createQuestions();
+            insats4.Title = "Community reinforcement approach, CRA";
+            insats4.Questions = questionList4;
+
+            Insatsen insats5 = new Insatsen();
+            List<Question> questionList5 = createQuestions();
+            insats5.Title = "12-stegsbehandling";
+            insats5.Questions = questionList5;
+
+            Insatsen insats6 = new Insatsen();
+            List<Question> questionList6 = createQuestions();
+            insats6.Title = "Social behaviour network therapy, SBNT";
+            insats6.Questions = questionList6;
+
+            Insatsen insats7 = new Insatsen();
+            List<Question> questionList7 = createQuestions();
+            insats7.Title = "Psykodynamisk terapi";
+            insats7.Questions = questionList7;
+
+            Insatsen insats8 = new Insatsen();
+            List<Question> questionList8 = createQuestions();
+            insats8.Title = "Interaktionell terapi";
+            insats8.Questions = questionList8;
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+            insatsList.Add(insats3);
+            insatsList.Add(insats4);
+            insatsList.Add(insats5);
+            insatsList.Add(insats6);
+            insatsList.Add(insats7);
+            insatsList.Add(insats8);
+            subarea8.insatslist = insatsList;
+
+
+            return subarea8;
+        }
+
+        private static Subarea2 createInsatser_Subarea9()
+        {
+            Subarea2 subarea9 = new Subarea2();
+            subarea9.Title = "Långvarigt bruk av bensodiazepiner";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats1.Title = "Kognitiv beteendeterapi alt återfallsprevention, KBT (*)";
+            insats1.Questions = questionList2;
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+
+            subarea9.insatslist = insatsList;
+
+            return subarea9;
+        }
+
+        private static Subarea2 createInsatser_Subarea10()
+        {
+            Subarea2 subarea10 = new Subarea2();
+            subarea10.Title = "Missbruk eller beroende av cannabis";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "KBT + MI/MET";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "ÅP + MI/MET";
+            insats2.Questions = questionList2;
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+
+            subarea10.insatslist = insatsList;
+
+            return subarea10;
+        }
+
+        private static Subarea2 createInsatser_Subarea11()
+        {
+            Subarea2 subarea11 = new Subarea2();
+            subarea11.Title = "Missbruk eller beroende av centralstimulantia";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "12-stegsbehandling";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "MATRIX";
+            insats2.Questions = questionList2;
+
+            Insatsen insats3 = new Insatsen();
+            List<Question> questionList3 = createQuestions();
+            insats3.Title = "Community reinforcement approach, CRA";
+            insats3.Questions = questionList3;
+
+            Insatsen insats4 = new Insatsen();
+            List<Question> questionList4 = createQuestions();
+            insats4.Title = "ÅP";
+            insats4.Questions = questionList4;
+
+
+            Insatsen insats5 = new Insatsen();
+            List<Question> questionList5 = createQuestions();
+            insats5.Title = "KBT";
+            insats5.Questions = questionList5;
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+            insatsList.Add(insats3);
+            insatsList.Add(insats4);
+            insatsList.Add(insats5);
+
+            subarea11.insatslist = insatsList;
+
+            return subarea11;
+        }
+
+        private static Subarea2 createInsatser_Subarea12()
+        {
+
+            Subarea2 subarea12 = new Subarea2();
+            subarea12.Title = "Missbruk eller beroende av opiater";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "KBT (*)";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "ÅP (*)";
+            insats2.Questions = questionList2;
+
+            Insatsen insats3 = new Insatsen();
+            List<Question> questionList3 = createQuestions();
+            insats3.Title = "CRA (*)";
+            insats3.Questions = questionList3;
+
+            Insatsen insats4 = new Insatsen();
+            List<Question> questionList4 = createQuestions();
+            insats4.Title = "Psykodynamisk terapi  (Û)";
+            insats4.Questions = questionList4;
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+            insatsList.Add(insats3);
+            insatsList.Add(insats4);
+
+            subarea12.insatslist = insatsList;
+
+            return subarea12;
+        }
+
+        private static Subarea2 createInsatser_Subarea13()
+        {
+
+            Subarea2 subarea13 = new Subarea2();
+            subarea13.Title = "Nätverks- och parterapi vid alkohol- eller narkotikaproblem";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "Parterapi (Û)";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "Nätverksterapi (Û)";
+            insats2.Questions = questionList2;
+
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+
+            subarea13.insatslist = insatsList;
+
+            return subarea13;
+        }
+
+        private static Subarea2 createInsatser_Subarea14()
+        {
+
+            Subarea2 subarea14 = new Subarea2();
+            subarea14.Title = "Arbetslivsinriktad rehabilitering";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "Parterapi (Û)";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "Nätverksterapi (Û)";
+            insats2.Questions = questionList2;
+
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+
+            subarea14.insatslist = insatsList;
+
+            return subarea14;
+        }
+
+        private static Subarea2 createInsatser_Subarea15()
+        {
+
+            Subarea2 subarea15 = new Subarea2();
+            subarea15.Title = "Boendeinsatser";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "Parterapi (Û)";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "Nätverksterapi (Û)";
+            insats2.Questions = questionList2;
+
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+
+            subarea15.insatslist = insatsList;
+
+            return subarea15;
+        }
+
+        private static Subarea2 createInsatser_Subarea16()
+        {
+
+            Subarea2 subarea16 = new Subarea2();
+            subarea16.Title = "Samordning i form av Case management";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "Parterapi (Û)";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "Nätverksterapi (Û)";
+            insats2.Questions = questionList2;
+
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+
+            subarea16.insatslist = insatsList;
+
+            return subarea16;
+        }
+        private static Subarea2 createInsatser_Subarea17()
+        {
+
+            Subarea2 subarea17 = new Subarea2();
+            subarea17.Title = "Psykosocialt stöd till vuxna anhöriga";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "Parterapi (Û)";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "Nätverksterapi (Û)";
+            insats2.Questions = questionList2;
+
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+
+            subarea17.insatslist = insatsList;
+
+            return subarea17;
+        }
+
+        private static Subarea2 createInsatser_Subarea18()
+        {
+
+            Subarea2 subarea18 = new Subarea2();
+            subarea18.Title = "Stöd till anhöriga som vill motivera närstående till behandling";
+
+            Insatsen insats1 = new Insatsen();
+            List<Question> questionList1 = createQuestions();
+            insats1.Title = "Parterapi (Û)";
+            insats1.Questions = questionList1;
+
+            Insatsen insats2 = new Insatsen();
+            List<Question> questionList2 = createQuestions();
+            insats2.Title = "Nätverksterapi (Û)";
+            insats2.Questions = questionList2;
+
+
+            List<Insatsen> insatsList = new List<Insatsen>();
+            insatsList.Add(insats1);
+            insatsList.Add(insats2);
+
+            subarea18.insatslist = insatsList;
+
+            return subarea18;
+        }
         private static List<Area> createAreas()
         {
             Area area1 = new Area();
@@ -51,10 +424,18 @@ namespace SoSWebb.JsonSerializer
             bedomningsinstrument_subarea3.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea3.Values_andelklienter = new int[] { 0, 1, 2, 3 };
 
+            Subarea bedomningsinstrument_subarea4 = new Subarea();
+            bedomningsinstrument_subarea4.Id = 4;
+            bedomningsinstrument_subarea4.Title = "Bedömning av hjälpbehov för ungdomar";
+            bedomningsinstrument_subarea4.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
             List<Subarea> subareaList1 = new List<Subarea>();
             subareaList1.Add(bedomningsinstrument_subarea1);
             subareaList1.Add(bedomningsinstrument_subarea2);
             subareaList1.Add(bedomningsinstrument_subarea3);
+            subareaList1.Add(bedomningsinstrument_subarea4);
 
             area1.Subarea = subareaList1;
 
@@ -91,133 +472,215 @@ namespace SoSWebb.JsonSerializer
 
             area2.Subarea = subareaList2;
 
+            Area area3 = new Area();
+            area3.Id = 3;
+            area3.Title = "Psykologisk och psykosocial behandling";
+
+            Subarea bedomningsinstrument_subarea1_3 = new Subarea();
+            bedomningsinstrument_subarea1_3.Id = 1;
+            bedomningsinstrument_subarea1_3.Title = "Missbruk eller beroende av alkohol";
+            bedomningsinstrument_subarea1_3.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea1_3.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea1_3.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            Subarea bedomningsinstrument_subarea2_3 = new Subarea();
+            bedomningsinstrument_subarea2_3.Id = 2;
+            bedomningsinstrument_subarea2_3.Title = "Långvarigt bruk av bensodiazepiner";
+            bedomningsinstrument_subarea2_3.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea2_3.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea2_3.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+
+            Subarea bedomningsinstrument_subarea3_3 = new Subarea();
+            bedomningsinstrument_subarea3_3.Id = 3;
+            bedomningsinstrument_subarea3_3.Title = "Missbruk eller beroende av canabis";
+            bedomningsinstrument_subarea3_3.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea3_3.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea3_3.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            Subarea bedomningsinstrument_subarea4_3 = new Subarea();
+            bedomningsinstrument_subarea4_3.Id = 3;
+            bedomningsinstrument_subarea4_3.Title = "Missbruk eller beroende av centralstimulantia";
+            bedomningsinstrument_subarea4_3.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea4_3.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea4_3.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            Subarea bedomningsinstrument_subarea5_3 = new Subarea();
+            bedomningsinstrument_subarea5_3.Id = 3;
+            bedomningsinstrument_subarea5_3.Title = "Missbruk eller beroende av opiater";
+            bedomningsinstrument_subarea5_3.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea5_3.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea5_3.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            Subarea bedomningsinstrument_subarea6_3 = new Subarea();
+            bedomningsinstrument_subarea6_3.Id = 3;
+            bedomningsinstrument_subarea6_3.Title = "Nätverks-/ parterapi vid alkohol-/ narkotikaproblem";
+            bedomningsinstrument_subarea6_3.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea6_3.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea6_3.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+
+            List<Subarea> subareaList3 = new List<Subarea>();
+            subareaList3.Add(bedomningsinstrument_subarea1_3);
+            subareaList3.Add(bedomningsinstrument_subarea2_3);
+            subareaList3.Add(bedomningsinstrument_subarea3_3);
+            subareaList3.Add(bedomningsinstrument_subarea4_3);
+            subareaList3.Add(bedomningsinstrument_subarea5_3);
+            subareaList3.Add(bedomningsinstrument_subarea6_3);
+
+            area3.Subarea = subareaList3;
+
+            Area area4 = new Area();
+            area4.Id = 4;
+            area4.Title = "Psykosociala stödinsatser";
+
+            Subarea bedomningsinstrument_subarea1_4 = new Subarea();
+            bedomningsinstrument_subarea1_4.Id = 1;
+            bedomningsinstrument_subarea1_4.Title = "Arbetslivsinriktadrehabilitering";
+            bedomningsinstrument_subarea1_4.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea1_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea1_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            Subarea bedomningsinstrument_subarea2_4 = new Subarea();
+            bedomningsinstrument_subarea2_4.Id = 2;
+            bedomningsinstrument_subarea2_4.Title = "Boendeinsatser";
+            bedomningsinstrument_subarea2_4.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea2_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea2_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+
+            Subarea bedomningsinstrument_subarea3_4 = new Subarea();
+            bedomningsinstrument_subarea3_4.Id = 3;
+            bedomningsinstrument_subarea3_4.Title = "Samording i form av case management";
+            bedomningsinstrument_subarea3_4.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea3_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea3_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            Subarea bedomningsinstrument_subarea4_4 = new Subarea();
+            bedomningsinstrument_subarea4_4.Id = 3;
+            bedomningsinstrument_subarea4_4.Title = "Psykosocialt stöd till vuxna anhöriga";
+            bedomningsinstrument_subarea4_4.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea4_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea4_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            Subarea bedomningsinstrument_subarea5_4 = new Subarea();
+            bedomningsinstrument_subarea5_4.Id = 3;
+            bedomningsinstrument_subarea5_4.Title = "Stöd till anhöriga som vill motivera närstående till behandling";
+            bedomningsinstrument_subarea5_4.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea5_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea5_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+
+
+            List<Subarea> subareaList4 = new List<Subarea>();
+            subareaList4.Add(bedomningsinstrument_subarea1_4);
+            subareaList4.Add(bedomningsinstrument_subarea2_4);
+            subareaList4.Add(bedomningsinstrument_subarea3_4);
+            subareaList4.Add(bedomningsinstrument_subarea4_4);
+            subareaList4.Add(bedomningsinstrument_subarea5_4);
+
+            area4.Subarea = subareaList4;
+
+            Area area5 = new Area();
+            area5.Id = 5;
+            area5.Title = "Behandling vid samsjuklighet";
+
+            Subarea bedomningsinstrument_subarea1_5 = new Subarea();
+            bedomningsinstrument_subarea1_5.Id = 1;
+            bedomningsinstrument_subarea1_5.Title = "Integrerad behandlingsmetod (Psykologiska och psykosociala behandlingsmetoder i kombination med farmalogisk behandling)";
+            bedomningsinstrument_subarea1_5.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea1_5.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea1_5.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            Subarea bedomningsinstrument_subarea2_5 = new Subarea();
+            bedomningsinstrument_subarea2_5.Id = 2;
+            bedomningsinstrument_subarea2_5.Title = "Samordning (case management)";
+            bedomningsinstrument_subarea2_5.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea2_5.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea2_5.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            List<Subarea> subareaList5 = new List<Subarea>();
+            subareaList5.Add(bedomningsinstrument_subarea1_5);
+            subareaList5.Add(bedomningsinstrument_subarea2_5);
+
+            area5.Subarea = subareaList5;
+
+            Area area6 = new Area();
+            area6.Id = 6;
+            area6.Title = "Ungdomar - Psykologisk och psykosocial behandling";
+
+            Subarea bedomningsinstrument_subarea1_6 = new Subarea();
+            bedomningsinstrument_subarea1_6.Id = 1;
+            bedomningsinstrument_subarea1_6.Title = "Korta insatser (BI)";
+            bedomningsinstrument_subarea1_6.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea1_6.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea1_6.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            Subarea bedomningsinstrument_subarea2_6 = new Subarea();
+            bedomningsinstrument_subarea2_6.Id = 2;
+            bedomningsinstrument_subarea2_6.Title = "Familjeinterventioner";
+            bedomningsinstrument_subarea2_6.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea2_6.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea2_6.Values_andelklienter = new int[] { 0, 1, 2, 3 };
+
+            List<Subarea> subareaList6 = new List<Subarea>();
+            subareaList6.Add(bedomningsinstrument_subarea1_6);
+            subareaList6.Add(bedomningsinstrument_subarea2_6);
+
+            area6.Subarea = subareaList6;
+
+
             List<Area> areaList = new List<Area>();
             areaList.Add(area1);
             areaList.Add(area2);
+            areaList.Add(area3);
+            areaList.Add(area4);
+            areaList.Add(area5);
+            areaList.Add(area6);
             return areaList;
         }
 
-        private static List<Insatsen> createInsatsen()
+
+        private static List<Question> createQuestions()
         {
             Question question1 = new Question();
-            question1.Id = 1;
             question1.QuestionStatement = "Kan insatsen möta behoven?";
-            question1.QuestionValues = new string[] {"Nej","Sannolikt inte","Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
+            question1.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
             Question question2 = new Question();
-            question2.Id = 1;
             question2.QuestionStatement = "vilken prioritering har insatsen i NR?";
             question2.QuestionValues = new string[] { "1", "2", "3", "4", "5", "Annan" };
 
             Question question3 = new Question();
-            question3.Id = 1;
             question3.QuestionStatement = "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?";
             question3.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
             Question question4 = new Question();
-            question4.Id = 1;
             question4.QuestionStatement = "Är de förväntade oönskade effekterna av insatsen små?";
             question4.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
             Question question5 = new Question();
-            question5.Id = 1;
-            question5.QuestionStatement = "är insatsen möjlig att implementera utan anpassning?";
+            question5.QuestionStatement = "Är insatsen möjlig att implementera utan anpassning?";
             question5.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
             Question question6 = new Question();
-            question6.Id = 1;
-            question6.QuestionStatement = "är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?";
+            question6.QuestionStatement = "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?";
             question6.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
             Question question7 = new Question();
-            question7.Id = 1;
             question7.QuestionStatement = "Är insatsen hållbar på lång sikt?";
             question7.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
-            Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = new List<Question>();
-            questionList1.Add(question1);
-            questionList1.Add(question2);
-            questionList1.Add(question3);
-            questionList1.Add(question4);
-            questionList1.Add(question5);
-            questionList1.Add(question6);
-            questionList1.Add(question7);
+            List<Question> questionlist = new List<Question>();
+            questionlist.Add(question1);
+            questionlist.Add(question2);
+            questionlist.Add(question3);
+            questionlist.Add(question4);
+            questionlist.Add(question5);
+            questionlist.Add(question6);
+            questionlist.Add(question7);
 
-            Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = new List<Question>();
-            questionList2.Add(question1);
-            questionList2.Add(question2);
-            questionList2.Add(question3);
-            questionList2.Add(question4);
-            questionList2.Add(question5);
-            questionList2.Add(question6);
-            questionList2.Add(question7);
-
-            Insatsen insats3 = new Insatsen();
-            List<Question> questionList3 = new List<Question>();
-            questionList3.Add(question1);
-            questionList3.Add(question2);
-            questionList3.Add(question3);
-            questionList3.Add(question4);
-            questionList3.Add(question5);
-            questionList3.Add(question6);
-            questionList3.Add(question7);
-
-            Insatsen insats4 = new Insatsen();
-            List<Question> questionList4 = new List<Question>();
-            questionList4.Add(question1);
-            questionList4.Add(question2);
-            questionList4.Add(question3);
-            questionList4.Add(question4);
-            questionList4.Add(question5);
-            questionList4.Add(question6);
-            questionList4.Add(question7);
-
-            Insatsen insats5 = new Insatsen();
-            List<Question> questionList5 = new List<Question>();
-            questionList5.Add(question1);
-            questionList5.Add(question2);
-            questionList5.Add(question3);
-            questionList5.Add(question4);
-            questionList5.Add(question5);
-            questionList5.Add(question6);
-            questionList5.Add(question7);
-
-            Insatsen insats6 = new Insatsen();
-            List<Question> questionList6 = new List<Question>();
-            questionList6.Add(question1);
-            questionList6.Add(question2);
-            questionList6.Add(question3);
-            questionList6.Add(question4);
-            questionList6.Add(question5);
-            questionList6.Add(question6);
-            questionList6.Add(question7);
-
-            Insatsen insats7 = new Insatsen();
-            List<Question> questionList7 = new List<Question>();
-            questionList7.Add(question1);
-            questionList7.Add(question2);
-            questionList7.Add(question3);
-            questionList7.Add(question4);
-            questionList7.Add(question5);
-            questionList7.Add(question6);
-            questionList7.Add(question7);
-
-            Insatsen insats8 = new Insatsen();
-            List<Question> questionList8 = new List<Question>();
-            questionList8.Add(question1);
-            questionList8.Add(question2);
-            questionList8.Add(question3);
-            questionList8.Add(question4);
-            questionList8.Add(question5);
-            questionList8.Add(question6);
-            questionList8.Add(question7);
-
-            insats1.Title = "Motivationshöjande behandling";
-            insats1.Questions = questionList1;
-
-            
+            return questionlist;
         }
     }
 }
