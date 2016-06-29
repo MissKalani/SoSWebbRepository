@@ -14,6 +14,8 @@
     <!--jspdf script-->
     <script type="text/javascript" src="Scripts/jspdf.min.js"></script>
     <script type="text/javascript" src="Scripts/jspdf.debug.js"></script>
+    <!--collapsible script-->
+    <script type="text/javascript" src="Scripts/CollapsibleLists.compressed.js"></script>
 </head>
 <body>
     <div class="container">
@@ -40,13 +42,8 @@
                         <h4>Bedöm insatsen av vald delområde: <span id="chosenDelomrade" style="font-weight:bold"></span> - centrala rekommendationer</h4>
                    <div class="dropdown insatsDropdown">
                        <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">Välj insatser <span class="caret"></span></a>
-                       <ul class="dropdown-menu">
-                           <li>
-                               <a id="insatsMenu" class="trigger right-caret">Motivationsbehandling, MET</a>
-                               <ul class="dropdown-menu sub-menu">
-                                   <li><a>Level 2</a></li>
-                               </ul>
-                           </li>
+                       <ul id="dropdownmenu" class="dropdown-menu collapsibleList">
+                   
                        </ul>
                    </div>
                         

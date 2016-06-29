@@ -1,5 +1,10 @@
 ﻿/*insatsprioritering.html css*/
 
+body{
+    margin-bottom: 250px;
+}
+
+
 .stepB-tabcontent{
    border-style: solid;
    border-top-style: none;    
@@ -14,8 +19,12 @@
     margin-bottom:10px;
     float:right;
 }
-/*tab-inatser css*/
+/*tab-insatser css*/
 .insatserDiv{
     text-align: left;
     width: 65%;
 }
+
+/*.dropdown-menu>li:hover{
+    background-color: yellow;
+}*/

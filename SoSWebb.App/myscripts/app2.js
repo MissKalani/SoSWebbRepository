@@ -13,11 +13,11 @@
                 //append subarea titles to step 2's first dropdown menu
                 var subareaTitle = subareas.title;
                 $('#menu').append('<option>' + subareaTitle + '</option>');
-               
-            });          
+
+            });
         });
     });
-    
+
     var subarea = "";
     var selectedSubarea = "";
     
@@ -26,26 +26,58 @@
         e.preventDefault();
         subarea = document.getElementById('menu');
         //get the selected option from the dropdown menu
-        selectedSubarea = subarea.options[subarea.selectedIndex].value;  
+        selectedSubarea = subarea.options[subarea.selectedIndex].value;
         $('.nav a[href="#tab-insatser"]').tab('show');
         var chosenDelomrade = document.getElementById('chosenDelomrade');
-        chosenDelomrade.innerHTML = selectedSubarea;  
+        chosenDelomrade.innerHTML = selectedSubarea;
 
     });
 
     $('.insatsDropdown').on('click', function (e) {
-        alert('hej');
+        showInsatserList();
+    });
+
+    $(document).on('click', '.trigger', function (e) {
+    
+        var current = $(this).next();
+        current.toggle();
+
+    });
+
+    $(document).on('click', '.dropdown-submenu', function (e) {
+        $(this).closest('.dropdown-submenu').find('.dropdown-menu').addClass('open');
+        CollapsibleLists.applyTo(document.getElementById('dropdownmenu'));
+    });
+
+
+    CollapsibleLists.applyTo(document.getElementById('dropdownmenu'));
+
+    function showInsatserList() {
+        var promise = [];
+        promise = getSelectedSubareaInsatslist();
+        promise.done(function (insatserlist) {
+            $('#dropdownmenu li').remove();
+            for (var i in insatserlist) {
+                $('#dropdownmenu').append('<li class="dropdown-submenu"><a href="#">' + insatserlist[i].title + '</a> '
+                    + '<ul class="dropdown-menu collapsibleList"><li class="dropdown-submenu">HEJ</li></ul></li>');
+            }
+        });
+    }
+ 
+    function getSelectedSubareaInsatslist() {
+        var insatserlistPromise = jQuery.Deferred();
         $.getJSON('data/data2.json', function (data) {
             $.each(data, function (index, data) {
                 $.each(data.subareas, function (index, subareas) {
-                    var subareaInsatser = subareas.insatslist;
-                    selectedSubarea = document.getElementById('chosenDelomrade');
-                  
+                    selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
+                    if (subareas.title == selectedSubarea) {                 
+                        insatserlistPromise.resolve(subareas.insatslist);
+                    };
                 });
             });
         });
-    });
- 
+        return insatserlistPromise.promise();
+    }
 });
 
 
