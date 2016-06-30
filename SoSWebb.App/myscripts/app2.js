@@ -32,6 +32,12 @@
         showInsatserList();
     });
 
+    var element = document.getElementsByClassName('collapse');
+    $(document).on('click', '#insats', function () {
+        //alert('hej!');
+        document.getElementById('questionlist');
+        showQuestionsList();
+    });
 
     function showInsatserList() {
         var promise = [];
@@ -39,9 +45,31 @@
         promise.done(function (insatserlist) {
             $('#accordion div').remove();
             for (var i in insatserlist) {
-                $('#accordion').append('<div><a data-toggle="collapse" data-parent="accordion" href="#collapse'+i+'" aria-expanded="true">' + insatserlist[i].title + '</a> '
-                    + '<div id="collapse'+i+'" class="collapse" ><p>HEJ</p></div></li>');              
+                $('#accordion').append('<div><a id="insats" data-toggle="collapse" data-parent="accordion" href="#collapse'+i+'" aria-expanded="true">' + insatserlist[i].title + '</a> '
+                    + '<div id="collapse'+i+'" class="collapse" ><div class ="list-group">'
+                    + ' <ul id="questionlist"></ul></div></div></li>');              
+            }            
+        });
+    }
+
+    function showQuestionsList() {
+  
+        var promise = [];
+        promise = getSelectedSubareaInsatslist();
+        promise.done(function (insatserlist) {
+            //var questions = insatserlist.questions;
+            //console.log(insatserlist);
+            
+            for (var i in insatserlist) {
+                var questions = insatserlist[i].questions;
+                $('#questionlist li').remove();
+                for (var j in questions) {
+                    var question = questions[j].questionstatement;
+                    console.log(questions[j].questionstatement);
+                    $('#questionlist').append('<li>'+question+'</li>');
+                }
             }
+            
         });
     }
 
