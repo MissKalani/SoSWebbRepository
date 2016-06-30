@@ -14,8 +14,6 @@
     <!--jspdf script-->
     <script type="text/javascript" src="Scripts/jspdf.min.js"></script>
     <script type="text/javascript" src="Scripts/jspdf.debug.js"></script>
-    <!--collapsible script-->
-    <script type="text/javascript" src="Scripts/CollapsibleLists.compressed.js"></script>
 </head>
 <body>
     <div class="container">
@@ -31,7 +29,7 @@
             </div>
             <div class="tab-content stepB-tabcontent">
                 <div class="tab-pane active" id="tab-delomrade">
-                   <h4>Välj ett (1) delområde med mycket hög prioritering insats eligt steg A</h4> 
+                    <h4>Välj ett (1) delområde med mycket hög prioritering insats eligt steg A</h4>
                     <div class="dropdown">
                         <select id="menu"></select>
                     </div>
@@ -40,21 +38,12 @@
                 <div class="tab-pane" id="tab-insatser">
                     <div class="insatserDiv">
                         <h4>Bedöm insatsen av vald delområde: <span id="chosenDelomrade" style="font-weight:bold"></span> - centrala rekommendationer</h4>
-                   <div class="dropdown insatsDropdown">
-                       <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">Välj insatser <span class="caret"></span></a>
-                       <ul id="dropdownmenu" class="dropdown-menu collapsibleList">
-                   
-                       </ul>
-                   </div>
-                        
+                        <div id="accordion" role="tablist" aria-multiselectable="true">
+                        </div>
+                        <ul id="insatserlist"></ul>
                     </div>
-                   
                 </div>
-
             </div>
-
-
-
         </div>
     </div>
     <script src="Scripts/jquery-2.2.4.js"></script>

@@ -20,7 +20,6 @@
 
     var subarea = "";
     var selectedSubarea = "";
-    
 
     $('#btn_Next').click(function (e) {
         e.preventDefault();
@@ -30,47 +29,29 @@
         $('.nav a[href="#tab-insatser"]').tab('show');
         var chosenDelomrade = document.getElementById('chosenDelomrade');
         chosenDelomrade.innerHTML = selectedSubarea;
-
-    });
-
-    $('.insatsDropdown').on('click', function (e) {
         showInsatserList();
     });
 
-    $(document).on('click', '.trigger', function (e) {
-    
-        var current = $(this).next();
-        current.toggle();
-
-    });
-
-    $(document).on('click', '.dropdown-submenu', function (e) {
-        $(this).closest('.dropdown-submenu').find('.dropdown-menu').addClass('open');
-        CollapsibleLists.applyTo(document.getElementById('dropdownmenu'));
-    });
-
-
-    CollapsibleLists.applyTo(document.getElementById('dropdownmenu'));
 
     function showInsatserList() {
         var promise = [];
         promise = getSelectedSubareaInsatslist();
         promise.done(function (insatserlist) {
-            $('#dropdownmenu li').remove();
+            $('#accordion div').remove();
             for (var i in insatserlist) {
-                $('#dropdownmenu').append('<li class="dropdown-submenu"><a href="#">' + insatserlist[i].title + '</a> '
-                    + '<ul class="dropdown-menu collapsibleList"><li class="dropdown-submenu">HEJ</li></ul></li>');
+                $('#accordion').append('<div><a data-toggle="collapse" data-parent="accordion" href="#collapse'+i+'" aria-expanded="true">' + insatserlist[i].title + '</a> '
+                    + '<div id="collapse'+i+'" class="collapse" ><p>HEJ</p></div></li>');              
             }
         });
     }
- 
+
     function getSelectedSubareaInsatslist() {
         var insatserlistPromise = jQuery.Deferred();
         $.getJSON('data/data2.json', function (data) {
             $.each(data, function (index, data) {
                 $.each(data.subareas, function (index, subareas) {
                     selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
-                    if (subareas.title == selectedSubarea) {                 
+                    if (subareas.title == selectedSubarea) {
                         insatserlistPromise.resolve(subareas.insatslist);
                     };
                 });
