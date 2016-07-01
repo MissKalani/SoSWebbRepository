@@ -10,14 +10,14 @@ namespace SoSWebb.JsonSerializer
     {
         //public int Id { get; set; }
         public string Title { get; set; }
-        public List<Question> Questions { get; set; }
+        //public List<Question> Questions { get; set; }
     }
-    public class Question
-    {
-        //public int Id { get; set; }
-        public string QuestionStatement { get; set; }
-        public string[] QuestionValues { get; set; }
+    //public class Question
+    //{
+    //    //public int Id { get; set; }
+    //    public string QuestionStatement { get; set; }
+    //    public string[] QuestionValues { get; set; }
 
-    }
+    //}
        
 }

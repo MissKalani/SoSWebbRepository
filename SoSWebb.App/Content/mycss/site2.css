@@ -1,61 +1,79 @@
 ﻿/*insatsprioritering.html css*/
 
-body{
+body {
     margin-bottom: 250px;
 }
 
 
-.stepB-tabcontent{
-   border-style: solid;
-   border-top-style: none;    
+.stepB-tabcontent {
+    border-style: solid;
+    border-top-style: none;
     position: relative;
     bottom: 22px;
-    padding:80px;
+    padding: 80px;
 }
 
 /*tab-delomrade css*/
-#btn_Next{
-    margin-top:10px;
-    margin-bottom:10px;
-    float:right;
+#btn_Next {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
 }
 /*tab-insatser css*/
-.insatserDiv{
+.insatserDiv {
     text-align: left;
-    width: 65%;
 }
+
+#accordion li {
+    font-size: 16px;
+    list-style: none;
+    border: 1px solid #000;
+}
+
+.list-group {
+    border-style: none;
+}
+
+    .list-group > ul {
+        padding:0;
+    }
+
+        .list-group > ul > li {
+            background-color: #ccc;
+            border: 1px solid #000;
+        }
 
 .dropdown-submenu {
     position: relative;
 }
 
-.dropdown-submenu>.dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
-}
+    .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px;
+        border-radius: 0 6px 6px 6px;
+    }
 
-.dropdown-submenu:active >.dropdown-menu {
-    display: block;
-}
+    .dropdown-submenu:active > .dropdown-menu {
+        display: block;
+    }
 
-.dropdown-submenu>a:after {
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
-}
+    .dropdown-submenu > a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-left-color: #ccc;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
 
 /*.dropdown-submenu:active >a:after {
     border-left-color: #fff;

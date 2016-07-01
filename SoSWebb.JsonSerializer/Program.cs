@@ -16,7 +16,6 @@ namespace SoSWebb.JsonSerializer
             var areaList2 = new List<Area2>();
             areaList2.Add(createAreaWithSubareaInsatser_Area2());
             areaList2.Add(createAreaWithSubareaInsatser_Area3());
-            
 
             var settings = new JsonSerializerSettings();
             settings.ContractResolver = new LowercaseContractResolver();
@@ -61,49 +60,32 @@ namespace SoSWebb.JsonSerializer
         //create the list of "insatser" in every subarea
         private static Subarea2 createInsatser_Subarea8()
         {
-
             Subarea2 subarea8 = new Subarea2();
             subarea8.Title = "Missbruk eller beroende av alkohol";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "Motivationshöjande behandling, MET";
-            insats1.Questions = questionList1;
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "Kognitiv beteendeterapi alt återfallsprevention, KBT";
-            insats2.Questions = questionList2;
 
             Insatsen insats3 = new Insatsen();
-            List<Question> questionList3 = createQuestions();
             insats3.Title = "ÅP";
-            insats3.Questions = questionList3;
 
             Insatsen insats4 = new Insatsen();
-            List<Question> questionList4 = createQuestions();
             insats4.Title = "Community reinforcement approach, CRA";
-            insats4.Questions = questionList4;
 
             Insatsen insats5 = new Insatsen();
-            List<Question> questionList5 = createQuestions();
             insats5.Title = "12-stegsbehandling";
-            insats5.Questions = questionList5;
 
             Insatsen insats6 = new Insatsen();
-            List<Question> questionList6 = createQuestions();
             insats6.Title = "Social behaviour network therapy, SBNT";
-            insats6.Questions = questionList6;
 
             Insatsen insats7 = new Insatsen();
-            List<Question> questionList7 = createQuestions();
             insats7.Title = "Psykodynamisk terapi";
-            insats7.Questions = questionList7;
 
             Insatsen insats8 = new Insatsen();
-            List<Question> questionList8 = createQuestions();
             insats8.Title = "Interaktionell terapi";
-            insats8.Questions = questionList8;
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -116,7 +98,6 @@ namespace SoSWebb.JsonSerializer
             insatsList.Add(insats8);
             subarea8.insatslist = insatsList;
 
-
             return subarea8;
         }
 
@@ -126,9 +107,7 @@ namespace SoSWebb.JsonSerializer
             subarea9.Title = "Långvarigt bruk av bensodiazepiner";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats1.Title = "Kognitiv beteendeterapi alt återfallsprevention, KBT (*)";
-            insats1.Questions = questionList2;
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -144,14 +123,12 @@ namespace SoSWebb.JsonSerializer
             subarea10.Title = "Missbruk eller beroende av cannabis";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "KBT + MI/MET";
-            insats1.Questions = questionList1;
+
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "ÅP + MI/MET";
-            insats2.Questions = questionList2;
+
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -168,30 +145,19 @@ namespace SoSWebb.JsonSerializer
             subarea11.Title = "Missbruk eller beroende av centralstimulantia";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "12-stegsbehandling";
-            insats1.Questions = questionList1;
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "MATRIX";
-            insats2.Questions = questionList2;
 
             Insatsen insats3 = new Insatsen();
-            List<Question> questionList3 = createQuestions();
             insats3.Title = "Community reinforcement approach, CRA";
-            insats3.Questions = questionList3;
 
             Insatsen insats4 = new Insatsen();
-            List<Question> questionList4 = createQuestions();
             insats4.Title = "ÅP";
-            insats4.Questions = questionList4;
-
 
             Insatsen insats5 = new Insatsen();
-            List<Question> questionList5 = createQuestions();
             insats5.Title = "KBT";
-            insats5.Questions = questionList5;
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -212,24 +178,16 @@ namespace SoSWebb.JsonSerializer
             subarea12.Title = "Missbruk eller beroende av opiater";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "KBT (*)";
-            insats1.Questions = questionList1;
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "ÅP (*)";
-            insats2.Questions = questionList2;
 
             Insatsen insats3 = new Insatsen();
-            List<Question> questionList3 = createQuestions();
             insats3.Title = "CRA (*)";
-            insats3.Questions = questionList3;
 
             Insatsen insats4 = new Insatsen();
-            List<Question> questionList4 = createQuestions();
             insats4.Title = "Psykodynamisk terapi  (Û)";
-            insats4.Questions = questionList4;
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -249,15 +207,10 @@ namespace SoSWebb.JsonSerializer
             subarea13.Title = "Nätverks- och parterapi vid alkohol- eller narkotikaproblem";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "Parterapi (Û)";
-            insats1.Questions = questionList1;
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "Nätverksterapi (Û)";
-            insats2.Questions = questionList2;
-
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -275,14 +228,10 @@ namespace SoSWebb.JsonSerializer
             subarea14.Title = "Arbetslivsinriktad rehabilitering";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "Parterapi (Û)";
-            insats1.Questions = questionList1;
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "Nätverksterapi (Û)";
-            insats2.Questions = questionList2;
 
 
             List<Insatsen> insatsList = new List<Insatsen>();
@@ -301,14 +250,10 @@ namespace SoSWebb.JsonSerializer
             subarea15.Title = "Boendeinsatser";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "Parterapi (Û)";
-            insats1.Questions = questionList1;
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "Nätverksterapi (Û)";
-            insats2.Questions = questionList2;
 
 
             List<Insatsen> insatsList = new List<Insatsen>();
@@ -327,14 +272,10 @@ namespace SoSWebb.JsonSerializer
             subarea16.Title = "Samordning i form av Case management";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "Parterapi (Û)";
-            insats1.Questions = questionList1;
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "Nätverksterapi (Û)";
-            insats2.Questions = questionList2;
 
 
             List<Insatsen> insatsList = new List<Insatsen>();
@@ -352,14 +293,10 @@ namespace SoSWebb.JsonSerializer
             subarea17.Title = "Psykosocialt stöd till vuxna anhöriga";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "Parterapi (Û)";
-            insats1.Questions = questionList1;
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "Nätverksterapi (Û)";
-            insats2.Questions = questionList2;
 
 
             List<Insatsen> insatsList = new List<Insatsen>();
@@ -378,14 +315,10 @@ namespace SoSWebb.JsonSerializer
             subarea18.Title = "Stöd till anhöriga som vill motivera närstående till behandling";
 
             Insatsen insats1 = new Insatsen();
-            List<Question> questionList1 = createQuestions();
             insats1.Title = "Parterapi (Û)";
-            insats1.Questions = questionList1;
 
             Insatsen insats2 = new Insatsen();
-            List<Question> questionList2 = createQuestions();
             insats2.Title = "Nätverksterapi (Û)";
-            insats2.Questions = questionList2;
 
 
             List<Insatsen> insatsList = new List<Insatsen>();
@@ -641,46 +574,47 @@ namespace SoSWebb.JsonSerializer
         }
 
 
-        private static List<Question> createQuestions()
-        {
-            Question question1 = new Question();
-            question1.QuestionStatement = "Kan insatsen möta behoven?";
-            question1.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
+        //private static List<Question> createQuestions()
+        //{
+        //    Question question1 = new Question();
+        //    question1.QuestionStatement = "Kan insatsen möta behoven?";
+        //    question1.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
-            Question question2 = new Question();
-            question2.QuestionStatement = "vilken prioritering har insatsen i NR?";
-            question2.QuestionValues = new string[] { "1", "2", "3", "4", "5", "Annan" };
+        //    Question question2 = new Question();
+        //    question2.QuestionStatement = "vilken prioritering har insatsen i NR?";
+        //    question2.QuestionValues = new string[] { "1", "2", "3", "4", "5", "Annan" };
 
-            Question question3 = new Question();
-            question3.QuestionStatement = "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?";
-            question3.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
+        //    Question question3 = new Question();
+        //    question3.QuestionStatement = "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?";
+        //    question3.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
-            Question question4 = new Question();
-            question4.QuestionStatement = "Är de förväntade oönskade effekterna av insatsen små?";
-            question4.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
+        //    Question question4 = new Question();
+        //    question4.QuestionStatement = "Är de förväntade oönskade effekterna av insatsen små?";
+        //    question4.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
-            Question question5 = new Question();
-            question5.QuestionStatement = "Är insatsen möjlig att implementera utan anpassning?";
-            question5.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
+        //    Question question5 = new Question();
+        //    question5.QuestionStatement = "Är insatsen möjlig att implementera utan anpassning?";
+        //    question5.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
-            Question question6 = new Question();
-            question6.QuestionStatement = "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?";
-            question6.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
+        //    Question question6 = new Question();
+        //    question6.QuestionStatement = "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?";
+        //    question6.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
-            Question question7 = new Question();
-            question7.QuestionStatement = "Är insatsen hållbar på lång sikt?";
-            question7.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
+        //    Question question7 = new Question();
+        //    question7.QuestionStatement = "Är insatsen hållbar på lång sikt?";
+        //    question7.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
 
-            List<Question> questionlist = new List<Question>();
-            questionlist.Add(question1);
-            questionlist.Add(question2);
-            questionlist.Add(question3);
-            questionlist.Add(question4);
-            questionlist.Add(question5);
-            questionlist.Add(question6);
-            questionlist.Add(question7);
+        //    List<Question> questionlist = new List<Question>();
+        //    questionlist.Add(question1);
+        //    questionlist.Add(question2);
+        //    questionlist.Add(question3);
+        //    questionlist.Add(question4);
+        //    questionlist.Add(question5);
+        //    questionlist.Add(question6);
+        //    questionlist.Add(question7);
 
-            return questionlist;
-        }
+        //    return questionlist;
+        //}
+
     }
 }
