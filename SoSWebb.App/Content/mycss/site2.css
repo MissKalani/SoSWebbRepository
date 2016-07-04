@@ -27,22 +27,69 @@ body {
 #accordion li {
     font-size: 16px;
     list-style: none;
-    border: 1px solid #000;
 }
+.qlistHeader{
+    background-color:forestgreen;
+    color:#fff;
+    text-indent:2px;
+}
+
+.question {
+    background-color: #ccc;
+    float: left;
+    height: 50px;
+    text-align: left;
+    padding-top: 10px;
+    width: 30%;
+    font-size: 10px;
+}
+
+.qoptions {
+    width: 70%;
+    height: 50px;
+    background-color: #ccc;
+}
+
+
 
 .list-group {
     border-style: none;
-    margin-bottom: 0;  
+    margin-bottom: 0;
 }
 
-    .list-group > ul {
-        padding:0;
+.checkboxDiv {
+    padding-top: 8px;
+    padding-right: 0px;
+}
+
+    /*.checkboxDiv input {
+        position: relative;
+        top: 10px;
+    }*/
+
+    .checkboxDiv label {
+        font-size: 8px;
+        position: relative;
+        bottom: 4px;
+        left: 4px;
     }
 
-        .list-group > ul > li {
-            background-color: #ccc;
-            border: 1px solid #000;
-        }
+/*.checkboxDiv .longlabel {
+        font-size: 8px;
+        position: relative;
+        bottom: 6px;
+        right: 17px;
+    }*/
+
+/*.list-group > ul > li > input {
+        border-style: solid;
+    }*/
+
+.list-group > ul {
+    padding: 0;
+}
+
+
 
 .dropdown-submenu {
     position: relative;
