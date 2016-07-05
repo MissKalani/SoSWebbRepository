@@ -29,7 +29,26 @@
         var chosenDelomrade = document.getElementById('chosenDelomrade');
         chosenDelomrade.innerHTML = selectedSubarea;
         showInsatserList();
+        disableQuestions();
     });
+
+    $(document).on('show.bs.collapse', '#accordion .collapse', function () {
+        var all = $('#accordion').find('.collapse');
+        var actives = $('#accordion').find('.in, .collapsing');
+        all.each(function (index, element) {
+            $(element).collapse('hide');
+        });
+        actives.each(function (index, element) {
+            $(element).collapse('show');
+        });
+    });
+
+    function disableQuestions() {
+       
+
+    }
+
+
 
     function showInsatserList() {
         var promise = [];
@@ -37,41 +56,19 @@
         promise.done(function (insatserlist) {
             $('#accordion ul li').remove();
             for (var i in insatserlist) {
-                console.log(insatserlist[i]);
-                $('#accordion #insatserlist').append('<li><a id="insats' + i + '" data-toggle="collapse" data-parent="accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</a> '
+                $('#insatserlist').append('<li><a id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</a> '
                     + '<div id="collapse' + i + '" class="collapse" ><div class ="list-group">'
-                    + ' <ul id="questionlist' + i + '"><li class="qlistHeader">Insatsens bedömning</li></ul></div></li></li>');
+                    + ' <ul id="questionlist' + i + '"><li class="qlistHeader">Insatsens bedömning</li></ul></div></li></li>');                
             }
             appendQuestionList();
-
         });
     }
 
-    $(document).on('change', 'input.group1',function () {
-        $('input.group1').not(this).prop('checked', false);        
-       
-    });
-    $(document).on('change', 'input.group2', function () {
-        $('input.group2').not(this).prop('checked', false);
 
-    });
-    $(document).on('change', 'input.group3', function () {
-        $('input.group3').not(this).prop('checked', false);
-    });
-    $(document).on('change', 'input.group4', function () {
-        $('input.group4').not(this).prop('checked', false);
-    });
-    $(document).on('change', 'input.group5', function () {
-        $('input.group5').not(this).prop('checked', false);
-    });
-    $(document).on('change', 'input.group6', function () {
-        $('input.group6').not(this).prop('checked', false);
-    });
-    $(document).on('change', 'input.group7', function () {
-        $('input.group7').not(this).prop('checked', false);
-    });
+    function unlockQuestions() {
+        
+    }
 
- 
 
 
     function appendQuestionList() {
@@ -84,12 +81,12 @@
             + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group1" value="5"><label>Varierar</label></span>'
             + '</div></li>');
         $('.list-group ul').append('<li id="q2"><div class="question col-xs-6"">Vilken prioritering har insatsen i NR? </div><div class="qoptions col-xs-6">'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " value="0"><label>1</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " value="1"><label>2</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " value="2"><label>3</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " value="3"><label>4</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " value="4"><label>5</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2" value="5"><label>Annan</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " disabled value="0"><label>1</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " disabled value="1"><label>2</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " disabled value="2"><label>3</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " disabled value="3"><label>4</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2 " disabled value="4"><label>5</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" class="group2" disabled value="5"><label>Annan</label></span>'
             + '</div></li>');
         $('.list-group ul').append('<li id="q3"><div class="question col-xs-6"">Är insatsen värderingsmässigt acceptabel för de flesta aktörer? </div><div class="qoptions col-xs-6">'
             + '<div class="checkboxDiv col-xs-2"><input type="checkbox" class="group3" value="0"><label>Nej</label></div>'
@@ -132,7 +129,7 @@
             + '<div class="checkboxDiv col-xs-2"><input type="checkbox" class="group7" value="5"><label>Varierar</label></div>'
             + '</div></li>');
     }
-   
+
     function getSelectedSubareaInsatslist() {
         var insatserlistPromise = jQuery.Deferred();
         $.getJSON('data/data2.json', function (data) {
@@ -150,3 +147,42 @@
 });
 
 
+
+$(document).on('change', 'input.group1', function () {
+    $('input.group1').not(this).prop('checked', false);
+
+    var value = $('.group1:checked').val();
+    console.log(value);
+    if (value == 3 || value == 4 || value == 5) {
+        document.getElementsByClassName('group2').disabled = false;
+    }   
+});
+
+$(document).on('change', 'input.group2', function () {
+    $('input.group2').not(this).prop('checked', false);
+
+});
+$(document).on('change', 'input.group3', function () {
+    $('input.group3').not(this).prop('checked', false);
+});
+$(document).on('change', 'input.group4', function () {
+    $('input.group4').not(this).prop('checked', false);
+});
+$(document).on('change', 'input.group5', function () {
+    $('input.group5').not(this).prop('checked', false);
+});
+$(document).on('change', 'input.group6', function () {
+    $('input.group6').not(this).prop('checked', false);
+});
+$(document).on('change', 'input.group7', function () {
+    $('input.group7').not(this).prop('checked', false);
+});
+
+
+
+
+$('.collapse').on('show.bs.collapse', function () {
+    alert('hej');
+    $otherPanels = $(this).parents('.panel-group').siblings('.panel-group');
+    $('.collapse', $otherPanels).removeClass('in');
+});
