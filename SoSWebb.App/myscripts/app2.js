@@ -44,7 +44,7 @@
     });
 
     function disableQuestions() {
-       
+
 
     }
 
@@ -58,15 +58,18 @@
             for (var i in insatserlist) {
                 $('#insatserlist').append('<li><a id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</a> '
                     + '<div id="collapse' + i + '" class="collapse" ><div class ="list-group">'
-                    + ' <ul id="questionlist' + i + '"><li class="qlistHeader">Insatsens bedömning</li></ul></div></li></li>');                
+                    + ' <ul id="questionlist' + i + '"><li class="qlistHeader">Insatsens bedömning</li></ul></div></li></li>');
             }
             appendQuestionList();
         });
     }
 
 
-    function unlockQuestions() {
+    window.unlockQuestions = function () {
         
+        $('.group2').each(function () {
+            $('input').removeAttr('disabled', 'disabled');
+        });
     }
 
 
@@ -154,8 +157,8 @@ $(document).on('change', 'input.group1', function () {
     var value = $('.group1:checked').val();
     console.log(value);
     if (value == 3 || value == 4 || value == 5) {
-        document.getElementsByClassName('group2').disabled = false;
-    }   
+        unlockQuestions();
+    }
 });
 
 $(document).on('change', 'input.group2', function () {
