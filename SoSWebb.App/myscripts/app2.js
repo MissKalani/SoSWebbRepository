@@ -196,18 +196,25 @@
         //alert('yolo!');
         var clicked = $(document).find("[href='#" + $(e.target).attr('id') + "']");
         //console.log(clicked);
-        var listgroup = $(clicked).find('.list-group ul li');
+        //var div = $(document).find('[href="#"]');
+        //console.log(div);
+        //var ul = $(div).find('ul');
+        //console.log(ul);
+        var listgroup = $(this).find('.list-group');
         console.log(listgroup);
-        var question = {
-            question: "text",
-            value: "0"
-        };
 
-        for (var i = 0; i < listgroup.length; i++) {
-                alert('yolo!');
-            question.question = $(listgroup).find($('.question').text());
-            console.log(question.question);
-        }
+
+
+        //var question = {
+        //    question: "text",
+        //    value: "0"
+        //};
+
+        //for (var i = 0; i < listgroup.length; i++) {
+        //        alert('yolo!');
+        //    question.question = $(listgroup).find($('.question').text());
+        //    console.log(question.question);
+        //}
 
         //listgroup.each(function (index, element) {
         //    alert('yolo!');
