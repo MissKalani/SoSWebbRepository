@@ -29,9 +29,9 @@ body {
     list-style: none;
 }
 
-/*#q2,#q3,#q4,#q5,#q6,#q7{
+#q2,#q3,#q4,#q5,#q6,#q7{
     opacity: 0.2;
-}*/
+}
 
 .opacity{
     opacity:0.2;
