@@ -52,7 +52,7 @@
             for (var i in insatserlist) {
                 $('#insatserlist').append('<li><a id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</a> '
                     + '<div id="collapse' + i + '" class="collapse" ><div class ="list-group">'
-                    + ' <ul id="questionlist' + i + '"><li class="qlistHeader">Insatsens bedömning</li></ul></div></li></li>');
+                    + ' <ul id="questionlist' + i + '"></ul></div></li></li>');
                 appendQuestionList(i);
                 oneCheckboxAtATime(i);
             }
@@ -190,70 +190,50 @@
     //    });
     //});
 
-
+    var answers = [];
 
     $(document).on('hide.bs.collapse', '#accordion .collapse', function (e) {
-        //alert('yolo!');
-        var clicked = $(document).find("[href='#" + $(e.target).attr('id') + "']");
-        //console.log(clicked);
-        //var div = $(document).find('[href="#"]');
-        //console.log(div);
-        //var ul = $(div).find('ul');
-        //console.log(ul);
-        var listgroup = $(this).find('.list-group');
-        console.log(listgroup);
+        var insatsTitle = $(this).closest('li').first().find('a').first().text();
+        //console.log(insatsTitle);
+        var listgroup = $(this).find('.list-group ul').first();
+        $(listgroup).each(function (index, element) {
+            var answersGroup = [];
+            var listItems = $(this).find('li');
+            if ($(this).find('li').first().find('input[type="checkbox"]:checked').first().val() > 2) {
+                listItems.each(function (idx, li) {
+                    var question = {
+                        questionText: $(li).find('.question').text(),
+                        value: $(li).find('input[type="checkbox"]:checked').first().next('label').text()
+                    };
+                    //console.log(question);
+                    answersGroup.push(question);
+                });
+            }
+            answers[insatsTitle] = answersGroup;
+        });
+        //console.log(answers.length);
+        for (var i in answers) {
+            if (answers[i].length !== 0) {                
+                $(this).closest('li').first().css('background-color', 'green');
+            } else {
+                $(this).closest('li').first().css('background-color', 'white');
+            }
+        }
+        console.log(answers);
 
-
-
-        //var question = {
-        //    question: "text",
-        //    value: "0"
-        //};
-
-        //for (var i = 0; i < listgroup.length; i++) {
-        //        alert('yolo!');
-        //    question.question = $(listgroup).find($('.question').text());
-        //    console.log(question.question);
-        //}
-
-        //listgroup.each(function (index, element) {
-        //    alert('yolo!');
-        //    question.question = $('.question').text();
-        //    console.log(question.question);
-        //});
-
-        //getQuestionArray();
     });
 
-    
+    $('#btn_createReport').click(function (e) {
+        e.preventDefault();
+        createInsatsPrioriteringReport(answers);
+    })
 
-    function getQuestionArray() { 
-        var questionsArray = [];
-        var question = {
-            question: "text",
-            value: "0"
-        };
-
-        var ul = $('#questionlist' + i + ' li');
-        $(ul).each( function () {
-            question.question = $('#question' + i + '').text();
-            console.log(question.question);
-            questionsArray.push(question);
-        });
-
-        //$('#questionlist' + i + '').each(function () {
-
-        //    question.question = $('#question'+i+'').text();
-        //    question.value = $(this).closest('input:checkbox').find($('input:checked')).val();
-        //    questionsArray.push(question);
-        //    console.log(question.value);
-        //    console.log(question.question);
-        //});
-        console.log(questionsArray);
-
+    function createInsatsPrioriteringReport(answers) {
+        var chosenDelomrade2 = document.getElementById('chosenDelomrade2');
+        var selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
+        var text = document.createTextNode(selectedSubarea);
+        chosenDelomrade2.appendChild(text);
     }
-
-
 
 
 });
