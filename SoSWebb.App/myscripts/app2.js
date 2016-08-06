@@ -19,7 +19,6 @@
     });
 
 
-
     $('#btn_Next').click(function (e) {
         e.preventDefault();
         var subarea = document.getElementById('menu');
@@ -30,130 +29,6 @@
         showInsatserList();
     });
 
-    //$(document).on('show.bs.collapse', '#accordion .collapse', function () {
-    //    var all = $('#accordion').find('.collapse');
-    //    var actives = $('#accordion').find('.in, .collapsing');
-    //    all.each(function (index, element) {
-    //        $(element).collapse('hide');
-    //    });
-    //    actives.each(function (index, element) {
-    //        $(element).collapse('show');
-    //    });
-    //});
-
-    $(document).on('hide.bs.collapse', '#accordion .collapse', function () {
-        alert('yolo!');
-        getQuestionArray();
-    });
-
-    var questionsArray = [] ;
-
-    function getQuestionArray() {
-        var i = 0;
-        if (i == i) i++;
-        $('#questionlist'+i+'').each(function () {
-            var question = {
-                question: "text",
-                value: "0"
-            };
-            question.question = $('.question').text();
-            question.value = $(this).closest('input:checkbox').find($('input:checked')).val();
-            questionsArray.push(question);
-            //console.log(question.value);
-            //console.log(question.question);
-        });
-        console.log(questionsArray);
-
-    }
-
-    function showInsatserList() {
-        var promise = [];
-        promise = getSelectedSubareaInsatslist();
-        promise.done(function (insatserlist) {
-            console.log(insatserlist);
-            $('#accordion ul li').remove();
-            for (var i in insatserlist) {
-                $('#insatserlist').append('<li><a id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</a> '
-                    + '<div id="collapse' + i + '" class="collapse" ><div class ="list-group">'
-                    + ' <ul id="questionlist' + i + '"></ul></div></li></li>');
-                console.log('Från showInsatserList()-loopen' + i);
-                appendQuestionList(i);
-            }
-            //appendQuestionList();
-        });
-    }
-
-
-    window.unlockCheckboxes = function () {
-        $('input').removeAttr('disabled', 'disabled');
-    }
-    window.lockCheckboxes = function () {
-        $('.group2').attr('disabled', 'disabled');      
-    }
-
-    window.toggleOpacity = function () {
-        $('#q').toggleClass('opacity');
-    }
-
-    function appendQuestionList(i) {
-        console.log('Från appendQuestionList()' + i);
-        $('.list-group ul').append('<li id="q1"><div class="question col-xs-6">Kan insatsen möta behoven? </div><div class="qoptions col-xs-6">'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group'+i+'" value="0"><label>Nej</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group1" value="1"><label class="longlabel">Sannolikt inte</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group1" value="2"><label>Osäkert</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1" class="group1" value="3"><label class="longlabel">Sannolikt Ja</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1" class="group1" value="4"><label>Ja</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1" class="group1" value="5"><label>Varierar</label></span>'
-            + '</div></li>');
-        $('.list-group ul').append('<li id="q2"><div class="question col-xs-6"">Vilken prioritering har insatsen i NR? </div><div class="qoptions col-xs-6">'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2 " disabled value="0"><label>1</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2 " disabled value="1"><label>2</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2 " disabled value="2"><label>3</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2 " disabled value="3"><label>4</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2 " disabled value="4"><label>5</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2" disabled value="5"><label>Annan</label></span>'
-            + '</div></li>');
-        $('.list-group ul').append('<li id="q3"><div class="question col-xs-6"">Är insatsen värderingsmässigt acceptabel för de flesta aktörer? </div><div class="qoptions col-xs-6">'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3" value="0"><label>Nej</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3" value="1"><label class="longlabel">Sannolikt inte</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3" value="2"><label>Osäkert</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3" value="3"><label class="longlabel">Sannolikt Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3" value="4"><label>Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3" value="5"><label>Varierar</label></div>'
-            + '</div></li>');
-        $('.list-group ul').append('<li id="q4"><div class="question col-xs-6"">Är de förväntade oönskade effekterna av insatsen små? </div><div class="qoptions col-xs-6">'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4" value="0"><label>Nej</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4" value="1"><label class="longlabel">Sannolikt inte</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4" value="2"><label>Osäkert</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4" value="3"><label class="longlabel">Sannolikt Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4" value="4"><label>Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4" value="5"><label>Varierar</label></div>'
-            + '</div></li>');
-        $('.list-group ul').append('<li id="q5"><div class="question col-xs-6"">Är insatsen möjlig att implementera utan anpassning? </div><div class="qoptions col-xs-6">'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5" value="0"><label>Nej</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5" value="1"><label class="longlabel">Sannolikt inte</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5" value="2"><label>Osäkert</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5" value="3"><label class="longlabel">Sannolikt Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5" value="4"><label>Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5" value="5"><label>Varierar</label></div>'
-            + '</div></li>');
-        $('.list-group ul').append('<li id="q6"><div class="question col-xs-6"">Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt? </div><div class="qoptions col-xs-6">'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6" value="0"><label>Nej</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6" value="1"><label class="longlabel">Sannolikt inte</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6" value="2"><label>Osäkert</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6" value="3"><label class="longlabel">Sannolikt Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6" value="4"><label>Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6" value="5"><label>Varierar</label></div>'
-            + '</div></li>');
-        $('.list-group ul').append('<li id="q7"><div class="question col-xs-6"">Är insatsen hållbar på lång sikt? </div><div class="qoptions col-xs-6">'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7" value="0"><label>Nej</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7" value="1"><label class="longlabel">Sannolikt inte</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7" value="2"><label>Osäkert</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7" value="3"><label class="longlabel">Sannolikt Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7" value="4"><label>Ja</label></div>'
-            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7" value="5"><label>Varierar</label></div>'
-            + '</div></li>');
-    }
 
     function getSelectedSubareaInsatslist() {
         var insatserlistPromise = jQuery.Deferred();
@@ -169,48 +44,198 @@
         });
         return insatserlistPromise.promise();
     }
-});
+    function showInsatserList() {
+        var promise = [];
+        promise = getSelectedSubareaInsatslist();
+        promise.done(function (insatserlist) {
+            $('#accordion ul li').remove();
+            for (var i in insatserlist) {
+                $('#insatserlist').append('<li><a id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</a> '
+                    + '<div id="collapse' + i + '" class="collapse" ><div class ="list-group">'
+                    + ' <ul id="questionlist' + i + '"></ul></div></li></li>');
+                appendQuestionList(i);
+                oneCheckboxAtATime(i);
+            }
+        });
 
-$(document).on('change', '#uncheckAll:checkbox', function () {
-    var others = $('input:checkbox').not('#uncheckAll');
-    if (this.checked) {
-        others.prop('checked', false);
     }
-});
-$(document).on('change', 'input.group1', function () {
-    $('input.group1').not(this).prop('checked', false);
-
-    var value = $('.group1:checked').val();
-    console.log(value);
-    if (value == 3 || value == 4 || value == 5) {
-        unlockCheckboxes();        
-    } else {
-        lockCheckboxes();
+    function appendQuestionList(i) {
+        $('.list-group #questionlist' + i + '').append('<li id="q1"><div id="question' + i + '" class="question col-xs-6">Kan insatsen möta behoven? </div><div class="qoptions col-xs-6">'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group1_' + i + '" value="0"><label>Nej</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group1_' + i + '" value="1"><label class="longlabel">Sannolikt inte</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group1_' + i + '" value="2"><label>Osäkert</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1" class="group1_' + i + '" value="3"><label class="longlabel">Sannolikt Ja</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1" class="group1_' + i + '" value="4"><label>Ja</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1" class="group1_' + i + '" value="5"><label>Varierar</label></span>'
+            + '</div></li>');
+        $('.list-group #questionlist' + i + '').append('<li id="q2"><div id="question' + i + '" class="question col-xs-6"">Vilken prioritering har insatsen i NR? </div><div class="qoptions col-xs-6">'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2_' + i + '" disabled value="0"><label>1</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2_' + i + '" disabled value="1"><label>2</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2_' + i + '" disabled value="2"><label>3</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2_' + i + '" disabled value="3"><label>4</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2_' + i + '" disabled value="4"><label>5</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2" class="group2_' + i + '" disabled value="5"><label>Annan</label></span>'
+            + '</div></li>');
+        $('.list-group #questionlist' + i + '').append('<li id="q3"><div id="question' + i + '" class="question col-xs-6"">Är insatsen värderingsmässigt acceptabel för de flesta aktörer? </div><div class="qoptions col-xs-6">'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3_' + i + '" disabled value="0"><label>Nej</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3_' + i + '" disabled value="1"><label class="longlabel">Sannolikt inte</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3_' + i + '" disabled value="2"><label>Osäkert</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3_' + i + '" disabled value="3"><label class="longlabel">Sannolikt Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3_' + i + '" disabled value="4"><label>Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3" class="group3_' + i + '" disabled value="5"><label>Varierar</label></div>'
+            + '</div></li>');
+        $('.list-group #questionlist' + i + '').append('<li id="q4"><div id="question' + i + '" class="question col-xs-6"">Är de förväntade oönskade effekterna av insatsen små? </div><div class="qoptions col-xs-6">'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4_' + i + '" disabled value="0"><label>Nej</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4_' + i + '" disabled value="1"><label class="longlabel">Sannolikt inte</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4_' + i + '" disabled value="2"><label>Osäkert</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4_' + i + '" disabled value="3"><label class="longlabel">Sannolikt Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4_' + i + '" disabled value="4"><label>Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group4" class="group4_' + i + '" disabled value="5"><label>Varierar</label></div>'
+            + '</div></li>');
+        $('.list-group #questionlist' + i + '').append('<li id="q5"><div id="question' + i + '" class="question col-xs-6"">Är insatsen möjlig att implementera utan anpassning? </div><div class="qoptions col-xs-6">'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5_' + i + '" disabled value="0"><label>Nej</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5_' + i + '" disabled value="1"><label class="longlabel">Sannolikt inte</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5_' + i + '" disabled value="2"><label>Osäkert</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5_' + i + '" disabled value="3"><label class="longlabel">Sannolikt Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5_' + i + '" disabled value="4"><label>Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group5" class="group5_' + i + '" disabled value="5"><label>Varierar</label></div>'
+            + '</div></li>');
+        $('.list-group #questionlist' + i + '').append('<li id="q6"><div id="question' + i + '" class="question col-xs-6"">Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt? </div><div class="qoptions col-xs-6">'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6_' + i + '" disabled value="0"><label>Nej</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6_' + i + '" disabled value="1"><label class="longlabel">Sannolikt inte</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6_' + i + '" disabled value="2"><label>Osäkert</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6_' + i + '" disabled value="3"><label class="longlabel">Sannolikt Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6_' + i + '" disabled value="4"><label>Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group6" class="group6_' + i + '" disabled value="5"><label>Varierar</label></div>'
+            + '</div></li>');
+        $('.list-group #questionlist' + i + '').append('<li id="q7"><div id="question' + i + '" class="question col-xs-6"">Är insatsen hållbar på lång sikt? </div><div class="qoptions col-xs-6">'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7_' + i + '" disabled value="0"><label>Nej</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7_' + i + '" disabled value="1"><label class="longlabel">Sannolikt inte</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7_' + i + '" disabled value="2"><label>Osäkert</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7_' + i + '" disabled value="3"><label class="longlabel">Sannolikt Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7_' + i + '" disabled value="4"><label>Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group7" class="group7_' + i + '" disabled value="5"><label>Varierar</label></div>'
+            + '</div></li>');
     }
-});
-$(document).on('change', 'input.group2', function () {
-    $('input.group2').not(this).prop('checked', false);
+    function oneCheckboxAtATime(i) {
+        $('input.group1_' + i + '').on('change', function () {
+            $('input.group1_' + i + '').not(this).prop('checked', false);
+            var value = $(this).val();
+            if (value == 3 || value == 4 || value == 5) {
+                unlockCheckboxes(i);
+            } else {
+                lockCheckboxes(i);
+            }
+        });
+        $('input.group2_' + i + '').on('change', function () {
+            $('input.group2_' + i + '').not(this).prop('checked', false);
+        });
+        $('input.group3_' + i + '').on('change', function () {
+            $('input.group3_' + i + '').not(this).prop('checked', false);
+        });
+        $('input.group4_' + i + '').on('change', function () {
+            $('input.group4_' + i + '').not(this).prop('checked', false);
+        });
+        $('input.group5_' + i + '').on('change', function () {
+            $('input.group5_' + i + '').not(this).prop('checked', false);
+        });
+        $('input.group6_' + i + '').on('change', function () {
+            $('input.group6_' + i + '').not(this).prop('checked', false);
+        });
+        $('input.group7_' + i + '').on('change', function () {
+            $('input.group7_' + i + '').not(this).prop('checked', false);
+        });
+    }
+
+    window.unlockCheckboxes = function (i) {
+        $('input.group2_' + i + '').removeAttr('disabled', 'disabled');
+        $('input.group3_' + i + '').removeAttr('disabled', 'disabled');
+        $('input.group4_' + i + '').removeAttr('disabled', 'disabled');
+        $('input.group5_' + i + '').removeAttr('disabled', 'disabled');
+        $('input.group6_' + i + '').removeAttr('disabled', 'disabled');
+        $('input.group7_' + i + '').removeAttr('disabled', 'disabled');
+
+        $('#questionlist' + i + ' #q2').css('opacity', '1');
+        $('#questionlist' + i + ' #q3').css('opacity', '1');
+        $('#questionlist' + i + ' #q4').css('opacity', '1');
+        $('#questionlist' + i + ' #q5').css('opacity', '1');
+        $('#questionlist' + i + ' #q6').css('opacity', '1');
+        $('#questionlist' + i + ' #q7').css('opacity', '1');
+
+    }
+    window.lockCheckboxes = function (i) {
+        $('input.group2_' + i + '').attr('disabled', 'disabled');
+        $('input.group3_' + i + '').attr('disabled', 'disabled');
+        $('input.group4_' + i + '').attr('disabled', 'disabled');
+        $('input.group5_' + i + '').attr('disabled', 'disabled');
+        $('input.group6_' + i + '').attr('disabled', 'disabled');
+        $('input.group7_' + i + '').attr('disabled', 'disabled');
+
+        $('#questionlist' + i + ' #q2').css('opacity', '0.2');
+        $('#questionlist' + i + ' #q3').css('opacity', '0.2');
+        $('#questionlist' + i + ' #q4').css('opacity', '0.2');
+        $('#questionlist' + i + ' #q5').css('opacity', '0.2');
+        $('#questionlist' + i + ' #q6').css('opacity', '0.2');
+        $('#questionlist' + i + ' #q7').css('opacity', '0.2');
+    }
+
+    //$(document).on('show.bs.collapse', '#accordion .collapse', function () {
+    //    var all = $('#accordion').find('.collapse');
+    //    var actives = $('#accordion').find('.in, .collapsing');
+    //    all.each(function (index, element) {
+    //        $(element).collapse('hide');
+    //    });
+    //    actives.each(function (index, element) {
+    //        $(element).collapse('show');
+    //    });
+    //});
+
+    var answers = [];
+
+    $(document).on('hide.bs.collapse', '#accordion .collapse', function (e) {
+        var insatsTitle = $(this).closest('li').first().find('a').first().text();
+        //console.log(insatsTitle);
+        var listgroup = $(this).find('.list-group ul').first();
+        $(listgroup).each(function (index, element) {
+            var answersGroup = [];
+            var listItems = $(this).find('li');
+            if ($(this).find('li').first().find('input[type="checkbox"]:checked').first().val() > 2) {
+                listItems.each(function (idx, li) {
+                    var question = {
+                        questionText: $(li).find('.question').text(),
+                        value: $(li).find('input[type="checkbox"]:checked').first().next('label').text()
+                    };
+                    //console.log(question);
+                    answersGroup.push(question);
+                });
+            }
+            answers[insatsTitle] = answersGroup;
+        });
+        //console.log(answers.length);
+        for (var i in answers) {
+            if (answers[i].length !== 0) {                
+                $(this).closest('li').first().css('background-color', 'green');
+            } else {
+                $(this).closest('li').first().css('background-color', 'white');
+            }
+        }
+        console.log(answers);
+
+    });
+
+    $('#btn_createReport').click(function (e) {
+        e.preventDefault();
+        createInsatsPrioriteringReport(answers);
+    })
+
+    function createInsatsPrioriteringReport(answers) {
+        var chosenDelomrade2 = document.getElementById('chosenDelomrade2');
+        var selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
+        var text = document.createTextNode(selectedSubarea);
+        chosenDelomrade2.appendChild(text);
+    }
+
 
 });
-$(document).on('change', 'input.group3', function () {
-    $('input.group3').not(this).prop('checked', false);
-});
-$(document).on('change', 'input.group4', function () {
-    $('input.group4').not(this).prop('checked', false);
-});
-$(document).on('change', 'input.group5', function () {
-    $('input.group5').not(this).prop('checked', false);
-});
-$(document).on('change', 'input.group6', function () {
-    $('input.group6').not(this).prop('checked', false);
-});
-$(document).on('change', 'input.group7', function () {
-    $('input.group7').not(this).prop('checked', false);
-});
 
 
-//$('.collapse').on('show.bs.collapse', function () {
-//    alert('hej');
-//    $otherPanels = $(this).parents('.panel-group').siblings('.panel-group');
-//    $('.collapse', $otherPanels).removeClass('in');
-//});

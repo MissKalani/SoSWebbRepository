@@ -24,23 +24,29 @@ body {
     text-align: left;
 }
 
+#btn_createReport {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+}
+
 #accordion li {
     font-size: 16px;
     list-style: none;
 }
 
-#q2,#q3,#q4,#q5,#q6,#q7{
-    opacity: 0.8;
+#q2, #q3, #q4, #q5, #q6, #q7 {
+    opacity: 0.2;
 }
 
-.opacity{
+/*.opacity{
     opacity:0.2;
-}
+}*/
 
-.qlistHeader{
-    background-color:forestgreen;
-    color:#fff;
-    text-indent:2px;
+.qlistHeader {
+    background-color: forestgreen;
+    color: #fff;
+    text-indent: 2px;
 }
 
 .question {
@@ -71,11 +77,6 @@ body {
     padding-right: 0px;
 }
 
-    /*.checkboxDiv input {
-        position: relative;
-        top: 10px;
-    }*/
-
     .checkboxDiv label {
         font-size: 8px;
         position: relative;
@@ -83,67 +84,17 @@ body {
         left: 4px;
     }
 
-/*.checkboxDiv .longlabel {
-        font-size: 8px;
-        position: relative;
-        bottom: 6px;
-        right: 17px;
-    }*/
-
-/*.list-group > ul > li > input {
-        border-style: solid;
-    }*/
 
 .list-group > ul {
     padding: 0;
 }
 
-
-
-.dropdown-submenu {
-    position: relative;
+#insatserlist > li {
+    border: 1px solid #00263e;
+    padding: 12px;
+    border-bottom-style: none;
 }
 
-    .dropdown-submenu > .dropdown-menu {
-        top: 0;
-        left: 100%;
-        margin-top: -6px;
-        margin-left: -1px;
-        -webkit-border-radius: 0 6px 6px 6px;
-        -moz-border-radius: 0 6px 6px;
-        border-radius: 0 6px 6px 6px;
+    #insatserlist > li:last-child {
+        border-bottom-style: solid;
     }
-
-    .dropdown-submenu:active > .dropdown-menu {
-        display: block;
-    }
-
-    .dropdown-submenu > a:after {
-        display: block;
-        content: " ";
-        float: right;
-        width: 0;
-        height: 0;
-        border-color: transparent;
-        border-style: solid;
-        border-width: 5px 0 5px 5px;
-        border-left-color: #ccc;
-        margin-top: 5px;
-        margin-right: -10px;
-    }
-
-/*.dropdown-submenu:active >a:after {
-    border-left-color: #fff;
-}
-
-.dropdown-submenu.pull-left {
-    float: none;
-}
-
-.dropdown-submenu.pull-left>.dropdown-menu {
-    left: -100%;
-    margin-left: 10px;
-    -webkit-border-radius: 6px 0 6px 6px;
-    -moz-border-radius: 6px 0 6px 6px;
-    border-radius: 6px 0 6px 6px;
-}*/
