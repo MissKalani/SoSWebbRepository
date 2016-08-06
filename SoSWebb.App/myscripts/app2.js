@@ -18,36 +18,35 @@
         });
     });
 
-    var subarea = "";
-    var selectedSubarea = "";
+
 
     $('#btn_Next').click(function (e) {
         e.preventDefault();
-        subarea = document.getElementById('menu');
-        selectedSubarea = subarea.options[subarea.selectedIndex].value;
+        var subarea = document.getElementById('menu');
+        var selectedSubarea = subarea.options[subarea.selectedIndex].value;
         $('.nav a[href="#tab-insatser"]').tab('show');
         var chosenDelomrade = document.getElementById('chosenDelomrade');
         chosenDelomrade.innerHTML = selectedSubarea;
         showInsatserList();
     });
 
-    $(document).on('show.bs.collapse', '#accordion .collapse', function () {
-        var all = $('#accordion').find('.collapse');
-        var actives = $('#accordion').find('.in, .collapsing');
-        all.each(function (index, element) {
-            $(element).collapse('hide');
-        });
-        actives.each(function (index, element) {
-            $(element).collapse('show');
-        });
-    });
+    //$(document).on('show.bs.collapse', '#accordion .collapse', function () {
+    //    var all = $('#accordion').find('.collapse');
+    //    var actives = $('#accordion').find('.in, .collapsing');
+    //    all.each(function (index, element) {
+    //        $(element).collapse('hide');
+    //    });
+    //    actives.each(function (index, element) {
+    //        $(element).collapse('show');
+    //    });
+    //});
 
     $(document).on('hide.bs.collapse', '#accordion .collapse', function () {
         alert('yolo!');
         getQuestionArray();
     });
 
-    var questionsArray = [];
+    var questionsArray = [] ;
 
     function getQuestionArray() {
         var i = 0;
@@ -71,13 +70,16 @@
         var promise = [];
         promise = getSelectedSubareaInsatslist();
         promise.done(function (insatserlist) {
+            console.log(insatserlist);
             $('#accordion ul li').remove();
             for (var i in insatserlist) {
                 $('#insatserlist').append('<li><a id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</a> '
                     + '<div id="collapse' + i + '" class="collapse" ><div class ="list-group">'
-                    + ' <ul id="questionlist' + i + '"><li class="qlistHeader">Insatsens bedömning</li></ul></div></li></li>');
+                    + ' <ul id="questionlist' + i + '"></ul></div></li></li>');
+                console.log('Från showInsatserList()-loopen' + i);
+                appendQuestionList(i);
             }
-            appendQuestionList();
+            //appendQuestionList();
         });
     }
 
@@ -93,9 +95,10 @@
         $('#q').toggleClass('opacity');
     }
 
-    function appendQuestionList() {
+    function appendQuestionList(i) {
+        console.log('Från appendQuestionList()' + i);
         $('.list-group ul').append('<li id="q1"><div class="question col-xs-6">Kan insatsen möta behoven? </div><div class="qoptions col-xs-6">'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group1" value="0"><label>Nej</label></span>'
+            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group'+i+'" value="0"><label>Nej</label></span>'
             + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group1" value="1"><label class="longlabel">Sannolikt inte</label></span>'
             + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="uncheckAll" class="group1" value="2"><label>Osäkert</label></span>'
             + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1" class="group1" value="3"><label class="longlabel">Sannolikt Ja</label></span>'
@@ -157,7 +160,7 @@
         $.getJSON('data/data2.json', function (data) {
             $.each(data, function (index, data) {
                 $.each(data.subareas, function (index, subareas) {
-                    selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
+                    var selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
                     if (subareas.title == selectedSubarea) {
                         insatserlistPromise.resolve(subareas.insatslist);
                     };
