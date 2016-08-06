@@ -98,3 +98,21 @@ body {
     #insatserlist > li:last-child {
         border-bottom-style: solid;
     }
+
+/*insatsprioriteringReport css*/
+
+#insatsprioriteringReport {
+    border: 1px solid green;
+}
+
+.reportSubtitle {
+    border-bottom: 1px solid green;
+    text-align: center;
+}
+
+.insatsTr{
+    border-bottom: 1px solid green;
+}
+.insatsTitleTd{
+    font-weight:bold;
+}
