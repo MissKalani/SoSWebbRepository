@@ -38,10 +38,9 @@ $(function () {
 
     //button click functions
     function hideElements() {
-        $('#prioriteringsTable').hide();
+        $('.tab-content').hide();
         $('#tabs').hide();
-        $('#btn_printGradedSubareas').hide();
-        $('#btn_submitGradedSubareas').hide();
+
     }
     $('#btn_printChosenSubareas').click(function (e) {
         e.preventDefault();

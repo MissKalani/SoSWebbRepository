@@ -102,7 +102,8 @@ body {
 /*insatsprioriteringReport css*/
 
 #insatsprioriteringReport {
-    border: 1px solid green;
+    background-color: white;
+    border-style: none;
 }
 
 .reportSubtitle {
@@ -110,9 +111,17 @@ body {
     text-align: center;
 }
 
-.insatsTr{
+.insatsTr {
     border-bottom: 1px solid green;
 }
-.insatsTitleTd{
-    font-weight:bold;
+
+    /*.insatsTr > td {
+        padding-left:1px;
+        padding-right:15px;
+        border-bottom: 1px solid green;
+    }*/
+
+.insatsTitleTd {
+    font-weight: bold;
+    text-align: left;
 }
