@@ -229,71 +229,60 @@
     })
 
     function createInsatsPrioriteringReport(answers) {
-        console.log(answers);
+        //console.log(answers);
+    
+
         var chosenDelomrade2 = document.getElementById('chosenDelomrade2');
         var selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
-        var text = document.createTextNode(selectedSubarea);
+        var text = selectedSubarea;
+        chosenDelomrade2.innerHTML = text;
 
-        chosenDelomrade2.appendChild(text);
+        $('#insatsprioriteringReport tr:gt(2)').remove();
 
         for (var key in answers) {
             var arr = answers[key];
-            if (arr.length > 0) {
+            if (arr.length > 0) {                
                 var tr = document.createElement('tr');
                 tr.setAttribute('class', 'insatsTr');
                 var tdInsats = document.createElement('td');
                 tdInsats.setAttribute('class', 'insatsTitleTd');
                 tdInsats.innerHTML = key;
                 tr.appendChild(tdInsats);
-
-
                 for (var i = 1; i < arr.length; i++) {
                     var obj = arr[i];
-                    console.log(obj.value);
-
+                    //console.log(obj.value);
                     var tdInsatsQuestionValue = document.createElement('td');
                     tdInsatsQuestionValue.innerHTML = obj.value;
                     tr.appendChild(tdInsatsQuestionValue);
-                    
-
-                    //for (var prop in obj) {
-                    //    if (obj.hasOwnProperty(prop)) {
-                    //        console.log(obj);
-                    //        //console.log(obj.value);
-
-                    //        //console.log(prop + " = " + obj[prop]);
-                    //    }
-                    //}
-
-
                 }
                 var tdInforasCheckbox = document.createElement('td');
-                tdInforasCheckbox.innerHTML = '<input type="checkbox" name="inforCheckbox">';
+                tdInforasCheckbox.innerHTML = '<input type="checkbox" name="inforCheckbox" id="inforCheckbox">';
                 tr.appendChild(tdInforasCheckbox);
                 var tdPrioriteringOchMotivering = document.createElement('td');
                 tr.appendChild(tdPrioriteringOchMotivering);
-
                 $('#insatsprioriteringReport').find('tbody').append(tr);
-
-
-                console.log(key);
 
             }
         }
 
-        //for (var i = 0; i < answers.length; i++) {
-        //    var obj = answers[i];
-        //    var insats = obj;
-        //    alert('hej');
+        document.addEventListener('click', function () {
+            document.querySelector('#inforCheckbox').addEventListener('change', addInsatsMotivering);
+        });
 
-        //    var tr = document.createElement('tr');
-        //    var tdInsats = document.createElement('td');
-        //    tdInsats.innerHTML = insats;
-
-        //    tr.appendChild(tdInsats);
-        //    $('#insatsprioriteringReport').find('tbody').append(tr);
-        //}
     }
+
+
+
+    function addInsatsMotivering() {
+        if (inforCheckbox.checked) {
+            alert('hej!');
+            var td = $('#inforCheckbox').closest('td').next().append('1');
+            console.log(td);
+        } else {
+            alert('bye!');
+        }
+    }
+
 
 
 });
