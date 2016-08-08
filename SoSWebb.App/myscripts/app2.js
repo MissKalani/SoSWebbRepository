@@ -1,6 +1,8 @@
 ﻿$(function () {
     'use strict';
     $('#reportStorage').hide();
+    $('#nav_tab-insatser').hide();
+
     var json = $.getJSON('data/data2.json', function (data) {
         $.each(data, function (index, data) {
             $.each(data.subareas, function (index, subareas) {
@@ -10,6 +12,7 @@
         });
     });
 
+    //tab-delomrade button click function
     $('#btn_Next').click(function (e) {
         e.preventDefault();
         var subarea = document.getElementById('menu');
@@ -18,13 +21,16 @@
         var chosenDelomrade = document.getElementById('chosenDelomrade');
         chosenDelomrade.innerHTML = selectedSubarea;
         showInsatserList();
+        $('#nav_tab-insatser').show();
+        $('#nav_tab-delomrade').hide();
+    });
+    //tab-insatser button click function
+    $('#btn_createReport').click(function (e) {
+        e.preventDefault();
+        hideElements();           
     });
 
-    function hideElements() {
-        $('.tab-content').hide();
-        $('#tabs').hide();
-    }
-
+    //function for reading data2.json and getting all the subarea actions
     function getSelectedSubareaInsatslist() {
         var insatserlistPromise = jQuery.Deferred();
         $.getJSON('data/data2.json', function (data) {
@@ -39,6 +45,8 @@
         });
         return insatserlistPromise.promise();
     }
+
+    //tab-insatser functions
     function showInsatserList() {
         var promise = [];
         promise = getSelectedSubareaInsatslist();
@@ -52,7 +60,6 @@
                 oneCheckboxAtATime(i);
             }
         });
-
     }
     function appendQuestionList(i) {
         $('.list-group #questionlist' + i + '').append('<li id="q1"><div id="question' + i + '" class="question col-xs-6">Kan insatsen möta behoven? </div><div class="qoptions col-xs-6">'
@@ -184,9 +191,6 @@
             $(element).collapse('show');
         });
     });
-
-    var answers = [];
-
     $(document).on('hide.bs.collapse', '#accordion .collapse', function (e) {
         var insatsTitle = $(this).closest('li').first().find('a').first().text();
         var listgroup = $(this).find('.list-group ul').first();
@@ -208,27 +212,18 @@
         for (var i in answers) {
             if (answers[i].length !== 0) {
                 $(this).closest('li').first().css('background-color', '#299c29');
-                $(this).closest('li').first().css('color', 'white');
+                $(this).closest('li').first().find('a').first().css('color', 'black');
             } else {
                 $(this).closest('li').first().css('background-color', 'white');
             }
         }
     });
 
-    $('#btn_createReport').click(function (e) {
-        e.preventDefault();
-        hideElements();
-        createInsatsPrioriteringReport(answers);
-    });
-
+    //insatsprioriteringReport functions
+    var answers = [];
     function createInsatsPrioriteringReport(answers) {
         $('#reportStorage').show();
-        var chosenDelomrade2 = document.getElementById('chosenDelomrade2');
-        var selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
-        var text = selectedSubarea;
-        chosenDelomrade2.innerHTML = text;
-
-        $('#insatsprioriteringReport tr:gt(2)').remove();
+        showSubareaTitleInInsatsReport();
         var counter = 0;
         for (var key in answers) {
             var arr = answers[key];
@@ -241,7 +236,6 @@
                 tr.appendChild(tdInsats);
                 for (var i = 1; i < arr.length; i++) {
                     var obj = arr[i];
-                    //console.log(obj.value);
                     var tdInsatsQuestionValue = document.createElement('td');
                     tdInsatsQuestionValue.innerHTML = obj.value;
                     tr.appendChild(tdInsatsQuestionValue);
@@ -257,10 +251,23 @@
                 counter++;
             }
         }
+        addPdfButton();
     }
+    function showSubareaTitleInInsatsReport() {
+        var chosenDelomrade2 = document.getElementById('chosenDelomrade2');
+        var selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
+        var text = selectedSubarea;
+        chosenDelomrade2.innerHTML = text;
 
+        $('#insatsprioriteringReport tr:gt(2)').remove();
+    }
+    function hideElements() {
+        $('.tab-content').hide();
+        $('#tabs').hide();
+    }
     function addInsatsMotivering() {
         var counter = 1;
+
         clearTextfields();
         $('#insatsprioriteringReport tbody tr').each(function () {
             var td = $(this).find('td:gt(6)').next();
@@ -273,21 +280,52 @@
             }
         });
     }
-
     function createTextField(counter) {
         var p = document.createElement('p');
+        p.setAttribute('class', 'textfieldP');
         p.innerHTML = counter;
         $('#reportStorage').append(p);
-        var textfield = document.createElement('input');
+        var textfield = document.createElement('textarea');
         textfield.setAttribute('id', 'textfield' + counter);
         textfield.setAttribute('type', 'text');
+        textfield.setAttribute('class', 'insatserReportTextfield');
         $('#reportStorage').append(textfield);
+        var travel = document.getElementById('textfield' + counter).value;
+        console.log(travel);
     }
-
     function clearTextfields() {
-        $('#reportStorage :input:text').remove();
+        $('#reportStorage textarea').remove();
         $('#reportStorage p').remove();
     }
+    function addPdfButton() {
+        var pdfButton = document.createElement('button');
+        pdfButton.innerHTML = 'Spara som PDF'
+        pdfButton.setAttribute('class', 'button');
+        pdfButton.setAttribute('id', 'insatsReportPdfButton');
+        $('.row').append(pdfButton);
+        document.getElementById('insatsReportPdfButton').addEventListener('click', createPDF);
+    }
+    function createPDF() {
+        var pdf = new jsPDF({
+            orientation: 'l',
+            unit: 'mm',
+            format: 'a4'
+        });
+
+        var specialElementHandlers = {
+            '#report': function (element, renderer) {
+                return true;
+            }
+        };
+
+        pdf.addHTML($('#report')[1], 1, 1, {
+            //'width':800,
+            'elementHandlers': specialElementHandlers
+        }, function () {
+            pdf.save('test.pdf');
+        });
+    }
+
 });
 
 

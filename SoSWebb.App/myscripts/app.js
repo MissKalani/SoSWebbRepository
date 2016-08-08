@@ -1,5 +1,4 @@
-﻿console.log('Hello');
-$(function () {
+﻿$(function () {
     'use strict';
     var radioNameCounter = 1;   
     var jsonData = $.getJSON('data/data.json', function (data) {
@@ -29,6 +28,8 @@ $(function () {
         html: true
     });
     $('#reportStorage').hide();
+    $('#nav_tab-prioritering').hide();
+
     //array variables
     var chosenSubareas = [];
     var sortedChosenSubareas = [];
@@ -36,12 +37,7 @@ $(function () {
     var finalChosenSubAreas_And_totalValue = [];
     var sorted_finalChosenSubAreas_And_totalValue = [];
 
-    //button click functions
-    function hideElements() {
-        $('.tab-content').hide();
-        $('#tabs').hide();
-
-    }
+    //button click functions 
     $('#btn_printChosenSubareas').click(function (e) {
         e.preventDefault();
         createPDF();
@@ -50,8 +46,14 @@ $(function () {
         e.preventDefault();
         createPDF();
     });
+    $('#btn_printFinalGradedSubareas').click(function (e) {
+        e.preventDefault();
+        createPDF();
+    });
     $('#btn_submitChosenSubareas').click(function (e) {
         e.preventDefault();
+        $('#nav_tab-prioritering').show();
+        $('#nav_tab-behovsbedomning').hide();
         $('.nav a[href="#tab-prioritering"]').tab('show');
         deleteChosenSubareaRows();
         addChosenSubareas();
@@ -69,19 +71,9 @@ $(function () {
         }
         sorted_finalChosenSubAreas_And_totalValue = sortByValue(finalChosenSubAreas_And_totalValue);
         var json = sorted_finalChosenSubAreas_And_totalValue;
-
-        //window.location.href = 'behovsbedomningReport.html';
-        console.log(json);
         createBehovsbedomningReportTable(json);
-        //var table = tableToJson($('#behovsbedomningReport').get(0));        
-        //console.log(table);
-        //alert("Prioritering av delområde submitted!")
-        createPDF();
 
-        ////show the finally chosen subareas and their total values
-        //var url = 'data:text/json;charset=utf8,' + encodeURIComponent(JSON.stringify(json, null, '\t'));
-        //window.open(url, '_blank');
-        //window.focus();
+        createPDF();
     });
 
     //behovsbedomningtable functions
@@ -180,8 +172,7 @@ $(function () {
                 + '<input class="insatsergradValue" type="radio" name="insatsergrad' + name + '" value="0" /> Ingen';
 
             td.innerHTML += sortedChosenSubareas[i].title;
-
-
+            
             tr.appendChild(td);
             tr.appendChild(td2);
             tr.appendChild(td3);
@@ -192,14 +183,15 @@ $(function () {
                 $(tr).insertAfter($('.trStortBehov'));
             } else {
                 $(tr).insertAfter($('.trLitetBehov'));
-            }
-
-
-            //$('#prioriteringsTable').find('tbody').append(tr);
+            }      
         }
     }
 
     //functions used for creating the report 
+    function hideElements() {
+        $('.tab-content').hide();
+        $('#tabs').hide();
+    }
     function getFinalChosenSubAreas() {        
         var i = 0;       
         finalChosenSubareas.length = 0;        
@@ -296,7 +288,7 @@ $(function () {
             tdInsatserValue.innerHTML = insatserValue;
             var tdExtraKommentar = document.createElement('td');
             tdExtraKommentar.setAttribute('class', 'extraKommentarReportTd');
-            tdExtraKommentar.innerHTML = '<input type="text"></input>';
+            tdExtraKommentar.innerHTML = '<textarea class="form-control animated"></textarea>';
 
             tr.appendChild(tdAreaTitle);
             tr.appendChild(tdSubareaTitle);
@@ -318,12 +310,12 @@ $(function () {
         });
 
         var specialElementHandlers = {
-            '#behovsbedomningReport': function (element, renderer) {
+            '#report': function (element, renderer) {
                 return true;
             }
         };
 
-        pdf.addHTML($('#behovsbedomningReport')[1], 1, 1, {
+        pdf.addHTML($('#report')[1], 1, 1, {
             //'width':800,
             'elementHandlers': specialElementHandlers
         }, function () {

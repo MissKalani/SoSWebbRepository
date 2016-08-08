@@ -19,17 +19,17 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 div-starter">
-                <h1>SoS Webbstöd</h1>
+                <h3>Webbstöd vid implementering av NR för vård och stöd vid missbruk och beroende</h3>
             </div>
             <div id="tabs" class="navbar">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#tab-delomrade" data-toggle="tab">Välja delområde</a></li>
-                    <li><a href="#tab-insatser" data-toggle="tab">Bedömning av insatser</a></li>
+                    <li id="nav_tab-delomrade" class="active"><a href="#tab-delomrade" data-toggle="tab">Välja delområde</a></li>
+                    <li id="nav_tab-insatser" ><a href="#tab-insatser" data-toggle="tab">Bedömning av insatser</a></li>
                 </ul>
             </div>
             <div class="tab-content stepB-tabcontent">
                 <div class="tab-pane active" id="tab-delomrade">
-                    <h4>Välj ett (1) delområde med mycket hög prioritering insats eligt steg A</h4>
+                    <h4>Välj ett (1) delområde som prioriteras mycket högt för nya insats i steg A</h4>
                     <div class="dropdown">
                         <select id="menu"></select>
                     </div>
@@ -37,7 +37,8 @@
                 </div>
                 <div class="tab-pane" id="tab-insatser">
                     <div class="insatserDiv">
-                        <h4>Bedöm insatsen av vald delområde: <span id="chosenDelomrade" style="font-weight:bold"></span> - centrala rekommendationer</h4>
+                        <h4><span id="chosenDelomrade" style="font-weight:bold"></span></h4>
+                        <h4>Bedöm respektive insats nedan som uppfattas som relevant för implementering.</h4>
                         <div id="accordion" role="tablist" aria-multiselectable="true">
                             <ul id="insatserlist"></ul>
                         </div>
@@ -74,6 +75,7 @@
     </div>
     <script src="Scripts/jquery-2.2.4.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/html2canvas.js"></script>
     <script src="myscripts/app2.js"></script>
 </body>
 </html>

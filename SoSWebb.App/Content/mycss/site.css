@@ -171,6 +171,10 @@ table.table {
     border-style: none;
 }
 
+#behovsbedomningReport > table {
+  margin-bottom: 25px;
+}
+
 .reportTitle th {
     text-align: center;
     background-color: green;
@@ -189,8 +193,11 @@ tr.reportItems > td {
     padding-right: 15px;
 }
 
-td.extraKommentarReportTd>input{
-    height:50px;
+td.extraKommentarReportTd > textarea {
+height: 50px;
+    width: 175px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 @media only screen and (min-width:960px) {

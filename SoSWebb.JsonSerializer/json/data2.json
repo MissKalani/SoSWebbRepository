@@ -1,27 +1,123 @@
 [
   {
+    "area": "Bedömningsinstrument",
+    "subareas": [
+      {
+        "title": "Identifiering av alkohol- och narkotikaproblem",
+        "insatslist": [
+          {
+            "title": "AUDIT (alkohol)"
+          },
+          {
+            "title": "DUDIT (narkotika). DUDIT-E för bedömning av narkotikaproblem"
+          }
+        ]
+      },
+      {
+        "title": "Diagnostik av skadligt bruk, missbruk eller beroende",
+        "insatslist": [
+          {
+            "title": "MINI"
+          },
+          {
+            "title": "SCID I"
+          },
+          {
+            "title": "ADDIS"
+          }
+        ]
+      },
+      {
+        "title": "Bedömning av hjälpbehov",
+        "insatslist": [
+          {
+            "title": "ASI"
+          },
+          {
+            "title": "DOK"
+          }
+        ]
+      },
+      {
+        "title": "Bedömning av hjälpbehov för ungdomar",
+        "insatslist": [
+          {
+            "title": "ADAD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "area": "Medicinska test",
+    "subareas": [
+      {
+        "title": "Pågående eller nyligt intag av alkohol",
+        "insatslist": [
+          {
+            "title": "Mätning av alkoholhalten i utandningsluft"
+          },
+          {
+            "title": "Mätning av EtG eller EtS i urin"
+          },
+          {
+            "title": "Mätning av alkoholhalten i urin"
+          }
+        ]
+      },
+      {
+        "title": "Långvarigt högt intag av alkohol",
+        "insatslist": [
+          {
+            "title": "CDT eller PEth i blodprov"
+          },
+          {
+            "title": "GT i blodprov"
+          },
+          {
+            "title": "Mätning av ASAT och ALAT i blodprov"
+          }
+        ]
+      },
+      {
+        "title": "Pågående eller nyligt intag av narkotika",
+        "insatslist": [
+          {
+            "title": "Urinprov"
+          },
+          {
+            "title": "Patientnära drogtest med urinprov (snabbtest)"
+          },
+          {
+            "title": "Salivprov"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "area": "Psykologisk och psykosocial behandling",
     "subareas": [
       {
         "title": "Missbruk eller beroende av alkohol",
         "insatslist": [
           {
-            "title": "Motivationshöjande behandling, MET"
+            "title": "MET"
           },
           {
-            "title": "Kognitiv beteendeterapi alt återfallsprevention, KBT"
+            "title": "KBT"
           },
           {
             "title": "ÅP"
           },
           {
-            "title": "Community reinforcement approach, CRA"
+            "title": "CRA"
           },
           {
             "title": "12-stegsbehandling"
           },
           {
-            "title": "Social behaviour network therapy, SBNT"
+            "title": "SBNT"
           },
           {
             "title": "Psykodynamisk terapi"
@@ -60,7 +156,7 @@
             "title": "MATRIX"
           },
           {
-            "title": "Community reinforcement approach, CRA"
+            "title": "CRA"
           },
           {
             "title": "ÅP"
@@ -83,7 +179,7 @@
             "title": "CRA (*)"
           },
           {
-            "title": "Psykodynamisk terapi  (Û)"
+            "title": "Psykodynamisk terapi (*)"
           }
         ]
       },
@@ -91,10 +187,10 @@
         "title": "Nätverks- och parterapi vid alkohol- eller narkotikaproblem",
         "insatslist": [
           {
-            "title": "Parterapi (Û)"
+            "title": "Parterapi (*)"
           },
           {
-            "title": "Nätverksterapi (Û)"
+            "title": "Nätverksterapi (*)"
           }
         ]
       }
@@ -104,35 +200,46 @@
     "area": "Psykosociala stödinsatser",
     "subareas": [
       {
-        "title": "Arbetslivsinriktad rehabilitering",
+        "title": "Arbetsförberedande träningsmodeller",
         "insatslist": [
           {
-            "title": "Parterapi (Û)"
+            "title": "Arbetslivsinriktad rehabilitering enligt IPS-modellen"
           },
           {
-            "title": "Nätverksterapi (Û)"
+            "title": "Arbetsförberedande träningsmodeller"
           }
         ]
       },
       {
-        "title": "Boendeinsatser",
+        "title": "Boendestöd",
         "insatslist": [
           {
-            "title": "Parterapi (Û)"
-          },
-          {
-            "title": "Nätverksterapi (Û)"
+            "title": "Personellt boendestöd"
           }
         ]
       },
       {
-        "title": "Samordning i form av Case management",
+        "title": "Boendeinsatser vid hemlöshet",
         "insatslist": [
           {
-            "title": "Parterapi (Û)"
+            "title": "Vårdkedja"
           },
           {
-            "title": "Nätverksterapi (Û)"
+            "title": "Bostad först"
+          },
+          {
+            "title": "Boendetrappa"
+          }
+        ]
+      },
+      {
+        "title": "Samordning av vård- och stödåtgärder",
+        "insatslist": [
+          {
+            "title": "Individuell case management enligt strengths model"
+          },
+          {
+            "title": "Case management i form av integrerade eller samverkande team (vid samsjuklighet)"
           }
         ]
       },
@@ -140,21 +247,84 @@
         "title": "Psykosocialt stöd till vuxna anhöriga",
         "insatslist": [
           {
-            "title": "Parterapi (Û)"
+            "title": "Al- eller Naranon inspirerade stödprogram"
           },
           {
-            "title": "Nätverksterapi (Û)"
+            "title": "Coping skills training"
           }
         ]
       },
       {
-        "title": "Stöd till anhöriga som vill motivera närstående till behandling",
+        "title": "Stöd till anhöriga som vill motivera narstående till behandling",
         "insatslist": [
           {
-            "title": "Parterapi (Û)"
+            "title": "CRAFT"
           },
           {
-            "title": "Nätverksterapi (Û)"
+            "title": "ARISE[1]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "area": "Behandling vid samsjuklighet",
+    "subareas": [
+      {
+        "title": "Psykologisk och psykosocial behandling ",
+        "insatslist": [
+          {
+            "title": "Integrerad behandlingsmetod. MI / KBT vid missbruk/ beroendet och samtidig depression eller integrerad behandling med KBT eller MI/ KBT vid missbruk/ beroendet och annan samtidig svår psykisk sjukdom."
+          }
+        ]
+      },
+      {
+        "title": "Samordning av vård- och stödåtgärder",
+        "insatslist": [
+          {
+            "title": "Case management i form av integrerade eller sam- verkande team"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "area": "Psykologisk och psykosocial behandling för ungdomar",
+    "subareas": [
+      {
+        "title": "Korta insatser (BI)",
+        "insatslist": [
+          {
+            "title": "Motivationshöjande behandling (MET)"
+          },
+          {
+            "title": "MET + KBT"
+          },
+          {
+            "title": "Adolescent community reinforcement approach (ACRA) "
+          },
+          {
+            "title": "Assertive continuing care (ACC)"
+          },
+          {
+            "title": "Haschavvänjningsprogrammet (HAP)[1]"
+          }
+        ]
+      },
+      {
+        "title": "Familjeinterventioner ",
+        "insatslist": [
+          {
+            "title": "Functional family treatment (FFT)"
+          },
+          {
+            "title": "Multidimensional family therapy (MDFT)"
+          },
+          {
+            "title": "Brief strategic family treatment (BSFT)"
+          },
+          {
+            "title": "Multisystemisk terapi"
           }
         ]
       }

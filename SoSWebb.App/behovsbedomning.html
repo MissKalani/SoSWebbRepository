@@ -18,12 +18,12 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 div-starter">
-                <h1>SoS Webbstöd</h1>
+                <h3>Webbstöd vid implementering av NR för vård och stöd vid missbruk och beroende</h3>
             </div>
             <div id="tabs" class="navbar">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#tab-behovsbedomning" data-toggle="tab">Behovsbedömning</a></li>
-                    <li><a href="#tab-prioritering" data-toggle="tab">Prioritering av delområden</a></li>
+                    <li id="nav_tab-behovsbedomning" class="active"><a href="#tab-behovsbedomning" data-toggle="tab">Behovsbedömning</a></li>
+                    <li id="nav_tab-prioritering"><a href="#tab-prioritering" data-toggle="tab">Prioritering av delområden</a></li>
                 </ul>
             </div>
             <div class="tab-content">
@@ -62,7 +62,7 @@
                         </table>
                     </div>
                     <div class="center-block">
-                        <input class="button" id="btn_printChosenSubareas" type="submit" name="printChosenSubareas" value="Skriv ut">
+                        <input class="button" id="btn_printChosenSubareas" type="submit" name="printChosenSubareas" value="Spara som PDF">
                         <input class="button" id="btn_submitChosenSubareas" type="submit" name="submitChosenSubareas" value="Nästa">
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         </table>
                     </div>
                     <div class="center-block">
-                        <!--<input class="button" id="btn_printGradedSubareas" type="submit" name="submitSubareas" value="Skriv ut rapport">-->
+                        <input class="button" id="btn_printGradedSubareas" type="submit" name="submitSubareas" value="Spara som PDF">
                         <input class="button" id="btn_submitGradedSubareas" type="submit" name="printSubareas" value="Skapa Rapport">
                     </div>
                 </div>
@@ -112,6 +112,7 @@
                             <th>Kommentar</th>
                         </tr>
                     </table>
+                    <!--<input class="button" id="btn_printFinalGradedSubareas" type="submit" name="submitSubareas" value="Spara som PDF">-->
                 </div>
             </div>
         </div>
