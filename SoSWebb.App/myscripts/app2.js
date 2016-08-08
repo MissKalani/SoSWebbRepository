@@ -269,7 +269,13 @@
     function addInsatsMotivering() {
         var counter = 1;
 
-        clearTextfields();
+        //if ($(this).find('input:checkbox:first').prop('checked') == true) {
+        //    var td = $(this).find('td:gt(6)').next();
+        //    td.html(counter);
+
+        //}
+
+        //clearTextfields();
         $('#insatsprioriteringReport tbody tr').each(function () {
             var td = $(this).find('td:gt(6)').next();
             if ($(this).find('input:checkbox:first').prop('checked') == true) {
@@ -278,22 +284,40 @@
                 counter++;
             } else {
                 td.html('');
+                deleteTextField(counter);
             }
         });
     }
     function createTextField(counter) {
-        var p = document.createElement('p');
-        p.setAttribute('class', 'textfieldP');
-        p.innerHTML = counter;
-        $('#reportStorage').append(p);
-        var textfield = document.createElement('textarea');
-        textfield.setAttribute('id', 'textfield' + counter);
-        textfield.setAttribute('type', 'text');
-        textfield.setAttribute('class', 'insatserReportTextfield');
-        $('#reportStorage').append(textfield);
-        var travel = document.getElementById('textfield' + counter).value;
-        console.log(travel);
+        //if textfield element does not exist then create textfield and p
+        if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
+            var p = document.createElement('p');
+            p.setAttribute('class', 'textfieldP');
+            p.setAttribute('id', 'textfieldP' + counter);
+            p.innerHTML = counter;
+            $('#reportStorage').append(p);
+            var textfield = document.createElement('textarea');
+            textfield.setAttribute('id', 'textfield' + counter);
+            textfield.setAttribute('type', 'text');
+            textfield.setAttribute('class', 'insatserReportTextfield');
+            $('#reportStorage').append(textfield);
+        }
+
     }
+
+    function deleteTextField(counter) {
+        if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
+            alert('element to delete exists');
+            var textfield = document.getElementById('textfield' + counter);
+            var p = document.getElementById('textfieldP' + counter);
+            if (textfield != null && p != null) {
+                textfield.parentNode.removeChild(textfield);
+                p.parentNode.removeChild(p);
+            }
+        }
+
+    }
+
     function clearTextfields() {
         $('#reportStorage textarea').remove();
         $('#reportStorage p').remove();
