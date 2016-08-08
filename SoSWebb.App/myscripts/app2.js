@@ -27,7 +27,8 @@
     //tab-insatser button click function
     $('#btn_createReport').click(function (e) {
         e.preventDefault();
-        hideElements();           
+        hideElements();
+        createInsatsPrioriteringReport(answers);
     });
 
     //function for reading data2.json and getting all the subarea actions
