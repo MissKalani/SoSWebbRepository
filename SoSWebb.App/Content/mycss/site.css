@@ -168,7 +168,7 @@ table.table {
 /*behovsbedomningReport css*/
 #behovsbedomningReport {
     background-color: white;
-    border-style: none;
+    
 }
 
 #behovsbedomningReport > table {
@@ -191,6 +191,7 @@ tr.reportItems > td {
     text-align: left;
     padding-left: 1px;
     padding-right: 15px;
+    word-break:normal;
 }
 
 td.extraKommentarReportTd > textarea {

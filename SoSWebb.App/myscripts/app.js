@@ -1,6 +1,6 @@
 ﻿$(function () {
     'use strict';
-    var radioNameCounter = 1;   
+    var radioNameCounter = 1;
     var jsonData = $.getJSON('data/data.json', function (data) {
         $.each(data, function (index, area) {
             $.each($(this), function (index, subarea) {
@@ -8,13 +8,13 @@
                 var areaSubarea = area.subarea;
                 if (document.getElementById('behovsbedomningTable')) {
                     createAreaRow(areaTitle);
-                }                  
+                }
                 for (var prop in areaSubarea) if (areaSubarea.hasOwnProperty(prop)) {
                     var value = areaSubarea[prop];
-                    var valuesBedomning = value.values_bedomning;                    
+                    var valuesBedomning = value.values_bedomning;
                     if (document.getElementById('behovsbedomningTable')) {
                         createSubAreaRow(value.title, valuesBedomning, radioNameCounter);
-                    }                  
+                    }
                     radioNameCounter++;
                 }
             });
@@ -40,13 +40,13 @@
     //button click functions 
     $('#btn_printChosenSubareas').click(function (e) {
         e.preventDefault();
-        createPDF();
+        window.print();
     });
     $('#btn_printGradedSubareas').click(function (e) {
         e.preventDefault();
-        createPDF();
+        window.print();
     });
-    $('#btn_printFinalGradedSubareas').click(function (e) {
+    $('#btn_savePdfFinalGradedSubareas').click(function (e) {
         e.preventDefault();
         createPDF();
     });
@@ -131,7 +131,7 @@
                 chosenSubareas.push(obj);
             }
         });
-       
+
         var sortByValue = function (array) {
             return _.sortBy(array, 'value').reverse();
         }
@@ -155,46 +155,51 @@
             var td5 = document.createElement("td");
             td5.setAttribute("class", "prioriteringsTableTd");
 
-            var name = i;
+            var count = i;
 
-            td2.innerHTML = '<input class="konsekvensgradValue" checked type="radio" name="konsekvensgrad' + name + '" value="3" />Mindre Allvarliga <br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + name + '" value="2" /> Varierande<br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + name + '"  value="1" /> Alvarliga <br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + name + '" value="0" /> Oklart';
-            td3.innerHTML = '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + name + '" value="3" />Liten andel<br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + name + '"  value="2" /> Varierande <br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + name + '" value="1" /> Stor andel <br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + name + '" value="0" /> Oklart';
-            td4.innerHTML = '<textarea class="form-control animated" id="comment"/>'
-            td5.innerHTML = '<input class="insatsergradValue" checked type="radio" name="insatsergrad' + name + '" value="3" />Mycket hög <br/>'
-                + '<input class="insatsergradValue" type="radio" name="insatsergrad' + name + '" value="2" /> Hög<br/>'
-                + '<input class="insatsergradValue" type="radio" name="insatsergrad' + name + '"  value="1" /> Låg <br/>'
-                + '<input class="insatsergradValue" type="radio" name="insatsergrad' + name + '" value="0" /> Ingen';
+            td2.innerHTML = '<input class="konsekvensgradValue" checked type="radio" name="konsekvensgrad' + count + '" value="3" />Mindre Allvarliga <br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" /> Varierande<br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="1" /> Alvarliga <br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="0" /> Oklart';
+            td3.innerHTML = '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="3" />Liten andel<br/>'
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '"  value="2" /> Varierande <br/>'
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="1" /> Stor andel <br/>'
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="0" /> Oklart';
+            td4.innerHTML = '<textarea class="comment"/>'
+            td5.innerHTML = '<input class="insatsergradValue" checked type="radio" name="insatsergrad' + count + '" value="3" />Mycket hög <br/>'
+                + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög<br/>'
+                + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '"  value="1" /> Låg <br/>'
+                + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="0" /> Ingen';
 
             td.innerHTML += sortedChosenSubareas[i].title;
-            
+
             tr.appendChild(td);
             tr.appendChild(td2);
             tr.appendChild(td3);
             tr.appendChild(td4);
             tr.appendChild(td5);
 
-            if (sortedChosenSubareas[i].value == 2) {
+            if (sortedChosenSubareas[count].value == 2) {
                 $(tr).insertAfter($('.trStortBehov'));
             } else {
                 $(tr).insertAfter($('.trLitetBehov'));
-            }      
+            }
         }
+        //make textarea autogrow
+        $('.comment').css('overflow', 'hidden').autogrow({vertical:true, horizontal:false});
+
     }
+
+
 
     //functions used for creating the report 
     function hideElements() {
         $('.tab-content').hide();
         $('#tabs').hide();
     }
-    function getFinalChosenSubAreas() {        
-        var i = 0;       
-        finalChosenSubareas.length = 0;        
+    function getFinalChosenSubAreas() {
+        var i = 0;
+        finalChosenSubareas.length = 0;
         $('.prioriteringsTableTr').each(function () {
             var subarea = {
                 subarea: sortedChosenSubareas[i],
@@ -202,7 +207,7 @@
                 andelklienterValue: "0",
                 kommentar: "text",
                 insatserValue: "0"
-            };                  
+            };
             subarea.subarea = sortedChosenSubareas[i];
             subarea.konsekvensValue = $(this).closest('tr').find($('input[class = konsekvensgradValue]:checked')).val();
             subarea.andelklienterValue = $(this).closest('tr').find($('input[class = andelklientergradValue]:checked')).val();
@@ -213,25 +218,25 @@
         });
         return finalChosenSubareas;
     }
-    function getFinalChosenSubareasWithTotalValues(subareaArray) {        
+    function getFinalChosenSubareasWithTotalValues(subareaArray) {
         var value_bedomning = 0;
         var value_gradKonsekvens = 0;
         var value_gradAndelKlienter = 0;
         var value_gradInsatser = 0;
-       
+
         finalChosenSubAreas_And_totalValue.length = 0;
-       
+
         for (var i = 0; i < finalChosenSubareas.length; i++) {
             value_bedomning = finalChosenSubareas[i].subarea.value;
             value_gradKonsekvens = finalChosenSubareas[i].konsekvensValue;
             value_gradAndelKlienter = finalChosenSubareas[i].andelklienterValue;
             value_gradInsatser = finalChosenSubareas[i].insatserValue;
-          
+
             var finalChosenSubarea_totalValue = 0;
             finalChosenSubarea_totalValue = parseInt(value_bedomning, 10)
                 + parseInt(value_gradKonsekvens, 10)
                 + parseInt(value_gradAndelKlienter, 10)
-                + parseInt(value_gradInsatser, 10);           
+                + parseInt(value_gradInsatser, 10);
 
             var chosenSubarea_And_TotalValue = { subarea: finalChosenSubareas[i], totalValue: finalChosenSubarea_totalValue };
             chosenSubarea_And_TotalValue.subarea = finalChosenSubareas[i];
@@ -288,7 +293,7 @@
             tdInsatserValue.innerHTML = insatserValue;
             var tdExtraKommentar = document.createElement('td');
             tdExtraKommentar.setAttribute('class', 'extraKommentarReportTd');
-            tdExtraKommentar.innerHTML = '<textarea class="form-control animated"></textarea>';
+            tdExtraKommentar.innerHTML = '<textarea class="comment"></textarea>';
 
             tr.appendChild(tdAreaTitle);
             tr.appendChild(tdSubareaTitle);
@@ -300,26 +305,64 @@
             tr.appendChild(tdExtraKommentar);
             $('#behovsbedomningReport').find('tbody').append(tr);
         };
+        //make textarea autogrow
+        $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
     }
 
     function createPDF() {
-        var pdf = new jsPDF({
-            orientation: 'l',
-            unit: 'mm',
-            format: 'a4'
-        });
+        var canvasToImage = function (canvas) {
+            var img = new Image();
+            var dataURL = canvas.toDataURL('image/png');
+            img.src = dataURL;
+            return img;
+        };
+        var canvasShiftImage = function (oldCanvas, shiftAmt) {
+            shiftAmt = parseInt(shiftAmt) || 0;
+            if (!shiftAmt) { return oldCanvas; }
 
-        var specialElementHandlers = {
-            '#report': function (element, renderer) {
-                return true;
-            }
+            var newCanvas = document.createElement('canvas');
+            newCanvas.height = oldCanvas.height - shiftAmt;
+            newCanvas.width = oldCanvas.width;
+            var ctx = newCanvas.getContext('2d');
+
+            var img = canvasToImage(oldCanvas);
+            ctx.drawImage(img, 0, shiftAmt, img.width, img.height, 0, 0, img.width, img.height);
+
+            return newCanvas;
         };
 
-        pdf.addHTML($('#report')[1], 1, 1, {
-            //'width':800,
-            'elementHandlers': specialElementHandlers
-        }, function () {
+
+        var canvasToImageSuccess = function (canvas) {
+            var pdf = new jsPDF('l', 'mm'),
+                pdfInternals = pdf.internal,
+                pdfPageSize = pdfInternals.pageSize,
+                pdfScaleFactor = pdfInternals.scaleFactor,
+                pdfPageWidth = pdfPageSize.width,
+                pdfPageHeight = pdfPageSize.height-10,
+                totalPdfHeight = 0,
+                htmlPageHeight = canvas.height,
+                htmlScaleFactor = canvas.width / (pdfPageWidth * pdfScaleFactor),
+                safetyNet = 0;
+
+            while (totalPdfHeight < htmlPageHeight && safetyNet < 15) {
+                var newCanvas = canvasShiftImage(canvas, totalPdfHeight);
+                pdf.addImage(newCanvas, 'png', 0, 0, pdfPageWidth, 0, null, 'NONE');
+
+                totalPdfHeight += (pdfPageHeight * pdfScaleFactor * htmlScaleFactor);
+
+                if (totalPdfHeight < htmlPageHeight) {
+                    pdf.addPage();
+                }
+                safetyNet++;
+            }
+
             pdf.save('test.pdf');
+        };
+
+        html2canvas($('main')[0], {
+            onrendered: function (canvas) {
+                canvasToImageSuccess(canvas);
+            }
         });
     }
 });

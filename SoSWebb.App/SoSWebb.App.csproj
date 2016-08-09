@@ -113,6 +113,7 @@
     <Content Include="Content\mycss\site.css" />
     <Content Include="index.html" />
     <Content Include="myscripts\app.js" />
+    <Content Include="Scripts\jquery.ns-autogrow.min.js" />
     <Content Include="Scripts\jspdf.debug.js" />
     <Content Include="Scripts\jspdf.min.js" />
     <Content Include="Scripts\underscore-min.js" />

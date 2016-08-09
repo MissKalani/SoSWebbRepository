@@ -289,7 +289,7 @@
         });
     }
     function createTextField(counter) {
-        //if textfield element does not exist then create textfield and p
+        //if textfield and p element does not exist then create textfield and p
         if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
             var p = document.createElement('p');
             p.setAttribute('class', 'textfieldP');
@@ -302,7 +302,6 @@
             textfield.setAttribute('class', 'insatserReportTextfield');
             $('#reportStorage').append(textfield);
         }
-
     }
 
     function deleteTextField(counter) {
