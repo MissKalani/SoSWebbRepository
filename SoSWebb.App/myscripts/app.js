@@ -1,7 +1,7 @@
 ﻿$(function () {
     'use strict';
     var radioNameCounter = 1;
-    var jsonData = $.getJSON('http://sos-web.azurewebsites.net/data/data.json', function (data) {
+    var jsonData = $.getJSON('data/data.json', function (data) {
         $.each(data, function (index, area) {
             $.each($(this), function (index, subarea) {
                 var areaTitle = area.title;

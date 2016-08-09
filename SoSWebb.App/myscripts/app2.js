@@ -3,7 +3,7 @@
     $('#reportStorage').hide();
     $('#nav_tab-insatser').hide();
 
-    var json = $.getJSON('http://sos-web.azurewebsites.net/data/data2.json', function (data) {
+    var json = $.getJSON('data/data2.json', function (data) {
         $.each(data, function (index, data) {
             $.each(data.subareas, function (index, subareas) {
                 var subareaTitle = subareas.title;

@@ -1,0 +1,522 @@
+[
+  {
+    "id": 1,
+    "title": "Bedömningsinstrument",
+    "subarea": [
+      {
+        "id": 1,
+        "title": "Identifiering av alkohol- och narkotika problem",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 2,
+        "title": "Diagnostik av skadligt bruk, missbruk eller beroende",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Bedömning av hjälpbehov",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 4,
+        "title": "Bedömning av hjälpbehov för ungdomar",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Medicinska test",
+    "subarea": [
+      {
+        "id": 1,
+        "title": "Nyligt intag av alokohol",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 2,
+        "title": "Långvarigt högt intag av alkohol",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Pågående eller nyligt intag av narkotika",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Psykologisk och psykosocial behandling",
+    "subarea": [
+      {
+        "id": 1,
+        "title": "Missbruk eller beroende av alkohol",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 2,
+        "title": "Långvarigt bruk av bensodiazepiner",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Missbruk eller beroende av canabis",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Missbruk eller beroende av centralstimulantia",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Missbruk eller beroende av opiater",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Nätverks-/ parterapi vid alkohol-/ narkotikaproblem",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Psykosociala stödinsatser",
+    "subarea": [
+      {
+        "id": 1,
+        "title": "Arbetslivsinriktadrehabilitering",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 2,
+        "title": "Boendeinsatser",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Samording i form av case management",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Psykosocialt stöd till vuxna anhöriga",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Stöd till anhöriga som vill motivera närstående till behandling",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Behandling vid samsjuklighet",
+    "subarea": [
+      {
+        "id": 1,
+        "title": "Integrerad behandlingsmetod (Psykologiska och psykosociala behandlingsmetoder i kombination med farmalogisk behandling)",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 2,
+        "title": "Samordning (case management)",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Ungdomar - Psykologisk och psykosocial behandling",
+    "subarea": [
+      {
+        "id": 1,
+        "title": "Korta insatser (BI)",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 2,
+        "title": "Familjeinterventioner",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      }
+    ]
+  }
+]
