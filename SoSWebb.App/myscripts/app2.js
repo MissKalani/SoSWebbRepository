@@ -3,7 +3,7 @@
     $('#reportStorage').hide();
     $('#nav_tab-insatser').hide();
 
-    var json = $.getJSON('data/data2.json', function (data) {
+    var json = $.getJSON('Content/data/data2.json', function (data) {
         $.each(data, function (index, data) {
             $.each(data.subareas, function (index, subareas) {
                 var subareaTitle = subareas.title;
@@ -182,6 +182,8 @@
         $('#questionlist' + i + ' #q7').css('opacity', '0.2');
     }
 
+    var answers = [];
+
     $(document).on('show.bs.collapse', '#accordion .collapse', function () {
         var all = $('#accordion').find('.collapse');
         var actives = $('#accordion').find('.in, .collapsing');
@@ -192,26 +194,34 @@
             $(element).collapse('show');
         });
     });
-    $(document).on('hide.bs.collapse', '#accordion .collapse', function (e) {
+    $(document).on('hide.bs.collapse', '#accordion .collapse', function (e) {        
         var insatsTitle = $(this).closest('li').first().find('a').first().text();
         var listgroup = $(this).find('.list-group ul').first();
         $(listgroup).each(function (index, element) {
             var answersGroup = [];
+            answersGroup.isValid = true;
             var listItems = $(this).find('li');
             if ($(this).find('li').first().find('input[type="checkbox"]:checked').first().val() > 2) {
                 listItems.each(function (idx, li) {
                     var question = {
                         questionText: $(li).find('.question').text(),
-                        value: $(li).find('input[type="checkbox"]:checked').first().next('label').text()
+                        value: $(li).find('input[type="checkbox"]:checked').first().next('label').text(),
                     };
                     answersGroup.push(question);
                 });
             }
+            $(answersGroup).each(function (key, data) {
+                var value = data.value;
+                if (!value) {
+                    answersGroup.isValid = false;
+                }
+            });
             answers[insatsTitle] = answersGroup;
+            console.log(answers);
         });
 
-        for (var i in answers) {
-            if (answers[i].length !== 0) {
+        for (var answergroup in answers) {
+            if (answers[answergroup].isValid == true) {
                 $(this).closest('li').first().css('background-color', '#299c29');
                 $(this).closest('li').first().find('a').first().css('color', 'black');
             } else {
@@ -221,7 +231,6 @@
     });
 
     //insatsprioriteringReport functions
-    var answers = [];
     function createInsatsPrioriteringReport(answers) {
         $('#reportStorage').show();
         showSubareaTitleInInsatsReport();
@@ -289,7 +298,7 @@
         });
     }
     function createTextField(counter) {
-        //if textfield and p element does not exist then create textfield and p
+        //if textfield element does not exist then create textfield and p
         if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
             var p = document.createElement('p');
             p.setAttribute('class', 'textfieldP');
@@ -302,6 +311,7 @@
             textfield.setAttribute('class', 'insatserReportTextfield');
             $('#reportStorage').append(textfield);
         }
+
     }
 
     function deleteTextField(counter) {
