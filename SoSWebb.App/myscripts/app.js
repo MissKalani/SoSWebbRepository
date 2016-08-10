@@ -41,6 +41,7 @@
     $('#btn_printChosenSubareas').click(function (e) {
         e.preventDefault();
         window.print();
+        //createPDF();
     });
     $('#btn_printGradedSubareas').click(function (e) {
         e.preventDefault();
@@ -71,6 +72,7 @@
         }
         sorted_finalChosenSubAreas_And_totalValue = sortByValue(finalChosenSubAreas_And_totalValue);
         var json = sorted_finalChosenSubAreas_And_totalValue;
+        //console.log(json);
         createBehovsbedomningReportTable(json);
 
         createPDF();
@@ -136,7 +138,7 @@
             return _.sortBy(array, 'value').reverse();
         }
         sortedChosenSubareas = sortByValue(chosenSubareas);
-        console.log(sortedChosenSubareas);
+        //console.log(sortedChosenSubareas);
         return sortedChosenSubareas;
     }
     function createPrioriteringsTable() {
@@ -157,13 +159,13 @@
 
             var count = i;
 
-            td2.innerHTML = '<input class="konsekvensgradValue" checked type="radio" name="konsekvensgrad' + count + '" value="3" />Mindre Allvarliga <br/>'
+            td2.innerHTML = '<input class="konsekvensgradValue" checked type="radio" name="konsekvensgrad' + count + '" value="1" />Mindre Allvarliga <br/>'
                 + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" /> Varierande<br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="1" /> Alvarliga <br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" /> Alvarliga <br/>'
                 + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="0" /> Oklart';
-            td3.innerHTML = '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="3" />Liten andel<br/>'
+            td3.innerHTML = '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="1" />Liten andel<br/>'
                + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '"  value="2" /> Varierande <br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="1" /> Stor andel <br/>'
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" /> Stor andel <br/>'
                + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="0" /> Oklart';
             td4.innerHTML = '<textarea class="comment"/>'
             td5.innerHTML = '<input class="insatsergradValue" checked type="radio" name="insatsergrad' + count + '" value="3" />Mycket hög <br/>'
@@ -186,7 +188,7 @@
             }
         }
         //make textarea autogrow
-        $('.comment').css('overflow', 'hidden').autogrow({vertical:true, horizontal:false});
+        $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
 
     }
 
@@ -216,6 +218,7 @@
             finalChosenSubareas.push(subarea);
             i++;
         });
+        //console.log(finalChosenSubareas);
         return finalChosenSubareas;
     }
     function getFinalChosenSubareasWithTotalValues(subareaArray) {
@@ -249,29 +252,49 @@
         $('#reportStorage').show();
         for (var i = 0; i < jsonObjArray.length; i++) {
             var obj = jsonObjArray[i];
+            //obj.subarea.subarea.konsekvensValue = jsonObjArray[i].subarea.konsekvensValue;
+            console.log(jsonObjArray[i]);
             var areaTitle = obj.subarea.subarea.area;
+            console.log(areaTitle);
             var subareaTitle = obj.subarea.subarea.title;
             var prioriteringRank = i + 1;
-            var konsekvensGrade = obj.subarea.subarea.konsekvensValue;
-            var andelklienterGrade = obj.subarea.subarea.andelklienterValue;
+            var konsekvensGrade = jsonObjArray[i].subarea.konsekvensValue;
+            console.log(konsekvensGrade);
+            var andelklienterGrade = jsonObjArray[i].subarea.andelklienterValue;
+            console.log(andelklienterGrade);
             var kommentarText = obj.subarea.kommentar;
-            var insatserValue = obj.subarea.subarea.insatserValue;
+            var insatserValue = jsonObjArray[i].subarea.insatserValue;
+            console.log(insatserValue);
 
-            var grade = 0;
-            switch (grade) {
-                case 0: konsekvensGrade = 'Oklart';
-                    andelklienterGrade = 'Oklart';
-                    insatserValue = 'Ingen';
-                case 1: konsekvensGrade = 'Alvarliga';
-                    andelklienterGrade = 'Stor andel';
-                    insatserValue = 'Låg';
-                case 2: konsekvensGrade = 'Varierande';
-                    andelklienterGrade = 'Varierande';
-                    insatserValue = 'Hög'
-                case 3: konsekvensGrade = 'Mindre Allvarliga';
-                    andelklienterGrade = 'Liten andel';
-                    insatserValue = 'Mycket hög';
-            };
+            if (konsekvensGrade == 0)
+                konsekvensGrade = 'Oklart';
+            if (andelklienterGrade == 0)
+                andelklienterGrade = 'Oklart';
+            if (insatserValue == 0)
+                insatserValue = 'Ingen';
+
+            if (konsekvensGrade == 3)
+                konsekvensGrade = 'Alvarliga';
+            if (andelklienterGrade == 3)
+                andelklienterGrade = 'Stor andel';
+            if (insatserValue == 3)
+                insatserValue = 'Låg';
+
+
+            if (konsekvensGrade == 2)
+                konsekvensGrade = 'Varierande';
+            if (andelklienterGrade == 2)
+                andelklienterGrade = 'Varierande';
+            if (insatserValue == 2)
+                insatserValue = 'Hög';
+
+            if (konsekvensGrade == 1)
+                konsekvensGrade = 'Mindre Allvarliga';
+            if (andelklienterGrade == 1)
+                andelklienterGrade = 'Liten andel';
+            if (insatserValue == 1)
+                insatserValue = 'Mycket hög';
+
 
             var tr = document.createElement('tr');
             tr.setAttribute('class', 'reportItems');
@@ -310,59 +333,14 @@
     }
 
     function createPDF() {
-        var canvasToImage = function (canvas) {
-            var img = new Image();
-            var dataURL = canvas.toDataURL('image/png');
-            img.src = dataURL;
-            return img;
-        };
-        var canvasShiftImage = function (oldCanvas, shiftAmt) {
-            shiftAmt = parseInt(shiftAmt) || 0;
-            if (!shiftAmt) { return oldCanvas; }
+        var pdf = new jsPDF('l', 'pt', 'a4');
 
-            var newCanvas = document.createElement('canvas');
-            newCanvas.height = oldCanvas.height - shiftAmt;
-            newCanvas.width = oldCanvas.width;
-            var ctx = newCanvas.getContext('2d');
-
-            var img = canvasToImage(oldCanvas);
-            ctx.drawImage(img, 0, shiftAmt, img.width, img.height, 0, 0, img.width, img.height);
-
-            return newCanvas;
-        };
-
-
-        var canvasToImageSuccess = function (canvas) {
-            var pdf = new jsPDF('l', 'mm'),
-                pdfInternals = pdf.internal,
-                pdfPageSize = pdfInternals.pageSize,
-                pdfScaleFactor = pdfInternals.scaleFactor,
-                pdfPageWidth = pdfPageSize.width,
-                pdfPageHeight = pdfPageSize.height-10,
-                totalPdfHeight = 0,
-                htmlPageHeight = canvas.height,
-                htmlScaleFactor = canvas.width / (pdfPageWidth * pdfScaleFactor),
-                safetyNet = 0;
-
-            while (totalPdfHeight < htmlPageHeight && safetyNet < 15) {
-                var newCanvas = canvasShiftImage(canvas, totalPdfHeight);
-                pdf.addImage(newCanvas, 'png', 0, 0, pdfPageWidth, 0, null, 'NONE');
-
-                totalPdfHeight += (pdfPageHeight * pdfScaleFactor * htmlScaleFactor);
-
-                if (totalPdfHeight < htmlPageHeight) {
-                    pdf.addPage();
-                }
-                safetyNet++;
-            }
-
+        pdf.addHTML(document.body, 2, 5, {
+            'pagesplit': true
+        }, function () {
             pdf.save('test.pdf');
-        };
-
-        html2canvas($('main')[0], {
-            onrendered: function (canvas) {
-                canvasToImageSuccess(canvas);
-            }
         });
     }
+
+
 });

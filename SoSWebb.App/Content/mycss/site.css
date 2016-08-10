@@ -30,6 +30,26 @@
         color: white;
         text-decoration: underline;
     }
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/*@page :top {
+    margin-bottom: 520px;
+}
+
+@page :bottom {
+    margin-top: 130px;
+    margin-bottom : 100px;
+}*/
+
+
+table {
+    page-break-inside: auto;
+}
+
 /*behovsbedomning page css*/
 
 .nav.nav-tabs {
@@ -168,12 +188,11 @@ table.table {
 /*behovsbedomningReport css*/
 #behovsbedomningReport {
     background-color: white;
-    
 }
 
-#behovsbedomningReport > table {
-  margin-bottom: 25px;
-}
+    #behovsbedomningReport > table {
+        margin-bottom: 25px;
+    }
 
 .reportTitle th {
     text-align: center;
@@ -191,11 +210,11 @@ tr.reportItems > td {
     text-align: left;
     padding-left: 1px;
     padding-right: 15px;
-    word-break:normal;
+    word-break: normal;
 }
 
 td.extraKommentarReportTd > textarea {
-height: 50px;
+    height: 50px;
     width: 175px;
     margin-top: 5px;
     margin-bottom: 5px;
