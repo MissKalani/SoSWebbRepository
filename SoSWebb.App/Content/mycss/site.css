@@ -53,7 +53,7 @@ table {
 /*behovsbedomning page css*/
 
 .nav.nav-tabs {
-    border-bottom: 2px solid #00263e;
+    /*border-bottom: 2px solid #00263e;*/
     margin-left: 20px;
 }
 
@@ -63,14 +63,13 @@ ul.nav.nav-tabs > li {
 
     ul.nav.nav-tabs > li > a {
         color: black;
+        pointer-events: none;
+        border: none;
+        font-size: large;
     }
 
     ul.nav.nav-tabs > li.active a {
-        border: 2px solid #00263e;
-        border-bottom-color: transparent;
-        font-weight: bold;
-        color: #00263e;
-        text-decoration: underline;
+        text-decoration: none;
     }
 
 i.fa.fa-info-circle {
@@ -93,9 +92,9 @@ table.table {
 
 .table-container {
     position: relative;
-    border-left: 2px solid #00263e;
-    border-right: 2px solid #00263e;
-    border-bottom: 2px solid #00263e;
+    border: 2px solid #00263e;
+    /*border-right: 2px solid #00263e;
+    border-bottom: 2px solid #00263e;*/
     bottom: 22px;
     left: 0.4px;
 }

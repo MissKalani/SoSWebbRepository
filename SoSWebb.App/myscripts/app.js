@@ -59,6 +59,8 @@
         deleteChosenSubareaRows();
         addChosenSubareas();
         createPrioriteringsTable();
+        //check if trStortBehov or trLitetBehov table row has contents otherwise don't show the header
+        elementIsEmpty();
     });
     $('#btn_submitGradedSubareas').click(function (e) {
         hideElements();
@@ -192,7 +194,13 @@
 
     }
 
-
+    function elementIsEmpty() {       
+        if ($('.trStortBehov').has('td:empty') || $('.trLitetBehov').has('td:empty')) {
+            alert('im here!');
+            var header = $(this).find('th').first();
+            $('header').remove();
+        };
+    }
 
     //functions used for creating the report 
     function hideElements() {
@@ -278,7 +286,7 @@
             if (andelklienterGrade == 3)
                 andelklienterGrade = 'Stor andel';
             if (insatserValue == 3)
-                insatserValue = 'Låg';
+                insatserValue = 'Mycket hög';
 
 
             if (konsekvensGrade == 2)
@@ -293,7 +301,7 @@
             if (andelklienterGrade == 1)
                 andelklienterGrade = 'Liten andel';
             if (insatserValue == 1)
-                insatserValue = 'Mycket hög';
+                insatserValue = ' Låg';
 
 
             var tr = document.createElement('tr');
