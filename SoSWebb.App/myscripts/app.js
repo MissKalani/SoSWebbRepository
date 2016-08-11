@@ -161,19 +161,19 @@
 
             var count = i;
 
-            td2.innerHTML = '<input class="konsekvensgradValue" checked type="radio" name="konsekvensgrad' + count + '" value="1" />Mindre Allvarliga <br/>'
+            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" />Mindre allvarliga <br/>'
                 + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" /> Varierande<br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" /> Alvarliga <br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="0" /> Oklart';
-            td3.innerHTML = '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="1" />Liten andel<br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" /> Allvarliga <br/>'
+                + '<input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" value="0" /> Oklart';
+            td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" />Liten andel<br/>'
                + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '"  value="2" /> Varierande <br/>'
                + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" /> Stor andel <br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="0" /> Oklart';
+               + '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="0" /> Oklart';
             td4.innerHTML = '<textarea class="comment"/>'
-            td5.innerHTML = '<input class="insatsergradValue" checked type="radio" name="insatsergrad' + count + '" value="3" />Mycket hög <br/>'
+            td5.innerHTML = '<input class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" />Mycket hög <br/>'
                 + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög<br/>'
                 + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '"  value="1" /> Låg <br/>'
-                + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="0" /> Ingen';
+                + '<input class="insatsergradValue" checked type="radio" name="insatsergrad' + count + '" value="0" /> Ingen';
 
             td.innerHTML += sortedChosenSubareas[i].title;
 
@@ -184,8 +184,10 @@
             tr.appendChild(td5);
 
             if (sortedChosenSubareas[count].value == 2) {
+                tr.setAttribute('id', 'storbehovTr');
                 $(tr).insertAfter($('.trStortBehov'));
             } else {
+                (tr).setAttribute('id', 'litetbehovTr');
                 $(tr).insertAfter($('.trLitetBehov'));
             }
         }
@@ -194,13 +196,16 @@
 
     }
 
-    function elementIsEmpty() {       
-        if ($('.trStortBehov').has('td:empty') || $('.trLitetBehov').has('td:empty')) {
-            alert('im here!');
-            var header = $(this).find('th').first();
-            $('header').remove();
-        };
+    function elementIsEmpty() {
+        if (!$('#storbehovTr').length) {
+            $('#storBehovTh').hide();
+        }
+        if (!$('#litetbehovTr').length) {
+            $('#litetBehovTh').hide();
+        }
     }
+
+
 
     //functions used for creating the report 
     function hideElements() {
