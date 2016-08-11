@@ -2,8 +2,16 @@
     margin: 0;
     padding: 0;
     border: 0;
+    margin-bottom: 2%;
 }
 
+@page{
+    size: A4 landscape;
+}
+
+table, figure {
+  page-break-inside: avoid;
+}
 
 /*Starter page css*/
 
@@ -178,9 +186,7 @@ table.table {
 
 
 /*prioriteringsTable css*/
-/*.table > tbody > tr > th#trBehovTh {
-    border-style: none;
-}*/
+
 th#storBehovTh, th#litetBehovTh{
     border-style:none;
 }
@@ -234,8 +240,14 @@ td.extraKommentarReportTd > textarea {
     margin-bottom: 5px;
 }
 
+/*desktop screens*/
 @media only screen and (max-width: 1024px){
     body{
         width:95%;
+    }
+}
+@media only screen and (max-width: 1920px) {
+    body {
+        width: 98%;
     }
 }

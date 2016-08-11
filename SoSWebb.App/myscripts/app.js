@@ -74,10 +74,11 @@
         }
         sorted_finalChosenSubAreas_And_totalValue = sortByValue(finalChosenSubAreas_And_totalValue);
         var json = sorted_finalChosenSubAreas_And_totalValue;
-        //console.log(json);
+
         createBehovsbedomningReportTable(json);
 
         createPDF();
+
     });
 
     //behovsbedomningtable functions
@@ -161,16 +162,16 @@
 
             var count = i;
 
-            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" />Mindre allvarliga <br/>'
+            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" /> Mindre allvarliga <br/>'
                 + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" /> Varierande<br/>'
                 + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" /> Allvarliga <br/>'
                 + '<input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" value="0" /> Oklart';
-            td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" />Liten andel<br/>'
+            td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" /> Liten andel<br/>'
                + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '"  value="2" /> Varierande <br/>'
                + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" /> Stor andel <br/>'
                + '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="0" /> Oklart';
             td4.innerHTML = '<textarea class="comment"/>'
-            td5.innerHTML = '<input class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" />Mycket hög <br/>'
+            td5.innerHTML = '<input class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" /> Mycket hög <br/>'
                 + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög<br/>'
                 + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '"  value="1" /> Låg <br/>'
                 + '<input class="insatsergradValue" checked type="radio" name="insatsergrad' + count + '" value="0" /> Ingen';
@@ -204,8 +205,6 @@
             $('#litetBehovTh').hide();
         }
     }
-
-
 
     //functions used for creating the report 
     function hideElements() {
@@ -260,24 +259,21 @@
             finalChosenSubAreas_And_totalValue.push(chosenSubarea_And_TotalValue);
         }
         return finalChosenSubAreas_And_totalValue;
+        //console.log(finalChosenSubAreas_And_totalValue);
     }
     function createBehovsbedomningReportTable(jsonObjArray) {
         $('#reportStorage').show();
         for (var i = 0; i < jsonObjArray.length; i++) {
             var obj = jsonObjArray[i];
             //obj.subarea.subarea.konsekvensValue = jsonObjArray[i].subarea.konsekvensValue;
-            console.log(jsonObjArray[i]);
-            var areaTitle = obj.subarea.subarea.area;
-            console.log(areaTitle);
+           
+            var areaTitle = obj.subarea.subarea.area;            
             var subareaTitle = obj.subarea.subarea.title;
             var prioriteringRank = i + 1;
-            var konsekvensGrade = jsonObjArray[i].subarea.konsekvensValue;
-            console.log(konsekvensGrade);
-            var andelklienterGrade = jsonObjArray[i].subarea.andelklienterValue;
-            console.log(andelklienterGrade);
+            var konsekvensGrade = jsonObjArray[i].subarea.konsekvensValue;            
+            var andelklienterGrade = jsonObjArray[i].subarea.andelklienterValue;           
             var kommentarText = obj.subarea.kommentar;
-            var insatserValue = jsonObjArray[i].subarea.insatserValue;
-            console.log(insatserValue);
+            var insatserValue = jsonObjArray[i].subarea.insatserValue;           
 
             if (konsekvensGrade == 0)
                 konsekvensGrade = 'Oklart';
@@ -287,7 +283,7 @@
                 insatserValue = 'Ingen';
 
             if (konsekvensGrade == 3)
-                konsekvensGrade = 'Alvarliga';
+                konsekvensGrade = 'Allvarliga';
             if (andelklienterGrade == 3)
                 andelklienterGrade = 'Stor andel';
             if (insatserValue == 3)
@@ -302,11 +298,11 @@
                 insatserValue = 'Hög';
 
             if (konsekvensGrade == 1)
-                konsekvensGrade = 'Mindre Allvarliga';
+                konsekvensGrade = 'Mindre allvarliga';
             if (andelklienterGrade == 1)
                 andelklienterGrade = 'Liten andel';
             if (insatserValue == 1)
-                insatserValue = ' Låg';
+                insatserValue = 'Låg';
 
 
             var tr = document.createElement('tr');
@@ -329,7 +325,7 @@
             tdInsatserValue.innerHTML = insatserValue;
             var tdExtraKommentar = document.createElement('td');
             tdExtraKommentar.setAttribute('class', 'extraKommentarReportTd');
-            tdExtraKommentar.innerHTML = '<textarea class="comment"></textarea>';
+            tdExtraKommentar.innerHTML = '<textarea disabled class="comment"></textarea>';
 
             tr.appendChild(tdAreaTitle);
             tr.appendChild(tdSubareaTitle);
@@ -339,21 +335,25 @@
             tr.appendChild(tdKommentar);
             tr.appendChild(tdInsatserValue);
             tr.appendChild(tdExtraKommentar);
+
             $('#behovsbedomningReport').find('tbody').append(tr);
         };
         //make textarea autogrow
-        $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
+        //$('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
     }
 
     function createPDF() {
-        var pdf = new jsPDF('l', 'pt', 'a4');
+        var pdf = new jsPDF({
+            orientation: 'l',
+            unit: 'mm',
+            format: 'a4'
+        });
 
-        pdf.addHTML(document.body, 2, 5, {
-            'pagesplit': true
+        pdf.addHTML($('#behovbedomningReport')[1], 1, 1, {
+
         }, function () {
             pdf.save('test.pdf');
         });
     }
-
 
 });
