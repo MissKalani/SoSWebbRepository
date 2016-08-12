@@ -40,15 +40,15 @@
     //button click functions 
     $('#btn_printChosenSubareas').click(function (e) {
         e.preventDefault();
-        createPDF();
+        window.print();
     });
     $('#btn_printGradedSubareas').click(function (e) {
         e.preventDefault();
-        createPDF();
+        window.print();
     });
     $('#btn_printFinalGradedSubareas').click(function (e) {
         e.preventDefault();
-        createPDF();
+        window.print();
     });
     $('#btn_submitChosenSubareas').click(function (e) {
         e.preventDefault();
@@ -186,7 +186,7 @@
             }      
         }
     }
-
+  
     //functions used for creating the report 
     function hideElements() {
         $('.tab-content').hide();
