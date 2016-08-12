@@ -218,15 +218,15 @@ table.table {
 tr.reportItems > td {
     border-bottom: 1px solid green;
     text-align: left;
-    padding-left: 1px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     word-break: normal;
 }
 
 td.extraKommentarReportTd > textarea {
     height: 50px;
     width: 175px;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 5px;
 }
 
