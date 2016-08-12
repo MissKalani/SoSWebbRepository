@@ -5,12 +5,12 @@
     margin-bottom: 2%;
 }
 
-@page{
+@page {
     size: A4 landscape;
 }
 
 table, figure {
-  page-break-inside: avoid;
+    page-break-inside: avoid;
 }
 
 /*Starter page css*/
@@ -186,24 +186,14 @@ table.table {
 
 
 /*prioriteringsTable css*/
-
-th#storBehovTh, th#litetBehovTh{
-    border-style:none;
+.storHeader, .litetHeader {  
+    padding: 10px;
 }
 
 .prioriteringsTableTdTitle {
     text-align: left;
-    padding-left: 25px;
-    padding-top: 15px;
-    width: 15%;
 }
 
-.prioriteringsTableTd {
-    width: 10%;
-    text-align: left;
-    /*padding-left: 25px;
-    padding-right: 25px;*/
-}
 
 /*behovsbedomningReport css*/
 #behovsbedomningReport {
@@ -241,11 +231,12 @@ td.extraKommentarReportTd > textarea {
 }
 
 /*desktop screens*/
-@media only screen and (max-width: 1024px){
-    body{
-        width:95%;
+@media only screen and (max-width: 1024px) {
+    body {
+        width: 95%;
     }
 }
+
 @media only screen and (max-width: 1920px) {
     body {
         width: 98%;

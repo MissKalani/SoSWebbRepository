@@ -54,7 +54,7 @@
         promise.done(function (insatserlist) {
             $('#accordion ul li').remove();
             for (var i in insatserlist) {
-                $('#insatserlist').append('<li><a id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</a> '
+                $('#insatserlist').append('<li><button class="insatserListBtn" id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</button> '
                     + '<div id="collapse' + i + '" class="collapse" ><div class ="list-group">'
                     + ' <ul id="questionlist' + i + '"></ul></div></li></li>');
                 appendQuestionList(i);
@@ -149,6 +149,24 @@
             $('input.group7_' + i + '').not(this).prop('checked', false);
         });
     }
+    function insatserMenuHeight() {
+        $('.list-group').height('auto');
+        $('.stepB-tabcontent').height('auto');
+        var a = $(".stepB-tabcontent").height(),
+        b = $(".list-group").height();
+        a > b ? $(".list-group").css("height", a) : $(".stepB-tabcontent").css("height", b);
+    }
+
+    $(document).on('click', '.insatserListBtn', function (e) {
+        $('.insatserListBtn').slideDown('normal', function () {
+            insatserMenuHeight();
+        });
+    });
+    $('.insatserListBtn').click(function (e) {
+        button.slideUp('normal', function () {
+            menuHeight();
+        });
+    });
 
     window.unlockCheckboxes = function (i) {
         $('input.group2_' + i + '').removeAttr('disabled', 'disabled');
@@ -182,7 +200,54 @@
         $('#questionlist' + i + ' #q7').css('opacity', '0.2');
     }
 
-    var answers = [];
+
+
+    function getAnswers(listgroup) {
+
+        $(listgroup).each(function (index, element) {
+            var answersGroup = [];
+            answersGroup.isComplete = true;
+            var listItems = $(element).find('li');
+            var firstQuestion = listItems[0];
+            var checked = $(firstQuestion).find('input[type="checkbox"]:checked').val();
+
+            if (checked > 2) {
+                alert('im here!');
+                listItems.each(function (idx, li) {
+                    var question = {
+                        questionText: $(li).find('.question').text(),
+                        value: $(li).find('input[type="checkbox"]:checked').first().val(),
+                    };
+                    answersGroup.push(question);
+                });
+            };
+            if (answersGroup.length == 0) {
+                answersGroup.isComplete = false;
+            };
+            $(answersGroup).each(function (key, data) {
+                var value = data.value;
+                if (!value) {
+                    answersGroup.isComplete = false;
+                }
+            });
+            return answersGroup;
+            console.log(answersGroup);
+
+            //if (answersGroup.length == 0) {
+            //    answersGroup.isComplete = false;
+            //}
+
+            //$(answersGroup).each(function (key, data) {
+            //    var value = data.value;
+            //    if (!value) {
+            //        answersGroup.isComplete = false;
+            //    }
+            //});
+            //answers[insatsTitle] = answersGroup;
+            //console.log(answers);
+        });
+
+    }
 
     $(document).on('show.bs.collapse', '#accordion .collapse', function () {
         var all = $('#accordion').find('.collapse');
@@ -195,43 +260,22 @@
         });
     });
     $(document).on('hide.bs.collapse', '#accordion .collapse', function (e) {
-        var insatsTitle = $(this).closest('li').first().find('a').first().text();
+        var insatsTitle = $(this).closest('li').first().find('button').first().html();
         var listgroup = $(this).find('.list-group ul').first();
-        $(listgroup).each(function (index, element) {
-            var answersGroup = [];
-            answersGroup.isComplete = true;
-            var listItems = $(this).find('li');
-            if ($(this).find('li').first().find('input[type="checkbox"]:checked').first().val() > 2) {
-                listItems.each(function (idx, li) {
-                    var question = {
-                        questionText: $(li).find('.question').text(),
-                        value: $(li).find('input[type="checkbox"]:checked').first().next('label').text(),
-                    };
-                    answersGroup.push(question);
-                });
-            }
-            if (answersGroup.length == 0) {
-                answersGroup.isComplete = false;
-            }
+        var answers = [];
+        var answersGroup = getAnswers(listgroup);
+        answers[insatsTitle] = answersGroup;
+        //console.log(answers);
 
-            $(answersGroup).each(function (key, data) {
-                var value = data.value;
-                if (!value) {
-                    answersGroup.isComplete = false;
-                }
-            });
-            answers[insatsTitle] = answersGroup;
-            console.log(answers);
-        });
 
-        for (var answergroup in answers) {
-            if (answers[answergroup].isComplete == true) {
-                $(this).closest('li').first().css('background-color', '#299c29');
-                $(this).closest('li').first().find('a').first().css('color', 'black');
-            } else {
-                $(this).closest('li').first().css('background-color', 'white');
-            }
-        }
+        //for (var answergroup in answers) {
+        //    if (answers[answergroup].isComplete == true) {
+        //        $(this).closest('li').first().css('background-color', '#299c29');
+        //        $(this).closest('li').first().find('a').first().css('color', 'black');
+        //    } else {
+        //        $(this).closest('li').first().css('background-color', 'white');
+        //    }
+        //}
     });
 
     //insatsprioriteringReport functions
@@ -278,7 +322,7 @@
             createTextField(counter);
             counter++;
         } else {
-            td.html('');       
+            td.html('');
 
 
             //deleteTextField(counter);
@@ -348,7 +392,7 @@
         //    textfield.parentNode.removeChild(textfield);
         //    p.parentNode.removeChild(p);
         //};
-        
+
     }
 
     function clearTextfields() {
@@ -371,7 +415,7 @@
         });
 
         pdf.addHTML($('#report')[1], 1, 1, {
-           
+
         }, function () {
             pdf.save('test.pdf');
         });

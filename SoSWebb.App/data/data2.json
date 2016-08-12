@@ -271,7 +271,7 @@
     "area": "Behandling vid samsjuklighet",
     "subareas": [
       {
-        "title": "Psykologisk och psykosocial behandling ",
+        "title": "Psykologisk och psykosocial behandling",
         "insatslist": [
           {
             "title": "Integrerad behandlingsmetod. MI / KBT vid missbruk/ beroendet och samtidig depression eller integrerad behandling med KBT eller MI/ KBT vid missbruk/ beroendet och annan samtidig svår psykisk sjukdom."
@@ -312,7 +312,7 @@
         ]
       },
       {
-        "title": "Familjeinterventioner ",
+        "title": "Familjeinterventioner",
         "insatslist": [
           {
             "title": "Functional family treatment (FFT)"

@@ -18,6 +18,10 @@
 .insatserDiv {
     text-align: left;
 }
+#insatserDivP{
+    font-size:1em;
+    margin-bottom:15px;
+}
 
 #btn_createReport {
     margin-top: 10px;
@@ -33,10 +37,6 @@
 #q2, #q3, #q4, #q5, #q6, #q7 {
     opacity: 0.2;
 }
-
-/*.opacity{
-    opacity:0.2;
-}*/
 
 .qlistHeader {
     background-color: forestgreen;
@@ -61,7 +61,6 @@
 }
 
 
-
 .list-group {
     border-style: none;
     margin-bottom: 0;
@@ -84,15 +83,12 @@
     padding: 0;
 }
 
-#insatserlist > li {
-    border: 1px solid #00263e;
-    padding: 12px;
-    border-bottom-style: none;
+.insatserListBtn{
+    width: 100%;
+    text-align: left;
+    text-indent: 10px;
+    padding: 10px;
 }
-
-    #insatserlist > li:last-child {
-        border-bottom-style: solid;
-    }
 
 /*insatsprioriteringReport css*/
 

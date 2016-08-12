@@ -535,7 +535,7 @@ namespace SoSWebb.JsonSerializer
         {
 
             Subarea2 subarea20 = new Subarea2();
-            subarea20.Title = "Psykologisk och psykosocial behandling ";
+            subarea20.Title = "Psykologisk och psykosocial behandling";
 
             Insatsen insats1 = new Insatsen();
             insats1.Title = "Integrerad behandlingsmetod. MI / KBT vid missbruk/ beroendet och samtidig depression eller integrerad behandling med KBT eller MI/ KBT vid missbruk/ beroendet och annan samtidig svår psykisk sjukdom.";
@@ -595,7 +595,7 @@ namespace SoSWebb.JsonSerializer
         {
 
             Subarea2 subarea23 = new Subarea2();
-            subarea23.Title = "Familjeinterventioner ";
+            subarea23.Title = "Familjeinterventioner";
             
             Insatsen insats1 = new Insatsen();
             insats1.Title = "Functional family treatment (FFT)";

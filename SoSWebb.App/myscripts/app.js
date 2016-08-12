@@ -30,57 +30,6 @@
     $('#reportStorage').hide();
     $('#nav_tab-prioritering').hide();
 
-    //array variables
-    var chosenSubareas = [];
-    var sortedChosenSubareas = [];
-    var finalChosenSubareas = [];
-    var finalChosenSubAreas_And_totalValue = [];
-    var sorted_finalChosenSubAreas_And_totalValue = [];
-
-    //button click functions 
-    $('#btn_printChosenSubareas').click(function (e) {
-        e.preventDefault();
-        window.print();
-        //createPDF();
-    });
-    $('#btn_printGradedSubareas').click(function (e) {
-        e.preventDefault();
-        window.print();
-    });
-    $('#btn_savePdfFinalGradedSubareas').click(function (e) {
-        e.preventDefault();
-        createPDF();
-    });
-    $('#btn_submitChosenSubareas').click(function (e) {
-        e.preventDefault();
-        $('#nav_tab-prioritering').show();
-        $('#nav_tab-behovsbedomning').hide();
-        $('.nav a[href="#tab-prioritering"]').tab('show');
-        deleteChosenSubareaRows();
-        addChosenSubareas();
-        createPrioriteringsTable();
-        //check if trStortBehov or trLitetBehov table row has contents otherwise don't show the header
-        elementIsEmpty();
-    });
-    $('#btn_submitGradedSubareas').click(function (e) {
-        hideElements();
-        finalChosenSubareas = getFinalChosenSubAreas();
-        //get all the finaly chosen subareas together with their total values
-        finalChosenSubAreas_And_totalValue = getFinalChosenSubareasWithTotalValues(finalChosenSubareas);
-
-        //function for sorting chosen object array by the total value gathered
-        var sortByValue = function (array) {
-            return _.sortBy(array, 'totalValue').reverse();
-        }
-        sorted_finalChosenSubAreas_And_totalValue = sortByValue(finalChosenSubAreas_And_totalValue);
-        var json = sorted_finalChosenSubAreas_And_totalValue;
-
-        createBehovsbedomningReportTable(json);
-
-        createPDF();
-
-    });
-
     //behovsbedomningtable functions
     function createAreaRow(area) {
         var table = document.getElementById('behovsbedomningTable');
@@ -117,13 +66,8 @@
 
 
     };
-
-    //prioriteringstable functions
-    function deleteChosenSubareaRows() {
-        chosenSubareas.length = 0;
-        $("#prioriteringsTable td").parent().remove();
-    };
-    function addChosenSubareas() {
+    function getSortedChosenSubareas() {
+        var chosenSubareas = [];
         var area = $('tr.area');
         $('tr.item').each(function () {
             var td = $(this).closest('tr').find('td:nth-child(2)');
@@ -136,15 +80,39 @@
                 chosenSubareas.push(obj);
             }
         });
+        console.log('getting chosen subareas');
+        console.log(chosenSubareas);
+        var sortedChosenSubareas = chosenSubareas.sort(function (value1, value2) {
+            if (value2.value - value1.value == 0) {
+                return value1;
+            } else {
+                return value2.value - value1.value;
+            }
+        });
 
-        var sortByValue = function (array) {
-            return _.sortBy(array, 'value').reverse();
-        }
-        sortedChosenSubareas = sortByValue(chosenSubareas);
-        //console.log(sortedChosenSubareas);
+        //var sortByValue = function (array) {   
+        //    return _.sortBy(array, 'value').reverse();
+        //}
+        //var sortedChosenSubareas = sortByValue(chosenSubareas);
+
+        console.log('getting sorted chosen subareas');
+        console.log(sortedChosenSubareas);
         return sortedChosenSubareas;
     }
-    function createPrioriteringsTable() {
+    var sortedChosenSubareas = [];
+    $('#btn_submitChosenSubareas').click(function (e) {
+        e.preventDefault();
+        $('#nav_tab-prioritering').show();
+        $('#nav_tab-behovsbedomning').hide();
+        $('.nav a[href="#tab-prioritering"]').tab('show');
+        deleteChosenSubareaRows();
+        sortedChosenSubareas = getSortedChosenSubareas();
+        createPrioriteringsTable(sortedChosenSubareas);
+        //check if trStortBehov or trLitetBehov table row has contents otherwise don't show the header
+        elementIsEmpty();
+    });
+
+    function createPrioriteringsTable(sortedChosenSubareas) {
         for (var i = 0; i < sortedChosenSubareas.length; i++) {
 
             var tr = document.createElement("tr");
@@ -177,6 +145,8 @@
                 + '<input class="insatsergradValue" checked type="radio" name="insatsergrad' + count + '" value="0" /> Ingen';
 
             td.innerHTML += sortedChosenSubareas[i].title;
+            console.log('sortedChosenSubareasTitle');
+            console.log(sortedChosenSubareas[i].title);
 
             tr.appendChild(td);
             tr.appendChild(td2);
@@ -186,34 +156,27 @@
 
             if (sortedChosenSubareas[count].value == 2) {
                 tr.setAttribute('id', 'storbehovTr');
-                $(tr).insertAfter($('.trStortBehov'));
+                if (!$('.storHeader').length) {
+                    $('#prioriteringsTable > tbody').append('<th class="storHeader" colspan="5">Stort Behov</th>');
+                }
+                $('#prioriteringsTable > tbody').append(tr);
             } else {
                 (tr).setAttribute('id', 'litetbehovTr');
-                $(tr).insertAfter($('.trLitetBehov'));
+                if (!$('.litetHeader').length) {
+                    $('#prioriteringsTable > tbody').append('<th class="litetHeader" colspan="5">Litet Behov</th>');
+                }
+                $('#prioriteringsTable > tbody').append(tr);
             }
         }
         //make textarea autogrow
         $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
-
     }
 
-    function elementIsEmpty() {
-        if (!$('#storbehovTr').length) {
-            $('#storBehovTh').hide();
-        }
-        if (!$('#litetbehovTr').length) {
-            $('#litetBehovTh').hide();
-        }
-    }
-
-    //functions used for creating the report 
-    function hideElements() {
-        $('.tab-content').hide();
-        $('#tabs').hide();
-    }
+    //prioriteringstable functions
     function getFinalChosenSubAreas() {
         var i = 0;
-        finalChosenSubareas.length = 0;
+        var finalChosenSubareas = [];
+        finalChosenSubareas.length = 0; //reset to zero
         $('.prioriteringsTableTr').each(function () {
             var subarea = {
                 subarea: sortedChosenSubareas[i],
@@ -223,6 +186,7 @@
                 insatserValue: "0"
             };
             subarea.subarea = sortedChosenSubareas[i];
+            //console.log(subarea.subarea);
             subarea.konsekvensValue = $(this).closest('tr').find($('input[class = konsekvensgradValue]:checked')).val();
             subarea.andelklienterValue = $(this).closest('tr').find($('input[class = andelklientergradValue]:checked')).val();
             subarea.kommentar = $(this).find($('textarea')).val();
@@ -233,16 +197,44 @@
         //console.log(finalChosenSubareas);
         return finalChosenSubareas;
     }
-    function getFinalChosenSubareasWithTotalValues(subareaArray) {
+    $('#btn_submitGradedSubareas').click(function (e) {
+        hideElements();
+        var finalChosenSubareas = getFinalChosenSubAreas();
+        console.log(finalChosenSubareas);
+
+        var totalValue = getFinalChosenSubareasWithTotalValues(finalChosenSubareas);
+        //get all the finaly chosen subareas together with their total values
+        //finalChosenSubAreas_And_totalValue = getFinalChosenSubareasWithTotalValues(finalChosenSubareas);
+
+        //function for sorting chosen object array by the total value gathered
+        //var sortByValue = function (array) {
+        //    return _.sortBy(array, 'totalValue').reverse();
+        //}
+        //sorted_finalChosenSubAreas_And_totalValue = sortByValue(finalChosenSubAreas_And_totalValue);
+        //var json = sorted_finalChosenSubAreas_And_totalValue;
+
+        //console.log(json);
+
+        //createBehovsbedomningReportTable(json);
+
+        //createPDF();
+
+    });
+    function getFinalChosenSubareasWithTotalValues(finalChosenSubareas) {
+
         var value_bedomning = 0;
         var value_gradKonsekvens = 0;
         var value_gradAndelKlienter = 0;
         var value_gradInsatser = 0;
 
+        var finalChosenSubAreas_And_totalValue = [];
         finalChosenSubAreas_And_totalValue.length = 0;
 
         for (var i = 0; i < finalChosenSubareas.length; i++) {
+            alert('you are here!');
             value_bedomning = finalChosenSubareas[i].subarea.value;
+            console.log(finalChosenSubareas[i].subarea.title);
+            console.log(value_bedomning);
             value_gradKonsekvens = finalChosenSubareas[i].konsekvensValue;
             value_gradAndelKlienter = finalChosenSubareas[i].andelklienterValue;
             value_gradInsatser = finalChosenSubareas[i].insatserValue;
@@ -259,21 +251,69 @@
             finalChosenSubAreas_And_totalValue.push(chosenSubarea_And_TotalValue);
         }
         return finalChosenSubAreas_And_totalValue;
-        //console.log(finalChosenSubAreas_And_totalValue);
+        console.log("getting the final subareas with total value");
+        console.log(finalChosenSubAreas_And_totalValue);
     }
+
+
+
+    //button click functions 
+    $('#btn_printChosenSubareas').click(function (e) {
+        e.preventDefault();
+        window.print();
+        //createPDF();
+    });
+    $('#btn_printGradedSubareas').click(function (e) {
+        e.preventDefault();
+        window.print();
+    });
+    $('#btn_savePdfFinalGradedSubareas').click(function (e) {
+        e.preventDefault();
+        createPDF();
+    });
+
+
+
+    function deleteChosenSubareaRows() {
+        //chosenSubareas.length = 0;
+        $("#prioriteringsTable td").parent().remove();
+    };
+
+
+
+
+
+    function elementIsEmpty() {
+        if (!$('#storbehovTr').length) {
+            $('#storBehovTh').hide();
+        }
+        if (!$('#litetbehovTr').length) {
+            $('#litetBehovTh').hide();
+        }
+    }
+
+    //functions used for creating the report 
+    function hideElements() {
+        $('.tab-content').hide();
+        $('#tabs').hide();
+    }
+
+
+
     function createBehovsbedomningReportTable(jsonObjArray) {
+        //console.log(jsonObjArray);
         $('#reportStorage').show();
         for (var i = 0; i < jsonObjArray.length; i++) {
             var obj = jsonObjArray[i];
             //obj.subarea.subarea.konsekvensValue = jsonObjArray[i].subarea.konsekvensValue;
-           
-            var areaTitle = obj.subarea.subarea.area;            
+
+            var areaTitle = obj.subarea.subarea.area;
             var subareaTitle = obj.subarea.subarea.title;
             var prioriteringRank = i + 1;
-            var konsekvensGrade = jsonObjArray[i].subarea.konsekvensValue;            
-            var andelklienterGrade = jsonObjArray[i].subarea.andelklienterValue;           
+            var konsekvensGrade = jsonObjArray[i].subarea.konsekvensValue;
+            var andelklienterGrade = jsonObjArray[i].subarea.andelklienterValue;
             var kommentarText = obj.subarea.kommentar;
-            var insatserValue = jsonObjArray[i].subarea.insatserValue;           
+            var insatserValue = jsonObjArray[i].subarea.insatserValue;
 
             if (konsekvensGrade == 0)
                 konsekvensGrade = 'Oklart';
