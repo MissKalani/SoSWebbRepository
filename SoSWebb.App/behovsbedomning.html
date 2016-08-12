@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="Content/font-awesome.min.css" />
     <!--jspdf script-->
     <script type="text/javascript" src="Scripts/jspdf.min.js"></script>
-    <script type="text/javascript" src="Scripts/jspdf.debug.js"></script>
+    <!--<script type="text/javascript" src="Scripts/jspdf.debug.js"></script>-->
 </head>
 <body>
     <div class="container">
@@ -31,7 +31,7 @@
                     <div class="table-container" style="overflow-x:auto">
                         <table id="behovsbedomningTable" class="table">
                             <tr class="trHeader">
-                                <th class="areaTitle">Område</th>
+                                <th scope="row" class="areaTitle">Område</th>
                                 <th class="subareaHeadTitle">Delområden</th>
                                 <th class="options">
                                     Inget<span>
@@ -43,26 +43,25 @@
                                 </th>
                                 <th class="options">
                                     Litet<span>
-                                             <a href="#">
-                                                 <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
-                                                    data-content="Litet behov = verksamheten erbjuder en del effektiva insatser men dessa bedöms inte heltäckande. <br> ELLER - relativt få klienter har de tillstånd som beskrivs inom området"></i>
-                                             </a>
+                                        <a href="#">
+                                            <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
+                                               data-content="Litet behov = verksamheten erbjuder en del effektiva insatser men dessa bedöms inte heltäckande. <br> ELLER - relativt få klienter har de tillstånd som beskrivs inom området"></i>
+                                        </a>
                                     </span>
                                 </th>
                                 <th class="options">
                                     Stort<span>
-                                             <a href="#">
-                                                 <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
-                                                    data-content="Stort behov = verksamheten erbjuder inga effektiva insatser inom området, trots att många klienter bedöms behöva dessa."></i>
-                                             </a>
+                                        <a href="#">
+                                            <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
+                                               data-content="Stort behov = verksamheten erbjuder inga effektiva insatser inom området, trots att många klienter bedöms behöva dessa."></i>
+                                        </a>
                                     </span>
                                 </th>
-
                             </tr>
                         </table>
                     </div>
                     <div class="center-block">
-                        <input class="button" id="btn_printChosenSubareas" type="submit" name="printChosenSubareas" value="Spara som PDF">
+                        <input class="button" id="btn_printChosenSubareas" type="submit" name="printChosenSubareas" value="Skriva ut">
                         <input class="button" id="btn_submitChosenSubareas" type="submit" name="submitChosenSubareas" value="Nästa">
                     </div>
                 </div>
@@ -70,26 +69,23 @@
                     <div class="table-container" style="overflow-x:auto">
                         <table id="prioriteringsTable" class="table">
                             <tr class="trHeader">
-                                <th class="chosenSubareaTitle">Delområde</th>
+                                <th scope="row" class="chosenSubareaTitle">Delområde</th>
                                 <th class="options gradering_insatskonsekvens">Gradering av konsekvens av om insats(er) uteblir</th>
                                 <th class="options gradering_andelklienter">Gradering för andel klienter som berörs om insats(er) uteblir</th>
                                 <th class="options gradering_kommentar">Beskrivning av VH-specifika omständighet(er)</th>
                                 <th class="options gradering_insatser">Prioritering av nya insatser</th>
-
-
                             </tr>
-                            <tr class="trStortBehov">
-                                <th class="trBehovTh">Stort Behov</th>
+                            <!--<tr class="trStortBehov">
+                                <th colspan="5" id="storBehovTh">Stort behov</th>
                             </tr>
                             <tr class="trLitetBehov">
-                                <th class="trBehovTh"> Litet Behov</th>
-                            </tr>
-
+                                <th colspan="5" id="litetBehovTh">Litet behov</th>
+                            </tr>-->
                         </table>
                     </div>
                     <div class="center-block">
-                        <input class="button" id="btn_printGradedSubareas" type="submit" name="submitSubareas" value="Spara som PDF">
-                        <input class="button" id="btn_submitGradedSubareas" type="submit" name="printSubareas" value="Skapa Rapport">
+                        <input class="button" id="btn_printGradedSubareas" type="submit" name="submitSubareas" value="Skriva ut">
+                        <input class="button" id="btn_submitGradedSubareas" type="submit" name="printSubareas" value="Skriva ut rapport">
                     </div>
                 </div>
             </div>
@@ -99,10 +95,10 @@
                 <div class="table" id="behovsbedomningReport">
                     <table>
                         <tr class="reportTitle">
-                            <th colspan="8">Behovsbedomning av delområden</th>
+                            <th colspan="8">Behovsbedömning av delområden</th>
                         </tr>
                         <tr class="reportColumnHeader">
-                            <th>Område</th>
+                            <th scope="row">Område</th>
                             <th>Delområde</th>
                             <th>Prioritering</th>
                             <th>Gradering av konsekvens om insats(er) uteblir </th>
@@ -112,15 +108,15 @@
                             <th>Kommentar</th>
                         </tr>
                     </table>
-                    <!--<input class="button" id="btn_printFinalGradedSubareas" type="submit" name="submitSubareas" value="Spara som PDF">-->
                 </div>
             </div>
         </div>
     </div>
     <script src="Scripts/jquery-2.2.4.js"></script>
     <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/underscore-min.js"></script>
     <script src="Scripts/html2canvas.js"></script>
+    <script src="Scripts/underscore-min.js"></script>
+    <script src="Scripts/jquery.ns-autogrow.min.js"></script>
     <script src="myscripts/app.js"></script>
 </body>
 </html>

@@ -1,13 +1,33 @@
-﻿
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    margin-bottom: 2%;
+}
+
+@page {
+    size: A4 landscape;
+}
+
+table, figure {
+    page-break-inside: avoid;
+}
+
 /*Starter page css*/
 
 .container {
+    width: 100%;
+    background-color: #fff;
+    margin: 0 auto;
     text-align: center;
-    margin-bottom: 5%;
 }
 
 .div-starter {
     margin-bottom: 10px;
+}
+
+.div-starter-below {
+    margin-bottom: 25px;
 }
 
 .starter-index {
@@ -30,10 +50,30 @@
         color: white;
         text-decoration: underline;
     }
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/*@page :top {
+    margin-bottom: 520px;
+}
+
+@page :bottom {
+    margin-top: 130px;
+    margin-bottom : 100px;
+}*/
+
+
+table {
+    page-break-inside: auto;
+}
+
 /*behovsbedomning page css*/
 
 .nav.nav-tabs {
-    border-bottom: 2px solid #00263e;
+    /*border-bottom: 2px solid #00263e;*/
     margin-left: 20px;
 }
 
@@ -43,14 +83,13 @@ ul.nav.nav-tabs > li {
 
     ul.nav.nav-tabs > li > a {
         color: black;
+        pointer-events: none;
+        border: none;
+        font-size: large;
     }
 
     ul.nav.nav-tabs > li.active a {
-        border: 2px solid #00263e;
-        border-bottom-color: transparent;
-        font-weight: bold;
-        color: #00263e;
-        text-decoration: underline;
+        text-decoration: none;
     }
 
 i.fa.fa-info-circle {
@@ -73,9 +112,9 @@ table.table {
 
 .table-container {
     position: relative;
-    border-left: 2px solid #00263e;
-    border-right: 2px solid #00263e;
-    border-bottom: 2px solid #00263e;
+    border: 2px solid #00263e;
+    /*border-right: 2px solid #00263e;
+    border-bottom: 2px solid #00263e;*/
     bottom: 22px;
     left: 0.4px;
 }
@@ -147,33 +186,23 @@ table.table {
 
 
 /*prioriteringsTable css*/
-.table > tbody > tr > th.trBehovTh {
-    border-style: none;
+.storHeader, .litetHeader {  
+    padding: 10px;
 }
 
 .prioriteringsTableTdTitle {
     text-align: left;
-    padding-left: 25px;
-    padding-top: 15px;
-    width: 15%;
 }
 
-.prioriteringsTableTd {
-    width: 10%;
-    text-align: left;
-    /*padding-left: 25px;
-    padding-right: 25px;*/
-}
 
 /*behovsbedomningReport css*/
 #behovsbedomningReport {
     background-color: white;
-    border-style: none;
 }
 
-#behovsbedomningReport > table {
-  margin-bottom: 25px;
-}
+    #behovsbedomningReport > table {
+        margin-bottom: 25px;
+    }
 
 .reportTitle th {
     text-align: center;
@@ -191,77 +220,25 @@ tr.reportItems > td {
     text-align: left;
     padding-left: 1px;
     padding-right: 15px;
+    word-break: normal;
 }
 
 td.extraKommentarReportTd > textarea {
-height: 50px;
+    height: 50px;
     width: 175px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-@media only screen and (min-width:960px) {
-    /* styles for browsers larger than 960px; */
-}
-
-@media only screen and (min-width:1440px) {
-    /* styles for browsers larger than 1440px; */
-}
-
-@media only screen and (min-width:2000px) {
-    /* for sumo sized (mac) screens */
-}
-
-@media only screen and (max-device-width:480px) {
-    /* styles for mobile browsers smaller than 480px; (iPhone) */
-    .btnHome {
-        top: 12px;
-        right: 0;
-    }
-
-    .nav-tabs > li {
-        width: 100%;
-    }
-
-    ul.nav.nav-tabs {
-        border-bottom-style: none;
-    }
-
-        ul.nav.nav-tabs > li {
-            border-style: none;
-        }
-
-            ul.nav.nav-tabs > li.active a {
-                border-style: none;
-            }
-
-    .table-container {
-        border-top: 2px solid #00263e;
-    }
-
-    .table {
-        margin-top: 2px;
-    }
-
-    td.areaTdTitle {
-        padding-right: 8px;
-    }
-
-    td.subareaTdTitle {
-        padding-right: 10px;
-        padding-left: 10px;
+/*desktop screens*/
+@media only screen and (max-width: 1024px) {
+    body {
+        width: 95%;
     }
 }
 
-@media only screen and (device-width:768px) {
-    /* default iPad screens */
-}
-/* different techniques for iPad screening */
-@media only screen and (min-device-width:320px) and (max-device-width: 1024px) and (orientation:portrait) {
-    /* For portrait layouts only */
-
-}
-
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-    /* For landscape layouts only */
+@media only screen and (max-width: 1920px) {
+    body {
+        width: 98%;
+    }
 }

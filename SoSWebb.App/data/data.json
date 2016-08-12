@@ -99,7 +99,7 @@
     "subarea": [
       {
         "id": 1,
-        "title": "Nyligt intag av alokohol",
+        "title": "Nyligt intag av alkohol",
         "values_bedomning": [
           0,
           1,
@@ -215,7 +215,7 @@
       },
       {
         "id": 3,
-        "title": "Missbruk eller beroende av canabis",
+        "title": "Missbruk eller beroende av cannabis",
         "values_bedomning": [
           0,
           1,
@@ -309,7 +309,7 @@
     "subarea": [
       {
         "id": 1,
-        "title": "Arbetslivsinriktadrehabilitering",
+        "title": "Arbetslivsinriktad rehabilitering",
         "values_bedomning": [
           0,
           1,

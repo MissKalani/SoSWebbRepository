@@ -54,7 +54,7 @@
         promise.done(function (insatserlist) {
             $('#accordion ul li').remove();
             for (var i in insatserlist) {
-                $('#insatserlist').append('<li><a id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</a> '
+                $('#insatserlist').append('<li><button class="insatserListBtn" id="insats' + i + '" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">' + insatserlist[i].title + '</button> '
                     + '<div id="collapse' + i + '" class="collapse" ><div class ="list-group">'
                     + ' <ul id="questionlist' + i + '"></ul></div></li></li>');
                 appendQuestionList(i);
@@ -149,6 +149,24 @@
             $('input.group7_' + i + '').not(this).prop('checked', false);
         });
     }
+    function insatserMenuHeight() {
+        $('.list-group').height('auto');
+        $('.stepB-tabcontent').height('auto');
+        var a = $(".stepB-tabcontent").height(),
+        b = $(".list-group").height();
+        a > b ? $(".list-group").css("height", a) : $(".stepB-tabcontent").css("height", b);
+    }
+
+    $(document).on('click', '.insatserListBtn', function (e) {
+        $('.insatserListBtn').slideDown('normal', function () {
+            insatserMenuHeight();
+        });
+    });
+    $('.insatserListBtn').click(function (e) {
+        button.slideUp('normal', function () {
+            menuHeight();
+        });
+    });
 
     window.unlockCheckboxes = function (i) {
         $('input.group2_' + i + '').removeAttr('disabled', 'disabled');
@@ -182,6 +200,55 @@
         $('#questionlist' + i + ' #q7').css('opacity', '0.2');
     }
 
+
+
+    function getAnswers(listgroup) {
+
+        $(listgroup).each(function (index, element) {
+            var answersGroup = [];
+            answersGroup.isComplete = true;
+            var listItems = $(element).find('li');
+            var firstQuestion = listItems[0];
+            var checked = $(firstQuestion).find('input[type="checkbox"]:checked').val();
+
+            if (checked > 2) {
+                alert('im here!');
+                listItems.each(function (idx, li) {
+                    var question = {
+                        questionText: $(li).find('.question').text(),
+                        value: $(li).find('input[type="checkbox"]:checked').first().val(),
+                    };
+                    answersGroup.push(question);
+                });
+            };
+            if (answersGroup.length == 0) {
+                answersGroup.isComplete = false;
+            };
+            $(answersGroup).each(function (key, data) {
+                var value = data.value;
+                if (!value) {
+                    answersGroup.isComplete = false;
+                }
+            });
+            return answersGroup;
+            console.log(answersGroup);
+
+            //if (answersGroup.length == 0) {
+            //    answersGroup.isComplete = false;
+            //}
+
+            //$(answersGroup).each(function (key, data) {
+            //    var value = data.value;
+            //    if (!value) {
+            //        answersGroup.isComplete = false;
+            //    }
+            //});
+            //answers[insatsTitle] = answersGroup;
+            //console.log(answers);
+        });
+
+    }
+
     $(document).on('show.bs.collapse', '#accordion .collapse', function () {
         var all = $('#accordion').find('.collapse');
         var actives = $('#accordion').find('.in, .collapsing');
@@ -193,50 +260,40 @@
         });
     });
     $(document).on('hide.bs.collapse', '#accordion .collapse', function (e) {
-        var insatsTitle = $(this).closest('li').first().find('a').first().text();
+        var insatsTitle = $(this).closest('li').first().find('button').first().html();
         var listgroup = $(this).find('.list-group ul').first();
-        $(listgroup).each(function (index, element) {
-            var answersGroup = [];
-            var listItems = $(this).find('li');
-            if ($(this).find('li').first().find('input[type="checkbox"]:checked').first().val() > 2) {
-                listItems.each(function (idx, li) {
-                    var question = {
-                        questionText: $(li).find('.question').text(),
-                        value: $(li).find('input[type="checkbox"]:checked').first().next('label').text()
-                    };
-                    answersGroup.push(question);
-                });
-            }
-            answers[insatsTitle] = answersGroup;
-        });
+        var answers = [];
+        var answersGroup = getAnswers(listgroup);
+        answers[insatsTitle] = answersGroup;
+        //console.log(answers);
 
-        for (var i in answers) {
-            if (answers[i].length !== 0) {
-                $(this).closest('li').first().css('background-color', '#299c29');
-                $(this).closest('li').first().find('a').first().css('color', 'black');
-            } else {
-                $(this).closest('li').first().css('background-color', 'white');
-            }
-        }
+
+        //for (var answergroup in answers) {
+        //    if (answers[answergroup].isComplete == true) {
+        //        $(this).closest('li').first().css('background-color', '#299c29');
+        //        $(this).closest('li').first().find('a').first().css('color', 'black');
+        //    } else {
+        //        $(this).closest('li').first().css('background-color', 'white');
+        //    }
+        //}
     });
 
     //insatsprioriteringReport functions
-    var answers = [];
     function createInsatsPrioriteringReport(answers) {
         $('#reportStorage').show();
         showSubareaTitleInInsatsReport();
         var counter = 0;
         for (var key in answers) {
-            var arr = answers[key];
-            if (arr.length > 0) {
+            var answerGroup = answers[key];
+            if (answerGroup.length > 0 && answerGroup.isComplete) {
                 var tr = document.createElement('tr');
                 tr.setAttribute('class', 'insatsTr');
                 var tdInsats = document.createElement('td');
                 tdInsats.setAttribute('class', 'insatsTitleTd');
                 tdInsats.innerHTML = key;
                 tr.appendChild(tdInsats);
-                for (var i = 1; i < arr.length; i++) {
-                    var obj = arr[i];
+                for (var i = 1; i < answerGroup.length; i++) {
+                    var obj = answerGroup[i];
                     var tdInsatsQuestionValue = document.createElement('td');
                     tdInsatsQuestionValue.innerHTML = obj.value;
                     tr.appendChild(tdInsatsQuestionValue);
@@ -248,12 +305,32 @@
                 tr.appendChild(tdPrioriteringOchMotivering);
                 $('#insatsprioriteringReport').find('tbody').append(tr);
 
-                document.getElementById('inforCheckbox' + counter).addEventListener('click', addInsatsMotivering);
+                //document.getElementById('inf+orCheckbox' + counter).addEventListener('change', addInsatsMotivering());
                 counter++;
             }
         }
         addPdfButton();
     }
+
+    var counter = 1;
+    //event listener for checkboxes in the report
+    $(document).on('change', '#insatsprioriteringReport input[type=checkbox]', function (e) {
+        var td = $(this).closest('td').next();
+        if ($(this).prop('checked') == true) {
+            //alert('inside checkbox true');
+            td.html(counter);
+            createTextField(counter);
+            counter++;
+        } else {
+            td.html('');
+
+
+            //deleteTextField(counter);
+
+        };
+        return counter;
+    });
+
     function showSubareaTitleInInsatsReport() {
         var chosenDelomrade2 = document.getElementById('chosenDelomrade2');
         var selectedSubarea = document.getElementById('chosenDelomrade').innerHTML;
@@ -266,31 +343,10 @@
         $('.tab-content').hide();
         $('#tabs').hide();
     }
-    function addInsatsMotivering() {
-        var counter = 1;
-
-        //if ($(this).find('input:checkbox:first').prop('checked') == true) {
-        //    var td = $(this).find('td:gt(6)').next();
-        //    td.html(counter);
-
-        //}
-
-        //clearTextfields();
-        $('#insatsprioriteringReport tbody tr').each(function () {
-            var td = $(this).find('td:gt(6)').next();
-            if ($(this).find('input:checkbox:first').prop('checked') == true) {
-                td.html(counter);
-                createTextField(counter);
-                counter++;
-            } else {
-                td.html('');
-                deleteTextField(counter);
-            }
-        });
-    }
     function createTextField(counter) {
-        //if textfield element does not exist then create textfield and p
+        //if textfield and p element does not exist then create them
         if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
+            //alert('inside createTextfield');
             var p = document.createElement('p');
             p.setAttribute('class', 'textfieldP');
             p.setAttribute('id', 'textfieldP' + counter);
@@ -316,6 +372,27 @@
             }
         }
 
+        //alert('inside deleteTextfield');
+        //var div = document.getElementById('reportStorage');
+        //var tf = document.getElementById('textfield' + counter);
+        //var p = document.getElementById('textfieldP' + counter);
+        //console.log(tf);
+        //div.removeChild(tf);
+        //div.removeChild(p);
+
+        //if textfield and p element exist then delete them
+        //if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
+        //    alert('inside deleteTextfield');
+        //    var textfield = document.getElementById('textfield' + counter);
+        //    var p = document.getElementById('textfieldP' + counter);
+        //    console.log(p);
+        //    console.log(textfield);
+        //    //$('#textfield' + counter).remove();
+        //    //$('#textfieldP' + counter).remove();
+        //    textfield.parentNode.removeChild(textfield);
+        //    p.parentNode.removeChild(p);
+        //};
+
     }
 
     function clearTextfields() {
@@ -337,15 +414,8 @@
             format: 'a4'
         });
 
-        var specialElementHandlers = {
-            '#report': function (element, renderer) {
-                return true;
-            }
-        };
-
         pdf.addHTML($('#report')[1], 1, 1, {
-            //'width':800,
-            'elementHandlers': specialElementHandlers
+
         }, function () {
             pdf.save('test.pdf');
         });

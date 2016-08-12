@@ -535,7 +535,7 @@ namespace SoSWebb.JsonSerializer
         {
 
             Subarea2 subarea20 = new Subarea2();
-            subarea20.Title = "Psykologisk och psykosocial behandling ";
+            subarea20.Title = "Psykologisk och psykosocial behandling";
 
             Insatsen insats1 = new Insatsen();
             insats1.Title = "Integrerad behandlingsmetod. MI / KBT vid missbruk/ beroendet och samtidig depression eller integrerad behandling med KBT eller MI/ KBT vid missbruk/ beroendet och annan samtidig svår psykisk sjukdom.";
@@ -547,8 +547,6 @@ namespace SoSWebb.JsonSerializer
 
             return subarea20;
         }
-
-
 
         private static Subarea2 createInsatser_Subarea21()
         {
@@ -597,7 +595,7 @@ namespace SoSWebb.JsonSerializer
         {
 
             Subarea2 subarea23 = new Subarea2();
-            subarea23.Title = "Familjeinterventioner ";
+            subarea23.Title = "Familjeinterventioner";
             
             Insatsen insats1 = new Insatsen();
             insats1.Title = "Functional family treatment (FFT)";
@@ -666,7 +664,7 @@ namespace SoSWebb.JsonSerializer
 
             Subarea bedomningsinstrument_subarea1_2 = new Subarea();
             bedomningsinstrument_subarea1_2.Id = 1;
-            bedomningsinstrument_subarea1_2.Title = "Nyligt intag av alokohol";
+            bedomningsinstrument_subarea1_2.Title = "Nyligt intag av alkohol";
             bedomningsinstrument_subarea1_2.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea1_2.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea1_2.Values_andelklienter = new int[] { 0, 1, 2, 3 };
@@ -714,7 +712,7 @@ namespace SoSWebb.JsonSerializer
 
             Subarea bedomningsinstrument_subarea3_3 = new Subarea();
             bedomningsinstrument_subarea3_3.Id = 3;
-            bedomningsinstrument_subarea3_3.Title = "Missbruk eller beroende av canabis";
+            bedomningsinstrument_subarea3_3.Title = "Missbruk eller beroende av cannabis";
             bedomningsinstrument_subarea3_3.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea3_3.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea3_3.Values_andelklienter = new int[] { 0, 1, 2, 3 };
@@ -757,7 +755,7 @@ namespace SoSWebb.JsonSerializer
 
             Subarea bedomningsinstrument_subarea1_4 = new Subarea();
             bedomningsinstrument_subarea1_4.Id = 1;
-            bedomningsinstrument_subarea1_4.Title = "Arbetslivsinriktadrehabilitering";
+            bedomningsinstrument_subarea1_4.Title = "Arbetslivsinriktad rehabilitering";
             bedomningsinstrument_subarea1_4.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea1_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea1_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };

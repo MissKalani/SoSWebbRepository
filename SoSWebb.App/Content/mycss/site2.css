@@ -1,31 +1,8 @@
 ﻿/*insatsprioritering.html css*/
 
-body {
-    margin-bottom: 250px;
-}
-
-.messagepop {
-  background-color:#FFFFFF;
-  border:1px solid #999999;
-  cursor:default;
-  display:none;
-  margin-top: 15px;
-  position:absolute;
-  text-align:left;
-  width:394px;
-  z-index:50;
-  padding: 25px 25px 20px;
-}
-
-.messagepop p, .messagepop.div {
-  border-bottom: 1px solid #EFEFEF;
-  margin: 8px 0;
-  padding-bottom: 8px;
-}
-
 .stepB-tabcontent {
-    border-style: solid;
-    border-top-style: none;
+    /*border-style: solid;*/
+    border: solid;
     position: relative;
     bottom: 22px;
     padding: 80px;
@@ -40,6 +17,10 @@ body {
 /*tab-insatser css*/
 .insatserDiv {
     text-align: left;
+}
+#insatserDivP{
+    font-size:1em;
+    margin-bottom:15px;
 }
 
 #btn_createReport {
@@ -56,10 +37,6 @@ body {
 #q2, #q3, #q4, #q5, #q6, #q7 {
     opacity: 0.2;
 }
-
-/*.opacity{
-    opacity:0.2;
-}*/
 
 .qlistHeader {
     background-color: forestgreen;
@@ -84,7 +61,6 @@ body {
 }
 
 
-
 .list-group {
     border-style: none;
     margin-bottom: 0;
@@ -107,15 +83,12 @@ body {
     padding: 0;
 }
 
-#insatserlist > li {
-    border: 1px solid #00263e;
-    padding: 12px;
-    border-bottom-style: none;
+.insatserListBtn{
+    width: 100%;
+    text-align: left;
+    text-indent: 10px;
+    padding: 10px;
 }
-
-    #insatserlist > li:last-child {
-        border-bottom-style: solid;
-    }
 
 /*insatsprioriteringReport css*/
 
