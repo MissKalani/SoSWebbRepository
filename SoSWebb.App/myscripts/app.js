@@ -30,6 +30,8 @@
     $('#reportStorage').hide();
     $('#nav_tab-prioritering').hide();
 
+    //following functions are arranged according to process flow of data
+
     //behovsbedomningtable functions
     function createAreaRow(area) {
         var table = document.getElementById('behovsbedomningTable');
@@ -63,6 +65,10 @@
             tr.appendChild(tdOption);
         };
         table.appendChild(tr);
+    };
+    function deleteChosenSubareaRows() {
+        //chosenSubareas.length = 0;
+        $("#prioriteringsTable td").parent().remove();
     };
     function getSortedChosenSubareas() {
         var chosenSubareas = [];
@@ -154,10 +160,10 @@
         $('#nav_tab-behovsbedomning').hide();
         $('.nav a[href="#tab-prioritering"]').tab('show');
         deleteChosenSubareaRows();
-        sortedChosenSubareas = getSortedChosenSubareas();        
+        sortedChosenSubareas = getSortedChosenSubareas();
         createPrioriteringsTable(sortedChosenSubareas);
     });
-    
+
     //prioriteringstable functions
     function getFinalChosenSubAreas() {
         var i = 0;
@@ -171,14 +177,14 @@
                 kommentar: "text",
                 insatserValue: "0"
             };
-            subarea.subarea = sortedChosenSubareas[i];     
+            subarea.subarea = sortedChosenSubareas[i];
             subarea.konsekvensValue = $(this).closest('tr').find($('input[class = konsekvensgradValue]:checked')).val();
             subarea.andelklienterValue = $(this).closest('tr').find($('input[class = andelklientergradValue]:checked')).val();
             subarea.kommentar = $(this).find($('textarea')).val();
             subarea.insatserValue = $(this).closest('tr').find($('input[class = insatsergradValue]:checked')).val();
             finalChosenSubareas.push(subarea);
             i++;
-        });        
+        });
         return finalChosenSubareas;
     }
     function getSortedFinalChosenSubareasWithTotalValues(finalChosenSubareas) {
@@ -190,7 +196,7 @@
         var subareasWithTotalValue = [];
         subareasWithTotalValue.length = 0;
 
-        for (var i = 0; i < finalChosenSubareas.length; i++) {            
+        for (var i = 0; i < finalChosenSubareas.length; i++) {
             value_bedomning = finalChosenSubareas[i].subarea.value;
             value_gradKonsekvens = finalChosenSubareas[i].konsekvensValue;
             value_gradAndelKlienter = finalChosenSubareas[i].andelklienterValue;
@@ -218,7 +224,6 @@
 
         return sorted_subareasWithTotalValue;
     }
-    
 
     $('#btn_submitGradedSubareas').click(function (e) {
         hideElements();
@@ -235,52 +240,12 @@
         createPDF();
 
     });
-    
 
-
-    //button click functions 
-    $('#btn_printChosenSubareas').click(function (e) {
-        e.preventDefault();
-        window.print();
-        //createPDF();
-    });
-    $('#btn_printGradedSubareas').click(function (e) {
-        e.preventDefault();
-        window.print();
-    });
-    $('#btn_savePdfFinalGradedSubareas').click(function (e) {
-        e.preventDefault();
-        createPDF();
-    });
-
-
-
-    function deleteChosenSubareaRows() {
-        //chosenSubareas.length = 0;
-        $("#prioriteringsTable td").parent().remove();
-    };
-
-
-
-
-
-    function elementIsEmpty() {
-        if (!$('#storbehovTr').length) {
-            $('#storBehovTh').hide();
-        }
-        if (!$('#litetbehovTr').length) {
-            $('#litetBehovTh').hide();
-        }
-    }
-
-    //functions used for creating the report 
+    //creating the report 
     function hideElements() {
         $('.tab-content').hide();
         $('#tabs').hide();
     }
-
-
-
     function createBehovsbedomningReportTable(jsonObjArray) {
         //console.log(jsonObjArray);
         $('#reportStorage').show();
@@ -362,7 +327,6 @@
         //make textarea autogrow
         //$('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
     }
-
     function createPDF() {
         var pdf = new jsPDF({
             orientation: 'l',
@@ -376,5 +340,20 @@
             pdf.save('test.pdf');
         });
     }
+    
+    //step A button click functions 
+    $('#btn_printChosenSubareas').click(function (e) {
+        e.preventDefault();
+        window.print();
+        //createPDF();
+    });
+    $('#btn_printGradedSubareas').click(function (e) {
+        e.preventDefault();
+        window.print();
+    });
+    $('#btn_savePdfFinalGradedSubareas').click(function (e) {
+        e.preventDefault();
+        createPDF();
+    });
 
 });
