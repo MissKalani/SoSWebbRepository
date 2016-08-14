@@ -382,83 +382,79 @@
     }
 
 
-    function createTextField(counter) {
-        //if textfield and p element does not exist then create them
-        if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
-            //alert('inside createTextfield');
-            var p = document.createElement('p');
-            p.setAttribute('class', 'textfieldP');
-            p.setAttribute('id', 'textfieldP' + counter);
-            p.innerHTML = counter;
-            $('#reportStorage').append(p);
-            var textfield = document.createElement('textarea');
-            textfield.setAttribute('id', 'textfield' + counter);
-            textfield.setAttribute('type', 'text');
-            textfield.setAttribute('class', 'insatserReportTextfield');
-            $('#reportStorage').append(textfield);
-        }
+    //function createTextField(counter) {
+    //    //if textfield and p element does not exist then create them
+    //    if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
+    //        //alert('inside createTextfield');
+    //        var p = document.createElement('p');
+    //        p.setAttribute('class', 'textfieldP');
+    //        p.setAttribute('id', 'textfieldP' + counter);
+    //        p.innerHTML = counter;
+    //        $('#reportStorage').append(p);
+    //        var textfield = document.createElement('textarea');
+    //        textfield.setAttribute('id', 'textfield' + counter);
+    //        textfield.setAttribute('type', 'text');
+    //        textfield.setAttribute('class', 'insatserReportTextfield');
+    //        $('#reportStorage').append(textfield);
+    //    }
 
-    }
+    //}
 
-    function deleteTextField(counter) {
-        if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
-            alert('element to delete exists');
-            var textfield = document.getElementById('textfield' + counter);
-            var p = document.getElementById('textfieldP' + counter);
-            if (textfield != null && p != null) {
-                textfield.parentNode.removeChild(textfield);
-                p.parentNode.removeChild(p);
-            }
-        }
+    //function deleteTextField(counter) {
+    //    if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
+    //        alert('element to delete exists');
+    //        var textfield = document.getElementById('textfield' + counter);
+    //        var p = document.getElementById('textfieldP' + counter);
+    //        if (textfield != null && p != null) {
+    //            textfield.parentNode.removeChild(textfield);
+    //            p.parentNode.removeChild(p);
+    //        }
+    //    }
 
-        //alert('inside deleteTextfield');
-        //var div = document.getElementById('reportStorage');
-        //var tf = document.getElementById('textfield' + counter);
-        //var p = document.getElementById('textfieldP' + counter);
-        //console.log(tf);
-        //div.removeChild(tf);
-        //div.removeChild(p);
+    //    //alert('inside deleteTextfield');
+    //    //var div = document.getElementById('reportStorage');
+    //    //var tf = document.getElementById('textfield' + counter);
+    //    //var p = document.getElementById('textfieldP' + counter);
+    //    //console.log(tf);
+    //    //div.removeChild(tf);
+    //    //div.removeChild(p);
 
-        //if textfield and p element exist then delete them
-        //if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
-        //    alert('inside deleteTextfield');
-        //    var textfield = document.getElementById('textfield' + counter);
-        //    var p = document.getElementById('textfieldP' + counter);
-        //    console.log(p);
-        //    console.log(textfield);
-        //    //$('#textfield' + counter).remove();
-        //    //$('#textfieldP' + counter).remove();
-        //    textfield.parentNode.removeChild(textfield);
-        //    p.parentNode.removeChild(p);
-        //};
+    //    //if textfield and p element exist then delete them
+    //    //if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
+    //    //    alert('inside deleteTextfield');
+    //    //    var textfield = document.getElementById('textfield' + counter);
+    //    //    var p = document.getElementById('textfieldP' + counter);
+    //    //    console.log(p);
+    //    //    console.log(textfield);
+    //    //    //$('#textfield' + counter).remove();
+    //    //    //$('#textfieldP' + counter).remove();
+    //    //    textfield.parentNode.removeChild(textfield);
+    //    //    p.parentNode.removeChild(p);
+    //    //};
 
-    }
+    //}
 
-    function clearTextfields() {
-        $('#reportStorage textarea').remove();
-        $('#reportStorage p').remove();
-    }
-    function addPdfButton() {
-        var pdfButton = document.createElement('button');
-        pdfButton.innerHTML = 'Spara som PDF'
-        pdfButton.setAttribute('class', 'button');
-        pdfButton.setAttribute('id', 'insatsReportPdfButton');
-        $('.row').append(pdfButton);
-        document.getElementById('insatsReportPdfButton').addEventListener('click', createPDF);
-    }
-    function createPDF() {
-        var pdf = new jsPDF({
-            orientation: 'l',
-            unit: 'mm',
-            format: 'a4'
-        });
+    //function clearTextfields() {
+    //    $('#reportStorage textarea').remove();
+    //    $('#reportStorage p').remove();
+    //}
 
-        pdf.addHTML($('#report')[1], 1, 1, {
+    //function createPDF() {
+    //    var pdf = new jsPDF({
+    //        orientation: 'l',
+    //        unit: 'mm',
+    //        format: 'a4'
+    //    });
 
-        }, function () {
-            pdf.save('test.pdf');
-        });
-    }
+    //    pdf.addHTML($('#report')[1], 1, 1, {
+
+    //    }, function () {
+    //        pdf.save('test.pdf');
+    //    });
+    //}
+    //$('#btn_printInsatsReport').click(function (e) {
+    //    window.print();
+    //});
 
 });
 
