@@ -154,6 +154,10 @@
         $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
     }
 
+    $('#btn_printChosenSubareas').click(function (e) {
+        e.preventDefault();
+        window.print();
+    });
     $('#btn_submitChosenSubareas').click(function (e) {
         e.preventDefault();
         $('#nav_tab-prioritering').show();
@@ -225,21 +229,40 @@
         return sorted_subareasWithTotalValue;
     }
 
+    $('#btn_printGradedSubareas').click(function (e) {
+        e.preventDefault();
+        window.print();
+    });
     $('#btn_submitGradedSubareas').click(function (e) {
         hideElements();
         var finalChosenSubareas = getFinalChosenSubAreas();
-        console.log('getting final chosen subareas');
-        console.log(finalChosenSubareas);
+        //console.log('getting final chosen subareas');
+        //console.log(finalChosenSubareas);
 
         var sorted_subareasWithTotalValue = getSortedFinalChosenSubareasWithTotalValues(finalChosenSubareas);
-        console.log('getting sorted subareas with total values');
-        console.log(sorted_subareasWithTotalValue);
+        //console.log('getting sorted subareas with total values');
+        //console.log(sorted_subareasWithTotalValue);
 
         createBehovsbedomningReportTable(sorted_subareasWithTotalValue);
 
-        createPDF();
+        window.print();
+        //createPDF();
 
     });
+    function createPDF() {
+        var pdf = new jsPDF({
+            orientation: 'l',
+            unit: 'mm',
+            format: 'a4'
+        });
+
+        pdf.addHTML($('#behovbedomningReport')[1], 1, 1, {
+
+        }, function () {
+            pdf.save('test.pdf');
+        });
+    }
+
 
     //creating the report 
     function hideElements() {
@@ -323,37 +346,7 @@
             tr.appendChild(tdExtraKommentar);
 
             $('#behovsbedomningReport').find('tbody').append(tr);
-        };
-        //make textarea autogrow
-        //$('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
+        };       
     }
-    function createPDF() {
-        var pdf = new jsPDF({
-            orientation: 'l',
-            unit: 'mm',
-            format: 'a4'
-        });
-
-        pdf.addHTML($('#behovbedomningReport')[1], 1, 1, {
-
-        }, function () {
-            pdf.save('test.pdf');
-        });
-    }
-    
-    //step A button click functions 
-    $('#btn_printChosenSubareas').click(function (e) {
-        e.preventDefault();
-        window.print();
-        //createPDF();
-    });
-    $('#btn_printGradedSubareas').click(function (e) {
-        e.preventDefault();
-        window.print();
-    });
-    $('#btn_savePdfFinalGradedSubareas').click(function (e) {
-        e.preventDefault();
-        createPDF();
-    });
 
 });

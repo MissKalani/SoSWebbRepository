@@ -3,11 +3,13 @@
     padding: 0;
     border: 0;
     margin-bottom: 2%;
+    min-width: 600px;
 }
 
 @page {
     size: A4 landscape;
 }
+
 
 table, figure {
     page-break-inside: avoid;
@@ -55,7 +57,6 @@ textarea {
     resize: none;
     height: 80px;
 }
-
 /*@page :top {
     margin-bottom: 520px;
 }
@@ -173,20 +174,9 @@ table.table {
         background-color: #10374f;
     }
 
-.btnHome {
-    position: relative;
-    font-size: 25px;
-    top: 55px;
-    right: 520px;
-}
-
-    .btnHome > img {
-        width: 45px;
-    }
-
 
 /*prioriteringsTable css*/
-.storHeader, .litetHeader {  
+.storHeader, .litetHeader {
     padding: 10px;
 }
 
@@ -194,6 +184,9 @@ table.table {
     text-align: left;
 }
 
+.prioriteringsTableTd {
+    text-align: left;
+}
 
 /*behovsbedomningReport css*/
 #behovsbedomningReport {
@@ -231,7 +224,7 @@ td.extraKommentarReportTd > textarea {
 }
 
 /*desktop screens*/
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1200px) {
     body {
         width: 95%;
     }
@@ -240,5 +233,11 @@ td.extraKommentarReportTd > textarea {
 @media only screen and (max-width: 1920px) {
     body {
         width: 98%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        width: 90%;
     }
 }

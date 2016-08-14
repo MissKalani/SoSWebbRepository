@@ -8,9 +8,9 @@
     padding: 80px;
 }
 
-.stepB-row{
-    width:95%;
-    margin:auto;
+.stepB-row {
+    width: 95%;
+    margin: auto;
 }
 
 /*tab-delomrade css*/
@@ -18,6 +18,10 @@
     margin-top: 10px;
     margin-bottom: 10px;
     float: right;
+}
+
+.dropdown{
+    font-size:larger;
 }
 
 
@@ -58,12 +62,12 @@
     height: 50px;
     text-align: left;
     padding-top: 10px;
-    width: 30%;
-    font-size: 10px;
+    width: 20%;
+    font-size: 15px;
 }
 
 .qoptions {
-    width: 70%;
+    width: 80%;
     height: 50px;
     background-color: #ccc;
 }
@@ -75,20 +79,24 @@
 }
 
 .checkboxDiv {
+    width: 16%;
     padding-top: 8px;
     padding-right: 0px;
 }
 
     .checkboxDiv label {
-        font-size: 8px;
+        display: list-item;
+        cursor: pointer;
         position: relative;
-        bottom: 4px;
-        left: 4px;
-    }
+        font-size: 13px;
+        bottom: 20px;
+        left: 15px;
+    }       
 
-div.list-group{
-    height:300px ;
+div.list-group {
+    height: 300px;
 }
+
 .list-group > ul {
     padding: 0;
 }
@@ -101,43 +109,47 @@ div.list-group{
 }
 
 /*insatsprioriteringReport css*/
-
-#insatsprioriteringReport {
-    background-color: white;
-    border-style: none;
-}
-
 .reportSubtitle {
     border-bottom: 1px solid green;
     text-align: center;
 }
 
-.insatsTr {
+.reportColumnHeader > th:nth-child(2), th:nth-child(8) {
+    text-align: center;
+}
+
+
+.insatsprioriteringTr {
     border-bottom: 1px solid green;
 }
 
-/*.insatsTr > td {
-        padding-left:1px;
-        padding-right:15px;
-        border-bottom: 1px solid green;
-    }*/
+    .insatsprioriteringTr > td {
+        text-align: left;
+        width: 10%;
+        word-wrap: normal;
+        padding-left: 10px;
+        padding-right: 15px;
+    }
 
-.insatsTitleTd {
+        .insatsprioriteringTr > td:first-child {
+            width: 20%;
+        }
+
+        .insatsprioriteringTr > td:nth-child(2), td:nth-child(8) {
+            text-align: center;
+        }
+
+        .insatsprioriteringTr > td > textarea.comment {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+.insatsArrow {
+    color: #00263e;
+}
+
+.insatsMarkering {
+    float: right;
     font-weight: bold;
-    text-align: left;
-}
-
-.textfieldP {
-    width: 1%;
-    float: left;
-    clear: both;
-}
-
-.insatserReportTextfield {
-    width: 99%;
-    margin-bottom: 5px;
-}
-
-.insatserReportPdfButton {
-    margin-top: 20px;
+    margin-right: 42px;
 }
