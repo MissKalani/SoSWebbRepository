@@ -73,6 +73,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\icon\iconhome.png" />
+    <Content Include="Content\mycss\print.css" />
     <Content Include="Content\mycss\site2.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

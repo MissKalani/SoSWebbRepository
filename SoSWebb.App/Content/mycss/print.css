@@ -1,0 +1,13 @@
+﻿@page {
+    size: A4 landscape;
+}
+
+@media print{
+    #reportStorage{
+        transform: scale(0.8,0.9);
+        font-size:9px;
+        margin: 0 auto !important; 
+        /*overflow:visible;*/
+       
+    }
+}
