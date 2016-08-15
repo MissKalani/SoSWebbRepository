@@ -281,8 +281,8 @@
         hideElements();
         var completeAnswers = getCompleteAnswers(answers);
         var sorted_completeAnswers = getSortedCompleteAnswers(completeAnswers);
-        console.log('getting sorted answergroup');
-        console.log(sorted_completeAnswers);
+        //console.log('getting sorted answergroup');
+        //console.log(sorted_completeAnswers);
         createInsatsPrioriteringReport(sorted_completeAnswers);
     });
     function getSortedCompleteAnswers(completeAnswers) {
@@ -323,7 +323,7 @@
     function createInsatsPrioriteringReport(sorted_completeAnswers) {
         var counter = 0;
         $('#reportStorage').show();
-        showSubareaTitleInInsatsReport(); 
+        showSubareaTitleInInsatsReport();
         for (var obj in sorted_completeAnswers) {
             var tr = document.createElement('tr');
             tr.setAttribute('class', 'insatsprioriteringTr');
@@ -338,7 +338,7 @@
             var tdInforas = document.createElement('td');
             var tdMotivering = document.createElement('td');
             tdMotivering.setAttribute('class', 'comment');
-            tdMotivering.setAttribute('id', 'comment'+counter);
+            tdMotivering.setAttribute('id', 'comment' + counter);
 
             tdInsats.innerHTML = sorted_completeAnswers[obj].insats;
             tdPrioritering.innerHTML = sorted_completeAnswers[obj].obj[1].valueText;
@@ -375,9 +375,20 @@
             tr.appendChild(tdMotivering);
             $('#insatsprioriteringReport').find('tbody').append(tr);
 
-            document.getElementById('comment' + counter).addEventListener('click', addInsatsMotivering);
+            //document.getElementById('comment' + counter).addEventListener('click', addInsatsMotivering(counter));
             counter++;
         }
+
+        var counter = 1;
+
+        $(document).on('click', '.comment', function () {
+            var td = $(this).first();
+            if ($(td).text().trim() == '') {
+                td.text(counter);
+                counter++;
+            }
+
+        });
 
     }
 
@@ -387,19 +398,17 @@
         window.print();
     });
 
-    function addInsatsMotivering() {
-        var counter = 1;
+    function addInsatsMotivering(counter) {
+        alert('in textarea now');
+        var tdMotivering = document.getElementById('comment' + counter);
+        console.log(tdMotivering);
+        if ($(tdMotivering).is(':empty')) {
+            tdMotivering.html(counter);
+            counter++;
+        } else {
+            tdMotivering.html('');
+        }
 
-        $('#insatsprioriteringReport tbody tr').each(function () {
-            var td = $(this).find('td:gt(6)').next();
-            $(td).text('YOLO');
-            //if ($(this).text().trim() == "") {
-            //    alert('hello');
-            //    //console.log()
-            //    $(this).text(counter);
-            //    counter++;
-            //}
-        });
     }
 
     function createTextField(counter) {
@@ -418,7 +427,6 @@
             $('#reportStorage').append(textfield);
             $('.insatserReportTextfield').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
         }
-
     }
 
     function deleteTextField(counter) {
