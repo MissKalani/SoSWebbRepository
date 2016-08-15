@@ -25,7 +25,7 @@
         $('#nav_tab-insatser').show();
         $('#nav_tab-delomrade').hide();
     });
-    
+
     //reading data2.json and return as promise
     function getSelectedSubareaInsatslist() {
         var insatserlistPromise = jQuery.Deferred();
@@ -43,7 +43,7 @@
     }
     //show promise
     function showInsatserList() {
-        var promise = [];       
+        var promise = [];
         promise = getSelectedSubareaInsatslist();
         promise.done(function (insatserlist) {
             $('#accordion ul li').remove();
@@ -167,7 +167,7 @@
         a > b ? $(".list-group").css("height", a) : $(".stepB-tabcontent").css("height", b);
 
     }
-    
+
     window.unlockCheckboxes = function (i) {
         $('input.group2_' + i + '').removeAttr('disabled', 'disabled');
         $('input.group3_' + i + '').removeAttr('disabled', 'disabled');
@@ -219,7 +219,6 @@
                     //console.log(question);
                 });
             };
-
             if (answersGroup.length == 0) {
                 answersGroup.isComplete = false;
             }
@@ -229,7 +228,7 @@
                     answersGroup.isComplete = false;
                 }
             });
-            checkIfAnswered(element,answersGroup);
+            checkIfAnswered(element, answersGroup);
             answers[insatsTitle] = answersGroup;
             //console.log(answers);
         });
@@ -273,7 +272,7 @@
 
         var insatsTitle = $(this).closest('li').first().find('button').first().val();
         var listgroup = $(this).find('.list-group ul').first();
-        var answers = getAnswers(insatsTitle, listgroup);        
+        var answers = getAnswers(insatsTitle, listgroup);
     });
 
     //creating insatsprioritering report functions
@@ -320,11 +319,11 @@
         $('.tab-content').hide();
         $('#tabs').hide();
     }
-    
-    function createInsatsPrioriteringReport(sorted_completeAnswers) {
-        $('#reportStorage').show();
-        showSubareaTitleInInsatsReport();
 
+    function createInsatsPrioriteringReport(sorted_completeAnswers) {
+        var counter = 0;
+        $('#reportStorage').show();
+        showSubareaTitleInInsatsReport(); 
         for (var obj in sorted_completeAnswers) {
             var tr = document.createElement('tr');
             tr.setAttribute('class', 'insatsprioriteringTr');
@@ -338,6 +337,8 @@
             var tdHallbar = document.createElement('td');
             var tdInforas = document.createElement('td');
             var tdMotivering = document.createElement('td');
+            tdMotivering.setAttribute('class', 'comment');
+            tdMotivering.setAttribute('id', 'comment'+counter);
 
             tdInsats.innerHTML = sorted_completeAnswers[obj].insats;
             tdPrioritering.innerHTML = sorted_completeAnswers[obj].obj[1].valueText;
@@ -362,8 +363,6 @@
                 $(tdHallbar).css('color', 'red');
             };
             tdInforas.innerHTML = '<input type="checkbox">';
-            tdMotivering.innerHTML = '<textarea class="comment" ></textarea>';
-
 
             tr.appendChild(tdInsats);
             tr.appendChild(tdPrioritering);
@@ -375,69 +374,70 @@
             tr.appendChild(tdInforas);
             tr.appendChild(tdMotivering);
             $('#insatsprioriteringReport').find('tbody').append(tr);
+
+            document.getElementById('comment' + counter).addEventListener('click', addInsatsMotivering);
+            counter++;
         }
-        //make textarea autogrow
-        $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
 
     }
 
 
-    //function createTextField(counter) {
-    //    //if textfield and p element does not exist then create them
-    //    if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
-    //        //alert('inside createTextfield');
-    //        var p = document.createElement('p');
-    //        p.setAttribute('class', 'textfieldP');
-    //        p.setAttribute('id', 'textfieldP' + counter);
-    //        p.innerHTML = counter;
-    //        $('#reportStorage').append(p);
-    //        var textfield = document.createElement('textarea');
-    //        textfield.setAttribute('id', 'textfield' + counter);
-    //        textfield.setAttribute('type', 'text');
-    //        textfield.setAttribute('class', 'insatserReportTextfield');
-    //        $('#reportStorage').append(textfield);
-    //    }
 
-    //}
+    $('#btn_printInsatsReport').click(function (e) {
+        window.print();
+    });
 
-    //function deleteTextField(counter) {
-    //    if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
-    //        alert('element to delete exists');
-    //        var textfield = document.getElementById('textfield' + counter);
-    //        var p = document.getElementById('textfieldP' + counter);
-    //        if (textfield != null && p != null) {
-    //            textfield.parentNode.removeChild(textfield);
-    //            p.parentNode.removeChild(p);
-    //        }
-    //    }
+    function addInsatsMotivering() {
+        var counter = 1;
 
-    //    //alert('inside deleteTextfield');
-    //    //var div = document.getElementById('reportStorage');
-    //    //var tf = document.getElementById('textfield' + counter);
-    //    //var p = document.getElementById('textfieldP' + counter);
-    //    //console.log(tf);
-    //    //div.removeChild(tf);
-    //    //div.removeChild(p);
+        $('#insatsprioriteringReport tbody tr').each(function () {
+            var td = $(this).find('td:gt(6)').next();
+            $(td).text('YOLO');
+            //if ($(this).text().trim() == "") {
+            //    alert('hello');
+            //    //console.log()
+            //    $(this).text(counter);
+            //    counter++;
+            //}
+        });
+    }
 
-    //    //if textfield and p element exist then delete them
-    //    //if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
-    //    //    alert('inside deleteTextfield');
-    //    //    var textfield = document.getElementById('textfield' + counter);
-    //    //    var p = document.getElementById('textfieldP' + counter);
-    //    //    console.log(p);
-    //    //    console.log(textfield);
-    //    //    //$('#textfield' + counter).remove();
-    //    //    //$('#textfieldP' + counter).remove();
-    //    //    textfield.parentNode.removeChild(textfield);
-    //    //    p.parentNode.removeChild(p);
-    //    //};
+    function createTextField(counter) {
+        //if textfield and p element does not exist then create them
+        if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
+            //alert('inside createTextfield');
+            var p = document.createElement('p');
+            p.setAttribute('class', 'textfieldP');
+            p.setAttribute('id', 'textfieldP' + counter);
+            $(p).text(counter);
+            $('#reportStorage').append(p);
+            var textfield = document.createElement('textarea');
+            textfield.setAttribute('id', 'textfield' + counter);
+            textfield.setAttribute('type', 'text');
+            textfield.setAttribute('class', 'insatserReportTextfield');
+            $('#reportStorage').append(textfield);
+            $('.insatserReportTextfield').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
+        }
 
-    //}
+    }
 
-    //function clearTextfields() {
-    //    $('#reportStorage textarea').remove();
-    //    $('#reportStorage p').remove();
-    //}
+    function deleteTextField(counter) {
+        if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
+            alert('element to delete exists');
+            var textfield = document.getElementById('textfield' + counter);
+            var p = document.getElementById('textfieldP' + counter);
+            if (textfield != null && p != null) {
+                textfield.parentNode.removeChild(textfield);
+                p.parentNode.removeChild(p);
+            }
+        }
+
+    }
+
+    function clearTextfields() {
+        $('#reportStorage textarea').remove();
+        $('#reportStorage p').remove();
+    }
 
     //function createPDF() {
     //    var pdf = new jsPDF({
@@ -452,9 +452,7 @@
     //        pdf.save('test.pdf');
     //    });
     //}
-    //$('#btn_printInsatsReport').click(function (e) {
-    //    window.print();
-    //});
+
 
 });
 
