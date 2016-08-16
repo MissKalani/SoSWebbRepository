@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="Content/mycss/site.css" />
     <link rel="stylesheet" href="Content/bootstrap.css" />
     <link rel="stylesheet" href="Content/mycss/print.css" />
-    <!--<link rel="stylesheet" href="Content/font-awesome.min.css" />-->
-    <!--jspdf script-->
-    <script type="text/javascript" src="Scripts/jspdf.min.js"></script>
-    <!--<script type="text/javascript" src="Scripts/jspdf.debug.js"></script>-->
 </head>
 <body>
     <div class="container">
@@ -31,7 +27,7 @@
                 <div class="tab-pane active" id="tab-behovsbedomning">
                     <div class="table-container" style="overflow-x:auto">
                         <table id="behovsbedomningTable" class="table">
-                            <tbody>
+                            <thead>
                                 <tr class="trHeader">
                                     <th scope="row" class="areaTitle">Område</th>
                                     <th class="subareaHeadTitle">Delområden</th>
@@ -60,7 +56,8 @@
                                         </span>
                                     </th>
                                 </tr>
-                            </tbody>
+                            </thead>
+                            <tbody></tbody>
                         </table>
                     </div>
                     <div class="center-block">
@@ -71,7 +68,7 @@
                 <div class="tab-pane" id="tab-prioritering">
                     <div class="table-container" style="overflow-x:auto">
                         <table id="prioriteringsTable" class="table">
-                            <tbody>
+                            <thead>
                                 <tr class="trHeader">
                                     <th scope="row" class="chosenSubareaTitle">Delområde</th>
                                     <th class="options gradering_insatskonsekvens">Gradering av konsekvens av om insats(er) uteblir</th>
@@ -79,7 +76,8 @@
                                     <th class="options gradering_kommentar">Beskrivning av VH-specifika omständighet(er)</th>
                                     <th class="options gradering_insatser">Prioritering av nya insatser</th>
                                 </tr>
-                            </tbody>
+                            </thead>
+                            <tbody></tbody>
                         </table>
                     </div>
                     <div class="center-block">
@@ -93,7 +91,7 @@
             <div class="container" style="overflow-x:auto">
                 <div class="table" id="behovsbedomningReport">
                     <table>
-                        <tbody>
+                        <thead>
                             <tr class="reportTitle">
                                 <th colspan="8">Behovsbedömning av delområden</th>
                             </tr>
@@ -107,19 +105,17 @@
                                 <th>Prioritering av nya insatser</th>
                                 <th>Kommentar</th>
                             </tr>
-                        </tbody>
+                        </thead>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-    <script src="Scripts/jquery-2.2.4.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/html2canvas.js"></script>
-    <script src="Scripts/underscore-min.js"></script>
+    <script src="Scripts/jquery-2.2.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>  
     <script src="Scripts/jquery.ns-autogrow.min.js"></script>
     <script src="myscripts/app.js"></script>
     <script src="myscripts/js.js"></script>
-
 </body>
 </html>

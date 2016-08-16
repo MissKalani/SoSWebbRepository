@@ -49,12 +49,13 @@
             $('#accordion ul li').remove();
             for (var i in insatserlist) {
                 checkTitle(insatserlist[i].title);
-                console.log(insatserlist[i].title);
-                $('#insatserlist').append('<li><button class="insatserListBtn" value="' + insatserlist[i].title + '" id="insats' + i + '"'
+                $('#insatserlist').append('<div class="panel-heading"> <a class="btn btn-default insatserListBtn" id="insats' + i + '"'
                     + 'data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" aria-expanded="true">'
-                    + '<span class="glyphicon glyphicon-arrow-down insatsArrow"></span> ' + insatserlist[i].title + ' <span class="insatsMarkering">&nbsp;</span> </button> '
-                    + '<div id="collapse' + i + '" class="collapse" ><div class ="list-group">'
-                    + ' <ul id="questionlist' + i + '"></ul></div></li></li>');
+                    + '<span class="glyphicon glyphicon-arrow-down insatsArrow"></span> ' + insatserlist[i].title + '<span class="insatsMarkering">&nbsp;</span></a> '
+                    + '<input type="hidden" value="' + insatserlist[i].title + '" />'
+                    + '<div id="collapse' + i + '" class="collapse"><div class ="panel-body list-group">'
+                    + ' <ul id="questionlist' + i + '"></ul>'
+                    + ' </div></div></div>');
                 appendQuestionList(i);
                 oneCheckboxAtATime(i);
             }
@@ -69,20 +70,20 @@
     }
     function appendQuestionList(i) {
         $('.list-group #questionlist' + i + '').append('<li id="q1"><div id="question' + i + '" class="question col-xs-6">Kan insatsen möta behoven? </div><div class="qoptions col-xs-6">'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_a' + i + '" class="group1_' + i + '" value="0"><label for="group1_a' + i + '">Nej</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_b' + i + '" class="group1_' + i + '" value="0"><label for="group1_b' + i + '">Sannolikt inte</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_c' + i + '" class="group1_' + i + '" value="0"><label for="group1_c' + i + '">Osäkert</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_d' + i + '" class="group1_' + i + '" value="2"><label for="group1_d' + i + '">Sannolikt Ja</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_e' + i + '" class="group1_' + i + '" value="3"><label for="group1_e' + i + '">Ja</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_f' + i + '" class="group1_' + i + '" value="1"><label for="group1_f' + i + '">Varierar</label></span>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_a' + i + '" class="group1_' + i + '" value="0"><label for="group1_a' + i + '">Nej</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_b' + i + '" class="group1_' + i + '" value="0"><label for="group1_b' + i + '">Sannolikt inte</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_c' + i + '" class="group1_' + i + '" value="0"><label for="group1_c' + i + '">Osäkert</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_d' + i + '" class="group1_' + i + '" value="2"><label for="group1_d' + i + '">Sannolikt Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_e' + i + '" class="group1_' + i + '" value="3"><label for="group1_e' + i + '">Ja</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group1_f' + i + '" class="group1_' + i + '" value="1"><label for="group1_f' + i + '">Varierar</label></div>'
             + '</div></li>');
         $('.list-group #questionlist' + i + '').append('<li id="q2"><div id="question' + i + '" class="question col-xs-6"">Vilken prioritering har insatsen i NR? </div><div class="qoptions col-xs-6">'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_a' + i + '" class="group2_' + i + '" disabled value="5"><label for="group2_a' + i + '">1</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_b' + i + '" class="group2_' + i + '" disabled value="4"><label for="group2_b' + i + '">2</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_c' + i + '" class="group2_' + i + '" disabled value="3"><label for="group2_c' + i + '">3</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_d' + i + '" class="group2_' + i + '" disabled value="2"><label for="group2_d' + i + '">4</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_e' + i + '" class="group2_' + i + '" disabled value="1"><label for="group2_e' + i + '">5</label></span>'
-            + '<span class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_f' + i + '" class="group2_' + i + '" disabled value="0"><label for="group2_f' + i + '">Annan</label></span>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_a' + i + '" class="group2_' + i + '" disabled value="5"><label for="group2_a' + i + '">1</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_b' + i + '" class="group2_' + i + '" disabled value="4"><label for="group2_b' + i + '">2</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_c' + i + '" class="group2_' + i + '" disabled value="3"><label for="group2_c' + i + '">3</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_d' + i + '" class="group2_' + i + '" disabled value="2"><label for="group2_d' + i + '">4</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_e' + i + '" class="group2_' + i + '" disabled value="1"><label for="group2_e' + i + '">5</label></div>'
+            + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group2_f' + i + '" class="group2_' + i + '" disabled value="0"><label for="group2_f' + i + '">Annan</label></div>'
             + '</div></li>');
         $('.list-group #questionlist' + i + '').append('<li id="q3"><div id="question' + i + '" class="question col-xs-6"">Är insatsen värderingsmässigt acceptabel för de flesta aktörer? </div><div class="qoptions col-xs-6">'
             + '<div class="checkboxDiv col-xs-2"><input type="checkbox" id="group3_a' + i + '" class="group3_' + i + '" disabled value="0"><label for="group3_a' + i + '">Nej</label></div>'
@@ -202,10 +203,13 @@
 
     var answers = [];
     function getAnswers(insatsTitle, listgroup) {
+        //console.log(listgroup);
         $(listgroup).each(function (index, element) {
             var answersGroup = [];
             answersGroup.isComplete = true;
             var listItems = $(element).find('li');
+            //console.log(listItems);
+
             var firstQuestion = listItems[0];
             var checked = $(firstQuestion).find('input[type="checkbox"]:checked').val();
             if (checked > 0) {
@@ -230,18 +234,19 @@
             });
             checkIfAnswered(element, answersGroup);
             answers[insatsTitle] = answersGroup;
-            //console.log(answers);
+            console.log(answers);
         });
         return answers;
     }
     function checkIfAnswered(element, answersGroup) {
-        var button = $(element).closest('div').parent().prev();
+        var span = $(element).closest('div').parent().prev().prev().find('.insatsMarkering');
+        console.log(span);
         if (answersGroup.length > 0 && answersGroup.isComplete) {
-            $(button).find('.insatsMarkering').text('Klarmarkerad');
-            $(button).find('.insatsMarkering').css('color', '#3c763d');
+            $(span).text('Klarmarkerad');
+            $(span).css('color', '#3c763d');
         } else {
-            $(button).find('.insatsMarkering').text('Ej klarmarkerad');
-            $(button).find('.insatsMarkering').css('color', 'red');
+            $(span).text('Ej klarmarkerad');
+            $(span).css('color', 'red');
         }
     }
     function getCompleteAnswers(answers) {
@@ -267,10 +272,12 @@
         });
     });
     $(document).on('hide.bs.collapse', '#accordion .collapse', function (e) {
-        var button = $(this).prev();
-        $(button).find('span:first-child').addClass('glyphicon-arrow-down').removeClass('glyphicon-arrow-up');
+        var div = $(this).prev();
+        $(div).find('span:first-child').addClass('glyphicon-arrow-down').removeClass('glyphicon-arrow-up');
 
-        var insatsTitle = $(this).closest('li').first().find('button').first().val();
+        var insatsTitle = $(this).prev().val();
+        console.log(insatsTitle);
+
         var listgroup = $(this).find('.list-group ul').first();
         var answers = getAnswers(insatsTitle, listgroup);
     });
@@ -391,11 +398,9 @@
                 td.css('cursor', 'default');
                 createTextField(counter);
                 counter++;
-            } 
+            }
         });
     }
-
-
 
     $('#btn_printInsatsReport').click(function (e) {
         window.print();

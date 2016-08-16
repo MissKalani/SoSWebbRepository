@@ -81,10 +81,7 @@
     <Content Include="myscripts\app2.js" />
     <Content Include="myscripts\js.js" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\CollapsibleLists.compressed.js" />
-    <Content Include="Scripts\html2canvas.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -101,7 +98,6 @@
     <None Include="data\data.json" />
     <None Include="data\data2.json" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
     <None Include="Web.Debug.config">
@@ -116,10 +112,6 @@
     <Content Include="index.html" />
     <Content Include="myscripts\app.js" />
     <Content Include="Scripts\jquery.ns-autogrow.min.js" />
-    <Content Include="Scripts\jspdf.debug.js" />
-    <Content Include="Scripts\jspdf.min.js" />
-    <Content Include="Scripts\pdfmake.min.js" />
-    <Content Include="Scripts\underscore-min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
