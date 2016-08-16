@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="Content/mycss/site2.css" />
     <link rel="stylesheet" href="Content/mycss/print.css" />
 
-    <!--jspdf script-->
-    <script type="text/javascript" src="Scripts/jspdf.min.js"></script>
-    <script type="text/javascript" src="Scripts/jspdf.debug.js"></script>
 </head>
 <body>
     <div class="container">
@@ -49,8 +46,8 @@
                             [*]Ej central rekommendation eftersom det vetenskapliga underlaget är begränsat. Insatsen har dock påvisats vara associerad med en mycket
                             hög andel som påbörjar och fullföljer behandling.
                         </p>
-                        <div id="accordion" role="tablist" aria-multiselectable="true">
-                            <ul id="insatserlist"></ul>
+                        <div id="accordion" class="panel-group">
+                            <div class="panel panel-default" id="insatserlist"></div>
                         </div>
                         <input class="button" id="btn_createReport" type="submit" name="Rapport" value="Skapa Rapport">
                     </div>
@@ -60,39 +57,40 @@
                 <div class="container" style="overflow-x:auto">
                     <div class="table" id="insatsprioriteringReport">
                         <table>
-                            <tr class="reportTitle">
-                                <th scope="row" colspan="9">Prioritering mellan insatser</th>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="reportSubtitle" colspan="9">Delområde : <span id="chosenDelomrade2"></span> </th>
-                            </tr>
-                            <tr class="reportColumnHeader">
-                                <th scope="row">Insats</th>
-                                <th>Prioritering i NR</th>
-                                <th>Är insatsen värderingsmässigt acceptabel?</th>
-                                <th>Medför insatsen få eller inga oönskade effekter?</th>
-                                <th>Kan insatsen implementeras utan anpassning?</th>
-                                <th>Är behovet av resurser för att genomföra insatsen lågt?</th>
-                                <th>Är insatsen hållbar över tid?</th>
-                                <th>Bör införas?</th>
-                                <th>Prioritering och motivering</th>
-                            </tr>
+                            <tbody>
+                                <tr class="reportTitle">
+                                    <th scope="row" colspan="9">Prioritering mellan insatser</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="reportSubtitle" colspan="9">Delområde : <span id="chosenDelomrade2"></span> </th>
+                                </tr>
+                                <tr class="reportColumnHeader">
+                                    <th scope="row">Insats</th>
+                                    <th>Prioritering i NR</th>
+                                    <th>Är insatsen värderingsmässigt acceptabel?</th>
+                                    <th>Medför insatsen få eller inga oönskade effekter?</th>
+                                    <th>Kan insatsen implementeras utan anpassning?</th>
+                                    <th>Är behovet av resurser för att genomföra insatsen lågt?</th>
+                                    <th>Är insatsen hållbar över tid?</th>
+                                    <th>Bör införas?</th>
+                                    <th>Prioritering och motivering</th>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     <div class="center-block">
                         <input class="button" id="btn_printInsatsReport" type="submit" name="submitSubareas" value="Skriv ut">
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="Scripts/jquery-2.2.4.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/html2canvas.js"></script>
+    <script src="Scripts/jquery-2.2.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery.ns-autogrow.min.js"></script>
     <script src="myscripts/app2.js"></script>
-    <script src="myscripts/js.js"></script>
+    <!-- <script src="myscripts/js.js"></script>-->
 </body>
 </html>
 

@@ -31,34 +31,36 @@
                 <div class="tab-pane active" id="tab-behovsbedomning">
                     <div class="table-container" style="overflow-x:auto">
                         <table id="behovsbedomningTable" class="table">
-                            <tr class="trHeader">
-                                <th scope="row" class="areaTitle">Område</th>
-                                <th class="subareaHeadTitle">Delområden</th>
-                                <th class="options">
-                                    Inget<span>
-                                        <a href="#">
-                                            <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
-                                               data-content="Inget behov = verksamheten erbjuder effektiva insatser inom området och dessa bedöms täcka behovet. <br> ELLER - inga clienter har de tillstånd som beskrivs inom området"></i>
-                                        </a>
-                                    </span>
-                                </th>
-                                <th class="options">
-                                    Litet<span>
-                                        <a href="#">
-                                            <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
-                                               data-content="Litet behov = verksamheten erbjuder en del effektiva insatser men dessa bedöms inte heltäckande. <br> ELLER - relativt få klienter har de tillstånd som beskrivs inom området"></i>
-                                        </a>
-                                    </span>
-                                </th>
-                                <th class="options">
-                                    Stort<span>
-                                        <a href="#">
-                                            <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
-                                               data-content="Stort behov = verksamheten erbjuder inga effektiva insatser inom området, trots att många klienter bedöms behöva dessa."></i>
-                                        </a>
-                                    </span>
-                                </th>
-                            </tr>
+                            <tbody>
+                                <tr class="trHeader">
+                                    <th scope="row" class="areaTitle">Område</th>
+                                    <th class="subareaHeadTitle">Delområden</th>
+                                    <th class="options">
+                                        Inget<span>
+                                            <a href="#">
+                                                <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
+                                                   data-content="Inget behov = verksamheten erbjuder effektiva insatser inom området och dessa bedöms täcka behovet. <br> ELLER - inga clienter har de tillstånd som beskrivs inom området"></i>
+                                            </a>
+                                        </span>
+                                    </th>
+                                    <th class="options">
+                                        Litet<span>
+                                            <a href="#">
+                                                <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
+                                                   data-content="Litet behov = verksamheten erbjuder en del effektiva insatser men dessa bedöms inte heltäckande. <br> ELLER - relativt få klienter har de tillstånd som beskrivs inom området"></i>
+                                            </a>
+                                        </span>
+                                    </th>
+                                    <th class="options">
+                                        Stort<span>
+                                            <a href="#">
+                                                <i class="fa fa-info-circle" data-toggle="popover" data-trigger="hover" data-html="true"
+                                                   data-content="Stort behov = verksamheten erbjuder inga effektiva insatser inom området, trots att många klienter bedöms behöva dessa."></i>
+                                            </a>
+                                        </span>
+                                    </th>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     <div class="center-block">
@@ -69,19 +71,15 @@
                 <div class="tab-pane" id="tab-prioritering">
                     <div class="table-container" style="overflow-x:auto">
                         <table id="prioriteringsTable" class="table">
-                            <tr class="trHeader">
-                                <th scope="row" class="chosenSubareaTitle">Delområde</th>
-                                <th class="options gradering_insatskonsekvens">Gradering av konsekvens av om insats(er) uteblir</th>
-                                <th class="options gradering_andelklienter">Gradering för andel klienter som berörs om insats(er) uteblir</th>
-                                <th class="options gradering_kommentar">Beskrivning av VH-specifika omständighet(er)</th>
-                                <th class="options gradering_insatser">Prioritering av nya insatser</th>
-                            </tr>
-                            <!--<tr class="trStortBehov">
-                                <th colspan="5" id="storBehovTh">Stort behov</th>
-                            </tr>
-                            <tr class="trLitetBehov">
-                                <th colspan="5" id="litetBehovTh">Litet behov</th>
-                            </tr>-->
+                            <tbody>
+                                <tr class="trHeader">
+                                    <th scope="row" class="chosenSubareaTitle">Delområde</th>
+                                    <th class="options gradering_insatskonsekvens">Gradering av konsekvens av om insats(er) uteblir</th>
+                                    <th class="options gradering_andelklienter">Gradering för andel klienter som berörs om insats(er) uteblir</th>
+                                    <th class="options gradering_kommentar">Beskrivning av VH-specifika omständighet(er)</th>
+                                    <th class="options gradering_insatser">Prioritering av nya insatser</th>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     <div class="center-block">
@@ -95,19 +93,21 @@
             <div class="container" style="overflow-x:auto">
                 <div class="table" id="behovsbedomningReport">
                     <table>
-                        <tr class="reportTitle">
-                            <th colspan="8">Behovsbedömning av delområden</th>
-                        </tr>
-                        <tr class="reportColumnHeader">
-                            <th scope="row">Område</th>
-                            <th>Delområde</th>
-                            <th>Prioritering</th>
-                            <th>Gradering av konsekvens om insats(er) uteblir </th>
-                            <th>Gradering för andel klienter som berörs om instast(er) uteblir</th>
-                            <th>Beskrivning av VH-specifika omständighet(er)</th>
-                            <th>Prioritering av nya insatser</th>
-                            <th>Kommentar</th>
-                        </tr>
+                        <tbody>
+                            <tr class="reportTitle">
+                                <th colspan="8">Behovsbedömning av delområden</th>
+                            </tr>
+                            <tr class="reportColumnHeader">
+                                <th scope="row">Område</th>
+                                <th>Delområde</th>
+                                <th>Prioritering</th>
+                                <th>Gradering av konsekvens om insats(er) uteblir </th>
+                                <th>Gradering för andel klienter som berörs om instast(er) uteblir</th>
+                                <th>Beskrivning av VH-specifika omständighet(er)</th>
+                                <th>Prioritering av nya insatser</th>
+                                <th>Kommentar</th>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
