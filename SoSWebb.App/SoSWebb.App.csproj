@@ -79,6 +79,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="insatsprioritering.html" />
     <Content Include="myscripts\app2.js" />
+    <Content Include="myscripts\js.js" />
     <Content Include="packages.config" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

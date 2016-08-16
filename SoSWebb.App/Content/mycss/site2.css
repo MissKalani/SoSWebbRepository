@@ -33,6 +33,7 @@
     font-size: 1em;
     margin-bottom: 2%;
 }
+
 .insatsArrow {
     color: #00263e;
 }
@@ -44,7 +45,7 @@
 }
 
 #btn_createReport {
-    margin-top: 2%;    
+    margin-top: 2%;
     float: right;
 }
 
@@ -79,7 +80,6 @@ div.list-group {
 
     .list-group > ul > li > div {
         padding-top: 1%;
-
     }
 
 
@@ -111,10 +111,13 @@ div.qoptions {
     }
 
 .insatserListBtn {
+    /*background-color:#999;*/
+    color: #000;
     width: 100%;
     text-align: left;
     text-indent: 10px;
     padding: 1%;
+    /*display:inline-block;*/
 }
 
 /*insatsprioriteringReport css*/
@@ -142,15 +145,24 @@ div.qoptions {
             width: 20%;
         }
 
-        .insatsprioriteringTr > td:nth-child(2), td:nth-child(8) {
+        .insatsprioriteringTr > td:nth-child(2), td:nth-child(8), td:nth-child(9) {
             text-align: center;
         }
 
-.insatserReportTextfield{
-    float:left;
-    width:98%;
+td.comment {
+    color:#1086ec;
+    text-decoration:underline;
+    cursor:pointer;
 }
-.textfieldP{
-    float:left;
-    width:2%;
+
+.insatserReportTextfield {
+    float: left;
+    width: 98%;
+    height: 2%;
+    margin-bottom: 2%;
+}
+
+.textfieldP {
+    float: left;
+    width: 2%;
 }

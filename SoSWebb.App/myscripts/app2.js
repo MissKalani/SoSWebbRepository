@@ -363,6 +363,7 @@
                 $(tdHallbar).css('color', 'red');
             };
             tdInforas.innerHTML = '<input type="checkbox">';
+            tdMotivering.innerHTML = 'Skriv motivering'
 
             tr.appendChild(tdInsats);
             tr.appendChild(tdPrioritering);
@@ -383,13 +384,15 @@
 
         $(document).on('click', '.comment', function () {
             var td = $(this).first();
-            if ($(td).text().trim() == '') {
+            if ($(td).text().trim() == 'Skriv motivering') {
                 td.text(counter);
+                td.css('color', '#000');
+                td.css('text-decoration', 'none');
+                td.css('cursor', 'default');
+                createTextField(counter);
                 counter++;
-            }
-
+            } 
         });
-
     }
 
 
@@ -398,18 +401,6 @@
         window.print();
     });
 
-    function addInsatsMotivering(counter) {
-        alert('in textarea now');
-        var tdMotivering = document.getElementById('comment' + counter);
-        console.log(tdMotivering);
-        if ($(tdMotivering).is(':empty')) {
-            tdMotivering.html(counter);
-            counter++;
-        } else {
-            tdMotivering.html('');
-        }
-
-    }
 
     function createTextField(counter) {
         //if textfield and p element does not exist then create them

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-    margin-bottom: 2%;
+    /*margin-bottom: 2%;*/
     min-width: 600px;
 }
 
@@ -10,6 +10,13 @@
 table, figure {
     page-break-inside: avoid;
 }
+
+/*a:link, a:visited{
+    background-color:transparent;
+}
+a:hover, a:active{
+    background-color:
+}*/
 
 /*Starter page css*/
 
@@ -51,16 +58,8 @@ table, figure {
 
 textarea {
     resize: none;
-    height: 80px;
+    height: 98%;
 }
-/*@page :top {
-    margin-bottom: 520px;
-}
-
-@page :bottom {
-    margin-top: 130px;
-    margin-bottom : 100px;
-}*/
 
 
 table {
@@ -222,18 +221,18 @@ td.extraKommentarReportTd > textarea {
 /*desktop screens*/
 @media only screen and (max-width: 1200px) {
     body {
-        width: 95%;
-    }
-}
-
-@media only screen and (max-width: 1920px) {
-    body {
         width: 98%;
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 1200px) {
     body {
-        width: 90%;
+        width: 100%;
     }
 }
+
+/*@media only screen and (max-width: 1000px) {
+    body {
+        width: 95%;
+    }
+}*/
