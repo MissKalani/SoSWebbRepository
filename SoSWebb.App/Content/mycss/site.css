@@ -11,13 +11,6 @@ table, figure {
     page-break-inside: avoid;
 }
 
-/*a:link, a:visited{
-    background-color:transparent;
-}
-a:hover, a:active{
-    background-color:
-}*/
-
 /*Starter page css*/
 
 .container {
@@ -181,6 +174,10 @@ table.table {
 
 .prioriteringsTableTd {
     text-align: left;
+}
+
+.prioriteringsTableTr > td:nth-child(5){
+    opacity:0.2;
 }
 
 /*behovsbedomningReport css*/

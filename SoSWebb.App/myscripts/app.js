@@ -52,14 +52,14 @@
         tr.setAttribute('class', 'item');
         var tdSubarea = document.createElement('td');
         var tdSubareaEmpty = document.createElement('td');
-        tdSubarea.setAttribute('class', 'subareaTdTitle');        
+        tdSubarea.setAttribute('class', 'subareaTdTitle');
         tdSubarea.innerHTML = subarea;
-        //tr.appendChild(tdSubareaEmpty);
+        tr.appendChild(tdSubareaEmpty);
         tr.appendChild(tdSubarea);
         var i = 0;
         for (var option in options) {
             var tdOption = document.createElement('td');
-            tdOption.setAttribute('class', 'behovsbedomningTd');           
+            tdOption.setAttribute('class', 'behovsbedomningTd');
             if (option == 0) {
                 tdOption.innerHTML = '<input checked type="radio" name="radio_' + radioName + '" value="' + option + '">';
             } else {
@@ -119,19 +119,19 @@
 
             var count = i;
 
-            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="1" /> Mindre allvarliga <br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="2" /> Varierande<br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  id="konsekvensgrad' + count + '" value="3" /> Allvarliga <br/>'
-                + '<input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="0" /> Oklart';
-            td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" id="" value="1" /> Liten andel<br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" id="" value="2" /> Varierande <br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" id="" value="3" /> Stor andel <br/>'
-               + '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" id="" value="0" /> Oklart';
+            td2.innerHTML = '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="1" /> Mindre allvarliga</label> <br/>'
+                + '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="2" /> Varierande<br/>'
+                + '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  id="konsekvensgrad' + count + '" value="3" /> Allvarliga</label> <br/>'
+                + '<label><input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="0" /> Oklart</label>';
+            td3.innerHTML = '<label><input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" id="" value="1" /> Liten andel</label><br/>'
+               + '<label><input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" id="" value="2" /> Varierande</label> <br/>'
+               + '<label><input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" id="" value="3" /> Stor andel</label> <br/>'
+               + '<label><input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" id="" value="0" /> Oklart</label>';
             td4.innerHTML = '<textarea class="comment"/>'
-            td5.innerHTML = '<input class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" /> Mycket hög <br/>'
-                + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög<br/>'
-                + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '"  value="1" /> Låg <br/>'
-                + '<input class="insatsergradValue" checked type="radio" name="insatsergrad' + count + '" value="0" /> Ingen';
+            td5.innerHTML = '<label><input disabled class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" /> Mycket hög</label> <br/>'
+                + '<label><input disabled class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög</label><br/>'
+                + '<label><input disabled class="insatsergradValue" type="radio" name="insatsergrad' + count + '"  value="1" /> Låg</label> <br/>'
+                + '<label><input disabled class="insatsergradValue" checked type="radio" name="insatsergrad' + count + '" value="0" /> Ingen</label>';
 
             td.innerHTML += sortedChosenSubareas[i].title;
             tr.appendChild(td);
@@ -140,29 +140,16 @@
             tr.appendChild(td4);
             tr.appendChild(td5);
 
-            var radios_konsekvens = document.getElementsByClassName('konsekvensgradValue');
-            for (var radio = 0; radio < radios_konsekvens.length; radio++) {
-                radios_konsekvens[radio].onclick = function () {
-                    var value = $(this).val();
-                    console.log(value);
-                    if (value > 0) {
-                        var td5 = $(this).closest('td').next().next().next();
-                        console.log(td5);
-                        td5.setAttribute('display','none');
-                    }
-                }
-            }
-
             if (sortedChosenSubareas[count].value == 2) {
                 tr.setAttribute('id', 'storbehovTr');
                 if (!$('.storHeader').length) {
-                    $('#prioriteringsTable > tbody').append('<th class="storHeader" colspan="5">Stort Behov</th>');
+                    $('#prioriteringsTable > tbody').append('<th class="storHeader" colspan="5">Stort Behov</th>');     
                 }
                 $('#prioriteringsTable > tbody').append(tr);
             } else {
                 (tr).setAttribute('id', 'litetbehovTr');
                 if (!$('.litetHeader').length) {
-                    $('#prioriteringsTable > tbody').append('<th class="litetHeader" colspan="5">Litet Behov</th>');
+                    $('#prioriteringsTable > tbody').append('<th class="litetHeader" colspan="5">Litet Behov</th>');          
                 }
                 $('#prioriteringsTable > tbody').append(tr);
             }
@@ -171,8 +158,33 @@
         $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
     }
 
-    function lockRadioButtonGroup(count) {
-  
+    $(document).on('click', '.konsekvensgradValue', function () {
+        var td = $(this).closest('td').first().next().next().next();
+        if ($(this).val() > 0) {
+            console.log(td);
+            $(td).find('input').removeAttr('disabled', 'disabled');
+            $(td).css('opacity', '1');         
+        } else {
+            $(td).find('input').attr('disabled', 'disabled');
+            $(td).find('input').val(0).prop('checked', 'true');
+            $(td).css('opacity', '0.2');
+        }
+    });
+
+    function hideRadioButtonGroup() {
+        var radios_konsekvens = document.getElementsByClassName('konsekvensgradValue');
+        for (var radio = 0; radio < radios_konsekvens.length; radio++) {
+            radios_konsekvens[radio].onclick = function () {
+                var value = $(this).val();
+                console.log(value);
+                if (value > 0) {
+                    var td5 = $(this).closest('td').next().next().next();
+                    console.log(td5);
+                    $(td5).hide();
+                }
+            }
+        }
+
     }
 
 
@@ -272,7 +284,7 @@
 
     });
 
-     //creating the report 
+    //creating the report 
     function hideElements() {
         $('.tab-content').hide();
         $('#tabs').hide();
@@ -354,7 +366,7 @@
             tr.appendChild(tdExtraKommentar);
 
             $('#behovsbedomningReport').find('tbody').append(tr);
-        };       
+        };
     }
 
 });
