@@ -48,15 +48,16 @@
         var tr = document.createElement('tr');
         tr.setAttribute('class', 'item');
         var tdSubarea = document.createElement('td');
-        var tdSubareaEmpty = document.createElement('td');
+
         tdSubarea.setAttribute('class', 'subareaTdTitle');
+        tdSubarea.setAttribute('colspan', '4');
         tdSubarea.innerHTML = subarea;
-        tr.appendChild(tdSubareaEmpty);
+        //tr.appendChild(tdSubareaEmpty);
         tr.appendChild(tdSubarea);
         var i = 0;
         for (var option in options) {
             var tdOption = document.createElement('td');
-            tdOption.setAttribute('class', 'behovsbedomningTd');
+            tdOption.setAttribute('class', 'behovsbedomningTd');           
             if (option == 0) {
                 tdOption.innerHTML = '<input checked type="radio" name="radio_' + radioName + '" value="' + option + '">';
             } else {
