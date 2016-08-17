@@ -42,7 +42,9 @@
         td.setAttribute('colspan', '4');
         td.innerHTML = area;
         tr.appendChild(td);
-        table.appendChild(tr);
+        $(table).find('tbody').append(tr);
+
+        //table.appendChild(tr);
     };
     function createSubAreaRow(subarea, options, radioName) {
         var table = document.getElementById('behovsbedomningTable');
@@ -65,7 +67,7 @@
             }
             tr.appendChild(tdOption);
         };
-        table.appendChild(tr);
+        $(table).find('tbody').append(tr);
     };
     function deleteChosenSubareaRows() {
         //chosenSubareas.length = 0;
