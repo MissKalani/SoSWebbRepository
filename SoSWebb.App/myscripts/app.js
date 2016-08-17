@@ -112,17 +112,18 @@
             td4.setAttribute("class", "prioriteringsTableTd");
             var td5 = document.createElement("td");
             td5.setAttribute("class", "prioriteringsTableTd");
+            td5.setAttribute("id", "prioriteringsTableTd" + i);
 
             var count = i;
 
-            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" /> Mindre allvarliga <br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" /> Varierande<br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" /> Allvarliga <br/>'
-                + '<input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" value="0" /> Oklart';
-            td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" /> Liten andel<br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '"  value="2" /> Varierande <br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" /> Stor andel <br/>'
-               + '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="0" /> Oklart';
+            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="1" /> Mindre allvarliga <br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="2" /> Varierande<br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  id="konsekvensgrad' + count + '" value="3" /> Allvarliga <br/>'
+                + '<input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="0" /> Oklart';
+            td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" id="" value="1" /> Liten andel<br/>'
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" id="" value="2" /> Varierande <br/>'
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" id="" value="3" /> Stor andel <br/>'
+               + '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" id="" value="0" /> Oklart';
             td4.innerHTML = '<textarea class="comment"/>'
             td5.innerHTML = '<input class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" /> Mycket hög <br/>'
                 + '<input class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög<br/>'
@@ -135,6 +136,19 @@
             tr.appendChild(td3);
             tr.appendChild(td4);
             tr.appendChild(td5);
+
+            var radios_konsekvens = document.getElementsByClassName('konsekvensgradValue');
+            for (var radio = 0; radio < radios_konsekvens.length; radio++) {
+                radios_konsekvens[radio].onclick = function () {
+                    var value = $(this).val();
+                    console.log(value);
+                    if (value > 0) {
+                        var td5 = $(this).closest('td').next().next().next();
+                        console.log(td5);
+                        td5.setAttribute('display','none');
+                    }
+                }
+            }
 
             if (sortedChosenSubareas[count].value == 2) {
                 tr.setAttribute('id', 'storbehovTr');
@@ -153,6 +167,11 @@
         //make textarea autogrow
         $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
     }
+
+    function lockRadioButtonGroup(count) {
+  
+    }
+
 
     $('#btn_printChosenSubareas').click(function (e) {
         e.preventDefault();
@@ -249,22 +268,8 @@
         //createPDF();
 
     });
-    function createPDF() {
-        var pdf = new jsPDF({
-            orientation: 'l',
-            unit: 'mm',
-            format: 'a4'
-        });
 
-        pdf.addHTML($('#behovbedomningReport')[1], 1, 1, {
-
-        }, function () {
-            pdf.save('test.pdf');
-        });
-    }
-
-
-    //creating the report 
+     //creating the report 
     function hideElements() {
         $('.tab-content').hide();
         $('#tabs').hide();
