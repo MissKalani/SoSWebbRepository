@@ -118,14 +118,14 @@
 
             var count = i;
 
-            td2.innerHTML = '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" /> Mindre allvarliga</label> <br/>'
-                + '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" /> Varierande</label><br/>'
-                + '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" /> Allvarliga</label> <br/>'
-                + '<label><input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" value="0" /> Oklart</label>';
-            td3.innerHTML = '<label><input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" /> Liten andel</label><br/>'
-               + '<label><input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="2" /> Varierande</label> <br/>'
-               + '<label><input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" /> Stor andel</label> <br/>'
-               + '<label><input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="0" /> Oklart</label>';
+            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" id="konsekvensgrad_a' + count + '" /> <label for="konsekvensgrad_a' + count + '"> Mindre allvarliga</label> <br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" id="konsekvensgrad_b' + count + '" /> <label for="konsekvensgrad_b' + count + '">Varierande</label><br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" id="konsekvensgrad_c' + count + '" /><label for="konsekvensgrad_c' + count + '"> Allvarliga</label> <br/>'
+                + '<input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" value="0" id="konsekvensgrad_d' + count + '" /><label for="konsekvensgrad_d' + count + '"> Oklart</label>';
+            td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" id="andelklientergrad_a' + count + '"/><label for="andelklientergrad_a' + count + '"> Liten andel</label><br/>'
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="2" id="andelklientergrad_b' + count + '" /><label for="andelklientergrad_b' + count + '"> Varierande</label> <br/>'
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" id="andelklientergrad_c' + count + '" /><label for="andelklientergrad_c' + count + '"> Stor andel</label> <br/>'
+               + '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="0" id="andelklientergrad_d' + count + '" /><label for="andelklientergrad_d' + count + '">Oklart</label>';
             td4.innerHTML = '<textarea class="comment"/>'
             td5.innerHTML = '<label><input disabled class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" /> Mycket hög</label> <br/>'
                 + '<label><input disabled class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög</label><br/>'
@@ -233,23 +233,31 @@
     }
     $(document).on('click', '#prioriteringsTable input[type="radio"]', function () {
         var tr = $(this).closest('tr');
-        console.log(tr);
-        var konsekvensElement = $(tr).find('td:nth-child(2)').find('input :checked').next();
-        var e = $(konsekvensElement).closest('label').text();
-        console.log(konsekvensElement);
-        console.log(e);
+        var td = $(this).closest('tr').find('td:last-child');
+        //var konsekvensLabel = $(tr).find('td:nth-child(2)').find('input[type="radio"]:checked').next().text();
+        //var andelklienterLabel = $(tr).find('td:nth-child(3)').find('input[type="radio"]:checked').next().text();
+        
+        ////$.each(td, function (index, data) {
+        ////    console.log(data);
+        ////});
 
-        //console.log(td);
+        console.log(td);
+        console.log($('.konsekvensgradValue:checked').val());
+        var k = $(tr).find('td').find($('.konsekvensgradValue:checked')).val();
+        var a = $(tr).find('td').find($('.andelklientergradValue:checked')).val()
 
-        //if ($('.konsekvensgradValue').val() > 0) {
-        //    console.log(td);
-        //    $(td).find('input').removeAttr('disabled', 'disabled');
-        //    $(td).css('opacity', '1');
-        //} else {
-        //    $(td).find('input').attr('disabled', 'disabled');
-        //    $(td).find('input').val(0).prop('checked', 'true');
-        //    $(td).css('opacity', '0.2');
-        //}
+        if (k > 0 || a > 0) {
+            console.log(td);
+            $(td).find('input').removeAttr('disabled', 'disabled');
+            $(td).css('opacity', '1');
+        } else  if (k == 0 && a == 0){
+            console.log(td);
+            $(td).find('input').attr('disabled', 'disabled');
+            $(td).find('input').val(0).prop('checked', 'true');
+            $(td).css('opacity', '0.2');
+        }
+
+
     });
 
     function hideRadioButtonGroup() {
