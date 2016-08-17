@@ -125,10 +125,7 @@ table.table {
 }
 
 .areaTdTitle {
-    position: relative;
-    top: 28px;
     text-align: left;
-    padding-left: 10px;
 }
 
 .options {
@@ -174,6 +171,9 @@ table.table {
 
 .prioriteringsTableTd {
     text-align: left;
+}
+.prioriteringsTableTd > label {
+    cursor:pointer;
 }
 
 .prioriteringsTableTr > td:nth-child(5){

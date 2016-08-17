@@ -43,8 +43,6 @@
         td.innerHTML = area;
         tr.appendChild(td);
         $(table).find('tbody').append(tr);
-
-        //table.appendChild(tr);
     };
     function createSubAreaRow(subarea, options, radioName) {
         var table = document.getElementById('behovsbedomningTable');
@@ -52,6 +50,7 @@
         tr.setAttribute('class', 'item');
         var tdSubarea = document.createElement('td');
         var tdSubareaEmpty = document.createElement('td');
+        tdSubareaEmpty.setAttribute('class', 'behovsbedomningTd');
         tdSubarea.setAttribute('class', 'subareaTdTitle');
         tdSubarea.innerHTML = subarea;
         tr.appendChild(tdSubareaEmpty);
@@ -96,8 +95,8 @@
                 return value2.value - value1.value;
             }
         });
-        console.log('getting sorted chosen subareas');
-        console.log(sortedChosenSubareas);
+        //console.log('getting sorted chosen subareas');
+        //console.log(sortedChosenSubareas);
         return sortedChosenSubareas;
     }
     var sortedChosenSubareas = [];
@@ -119,14 +118,14 @@
 
             var count = i;
 
-            td2.innerHTML = '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="1" /> Mindre allvarliga</label> <br/>'
-                + '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="2" /> Varierande<br/>'
-                + '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  id="konsekvensgrad' + count + '" value="3" /> Allvarliga</label> <br/>'
-                + '<label><input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" id="konsekvensgrad' + count + '" value="0" /> Oklart</label>';
-            td3.innerHTML = '<label><input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" id="" value="1" /> Liten andel</label><br/>'
-               + '<label><input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" id="" value="2" /> Varierande</label> <br/>'
-               + '<label><input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" id="" value="3" /> Stor andel</label> <br/>'
-               + '<label><input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" id="" value="0" /> Oklart</label>';
+            td2.innerHTML = '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" /> Mindre allvarliga</label> <br/>'
+                + '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" /> Varierande</label><br/>'
+                + '<label><input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" /> Allvarliga</label> <br/>'
+                + '<label><input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" value="0" /> Oklart</label>';
+            td3.innerHTML = '<label><input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" /> Liten andel</label><br/>'
+               + '<label><input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="2" /> Varierande</label> <br/>'
+               + '<label><input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" /> Stor andel</label> <br/>'
+               + '<label><input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="0" /> Oklart</label>';
             td4.innerHTML = '<textarea class="comment"/>'
             td5.innerHTML = '<label><input disabled class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" /> Mycket hög</label> <br/>'
                 + '<label><input disabled class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög</label><br/>'
@@ -141,15 +140,15 @@
             tr.appendChild(td5);
 
             if (sortedChosenSubareas[count].value == 2) {
-                tr.setAttribute('id', 'storbehovTr');
+                $(tr).addClass('storbehovTr');
                 if (!$('.storHeader').length) {
-                    $('#prioriteringsTable > tbody').append('<th class="storHeader" colspan="5">Stort Behov</th>');     
+                    $('#prioriteringsTable > tbody').append('<tr><td class="storHeader" colspan="5">Stort Behov</td></tr>');
                 }
                 $('#prioriteringsTable > tbody').append(tr);
             } else {
-                (tr).setAttribute('id', 'litetbehovTr');
+                $(tr).addClass('litetbehovTr');
                 if (!$('.litetHeader').length) {
-                    $('#prioriteringsTable > tbody').append('<th class="litetHeader" colspan="5">Litet Behov</th>');          
+                    $('#prioriteringsTable > tbody').append('<tr><td class="litetHeader" colspan="5">Litet Behov</td></tr>');
                 }
                 $('#prioriteringsTable > tbody').append(tr);
             }
@@ -157,37 +156,7 @@
         //make textarea autogrow
         $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
     }
-
-    $(document).on('click', '.konsekvensgradValue', function () {
-        var td = $(this).closest('td').first().next().next().next();
-        if ($(this).val() > 0) {
-            console.log(td);
-            $(td).find('input').removeAttr('disabled', 'disabled');
-            $(td).css('opacity', '1');         
-        } else {
-            $(td).find('input').attr('disabled', 'disabled');
-            $(td).find('input').val(0).prop('checked', 'true');
-            $(td).css('opacity', '0.2');
-        }
-    });
-
-    function hideRadioButtonGroup() {
-        var radios_konsekvens = document.getElementsByClassName('konsekvensgradValue');
-        for (var radio = 0; radio < radios_konsekvens.length; radio++) {
-            radios_konsekvens[radio].onclick = function () {
-                var value = $(this).val();
-                console.log(value);
-                if (value > 0) {
-                    var td5 = $(this).closest('td').next().next().next();
-                    console.log(td5);
-                    $(td5).hide();
-                }
-            }
-        }
-
-    }
-
-
+    
     $('#btn_printChosenSubareas').click(function (e) {
         e.preventDefault();
         window.print();
@@ -261,6 +230,42 @@
         });
 
         return sorted_subareasWithTotalValue;
+    }
+    $(document).on('click', '#prioriteringsTable input[type="radio"]', function () {
+        var tr = $(this).closest('tr');
+        console.log(tr);
+        var konsekvensElement = $(tr).find('td:nth-child(2)').find('input :checked').next();
+        var e = $(konsekvensElement).closest('label').text();
+        console.log(konsekvensElement);
+        console.log(e);
+
+        //console.log(td);
+
+        //if ($('.konsekvensgradValue').val() > 0) {
+        //    console.log(td);
+        //    $(td).find('input').removeAttr('disabled', 'disabled');
+        //    $(td).css('opacity', '1');
+        //} else {
+        //    $(td).find('input').attr('disabled', 'disabled');
+        //    $(td).find('input').val(0).prop('checked', 'true');
+        //    $(td).css('opacity', '0.2');
+        //}
+    });
+
+    function hideRadioButtonGroup() {
+        var radios_konsekvens = document.getElementsByClassName('konsekvensgradValue');
+        for (var radio = 0; radio < radios_konsekvens.length; radio++) {
+            radios_konsekvens[radio].onclick = function () {
+                var value = $(this).val();
+                console.log(value);
+                if (value > 0) {
+                    var td5 = $(this).closest('td').next().next().next();
+                    console.log(td5);
+                    $(td5).hide();
+                }
+            }
+        }
+
     }
 
     $('#btn_printGradedSubareas').click(function (e) {
@@ -355,6 +360,13 @@
             var tdExtraKommentar = document.createElement('td');
             tdExtraKommentar.setAttribute('class', 'extraKommentarReportTd');
             tdExtraKommentar.innerHTML = '<textarea disabled class="comment"></textarea>';
+
+            if (tdKonsekvensgrade.innerHTML == "Oklart") {
+                $(tdKonsekvensgrade).css('color', 'red');
+            }
+            if (tdAndelKlienterGrade.innerHTML == "Oklart") {
+                $(tdAndelKlienterGrade).css('color', 'red');
+            }
 
             tr.appendChild(tdAreaTitle);
             tr.appendChild(tdSubareaTitle);
