@@ -39,7 +39,7 @@
         tr.setAttribute('class', 'area');
         var td = document.createElement('td');
         td.setAttribute('class', 'areaTdTitle');
-        td.setAttribute('colspan', '4');
+        td.setAttribute('colspan', '5');
         td.innerHTML = area;
         tr.appendChild(td);
         $(table).find('tbody').append(tr);
@@ -51,7 +51,7 @@
         var tr = document.createElement('tr');
         tr.setAttribute('class', 'item');
         var tdSubarea = document.createElement('td');
-
+        var tdSubareaEmpty = document.createElement('td');
         tdSubarea.setAttribute('class', 'subareaTdTitle');        
         tdSubarea.innerHTML = subarea;
         //tr.appendChild(tdSubareaEmpty);
