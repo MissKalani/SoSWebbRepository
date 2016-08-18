@@ -1,22 +1,49 @@
-﻿html, body, .container {
+﻿html, body, {
     margin: 0;
     padding: 0;
     border: 0;
-    /*margin-bottom: 2%;*/
-    min-width: 600px;
 }
-
-
+body {
+    min-height: 101%;
+    padding-bottom: 4em;
+}
+label {
+    cursor: pointer;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+}
+h1 {
+    font-size: 2em;
+}
+.page-header {
+    margin: 0;
+    padding: 1em;
+    border-bottom: none;
+}
+.page-header img {
+    max-width: 70%;
+    width: 280px;
+    vertical-align: top;
+}
 table, figure {
     page-break-inside: avoid;
 }
 
+/*a:link, a:visited{
+    background-color:transparent;
+}
+a:hover, a:active{
+    background-color:
+}*/
+
 /*Starter page css*/
 
 .container {
-    width: 100%;
     background-color: #fff;
     margin: 0 auto;
+    padding: 0 1em;
     text-align: center;
 }
 
@@ -87,7 +114,6 @@ i.fa.fa-info-circle {
 
 .tab-content {
     border-top-style: none;
-    margin-left: 20.5px;
 }
 
 .table {
@@ -126,6 +152,8 @@ table.table {
 
 .areaTdTitle {
     text-align: left;
+    padding-left: 10px;
+    font-weight: bold;
 }
 
 .options {
@@ -153,6 +181,7 @@ table.table {
     padding: 9px 35px;
     border-style: none;
     border-radius: 5px;
+    margin-bottom: 1em;
 }
 
     .button:hover {
@@ -171,13 +200,6 @@ table.table {
 
 .prioriteringsTableTd {
     text-align: left;
-}
-.prioriteringsTableTd > label {
-    cursor:pointer;
-}
-
-.prioriteringsTableTr > td:nth-child(5){
-    opacity:0.2;
 }
 
 /*behovsbedomningReport css*/
@@ -215,21 +237,52 @@ td.extraKommentarReportTd > textarea {
     margin-bottom: 5px;
 }
 
-/*desktop screens*/
-@media only screen and (max-width: 1200px) {
-    body {
-        width: 98%;
+
+@media all and (max-width: 1200px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+    .table > thead > tr > th {
+        font-size: 1em;
     }
 }
-
-@media only screen and (min-width: 1200px) {
-    body {
+@media all and (max-width: 800px) {
+    .container {
+        width: 98%;
+    }
+    #behovsbedomningTable .trHeader>th:first-child,
+    #behovsbedomningTable .item>td:first-child {
+    display: none;
+  }
+   #behovsbedomningTable th.subareaHeadTitle:before {
+    content: "Område/";
+  }
+  .page-header {
+    text-align: center;
+  }
+  .page-header img {
+    max-width: 280px;
+    width: 50%;
+    vertical-align: top;
+    }
+    .table > thead > tr > th {
+        font-size: .8em;
+    }
+    .container .container {
         width: 100%;
     }
 }
 
-/*@media only screen and (max-width: 1000px) {
-    body {
-        width: 95%;
-    }
-}*/
+#reportStorage .container {
+    padding: 0;
+    width: 100%;
+}
+#reportStorage .reportColumnHeader th {
+    padding: 5px 0;
+}
+.table > thead > tr > td {
+    vertical-align: top;
+}

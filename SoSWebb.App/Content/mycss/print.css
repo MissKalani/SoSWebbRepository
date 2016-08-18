@@ -1,8 +1,10 @@
 ﻿
-@media print{
   @page {
-    size: A4 landscape;
+    size: landscape;   /* auto is the initial value */
+      margin: 0;
   }
+@media print{
+
   html,body,.container {
     margin: 0;
     padding: 0;

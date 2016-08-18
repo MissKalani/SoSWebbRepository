@@ -5,11 +5,10 @@
     border: solid;
     position: relative;
     bottom: 22px;
-    padding: 7%;
+    padding: 1em;
 }
 
 .stepB-row {
-    width: 95%;
     margin: auto;
 }
 
@@ -103,9 +102,15 @@ div.question {
 .checkboxDiv {
     width: 16%;
 }*/
+.checkboxDiv {
+    white-space: nowrap;
+}
     .checkboxDiv label {
         /*display: list-item;*/
         cursor: pointer;
+        font-size: .8em;
+        padding-left: 5px;
+        font-weight: normal;
         /*position: relative;*/
         /*bottom: 20px;
         padding-left: 20px;*/

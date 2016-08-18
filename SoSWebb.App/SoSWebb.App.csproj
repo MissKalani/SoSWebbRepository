@@ -68,7 +68,7 @@
   <ItemGroup>
     <Content Include="behovsbedomning.html" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\icon\iconhome.png" />
+    <Content Include="Content\icon\socialstyrelsen-logo20130601.png" />
     <Content Include="Content\mycss\print.css" />
     <Content Include="Content\mycss\site2.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />

@@ -276,6 +276,8 @@
     }
 
     $(document).on('show.bs.collapse', '#accordion .collapse', function () {
+        console.log('this is span!');
+        console.log($(this));
         $(this).prev().find('span:first-child').addClass('glyphicon-arrow-up').removeClass('glyphicon-arrow-down');
     });
 
