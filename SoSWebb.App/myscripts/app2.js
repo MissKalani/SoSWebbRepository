@@ -211,8 +211,6 @@
 
     var answers = [];
     function getAnswers(insatsTitle, listgroup) {
-        //alert('here!');
-
         //console.log('show list group');
         //console.log(listgroup);
 
@@ -297,34 +295,10 @@
         e.preventDefault();
         hideElements();
         var completeAnswers = getCompleteAnswers(answers);
-        //var sorted_completeAnswers = getSortedCompleteAnswers(completeAnswers);
-        var sortedbyNR_completeAnswers = getSortedInsatsAccordingToNR(completeAnswers);
-        console.log(sortedbyNR_completeAnswers);
-        //createInsatsPrioriteringReport(sorted_completeAnswers);
-        createInsatsPrioriteringReport(sortedbyNR_completeAnswers);
-    });
+        var sorted_completeAnswers = getSortedCompleteAnswers(completeAnswers);
+        createInsatsPrioriteringReport(sorted_completeAnswers);
 
-    function getSortedInsatsAccordingToNR(completeAnswers) {
-        var answergroupAndNRValue = [];
-        for (var key in completeAnswers) {
-            var answerlist = completeAnswers[key];
-            console.log(answerlist[1].value);
-            for (var i = 0; i < answerlist.length; i++) {
-                var valueNR = answerlist[1].value;                
-            }
-            var answerWithNrValue = {
-                insats: key,
-                obj: completeAnswers[key],
-                value_NR: valueNR,
-            };
-           
-            answergroupAndNRValue.push(answerWithNrValue);
-            var sorted_answerGroupByNRValue = answergroupAndNRValue.sort(function (value1, value2) {
-                return value2.value_NR - value1.value_NR;
-            });           
-        }
-        return sorted_answerGroupByNRValue;
-    }
+    });
 
     function getSortedCompleteAnswers(completeAnswers) {
         var answergroupAndTotalValue = [];
@@ -439,8 +413,7 @@
     $('#btn_printInsatsReport').click(function (e) {
         window.print();
     });
-
-
+    
     function createTextField(counter) {
         //if textfield and p element does not exist then create them
         if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
