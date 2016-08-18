@@ -60,7 +60,7 @@
             var tdOption = document.createElement('td');
             tdOption.setAttribute('class', 'behovsbedomningTd');
             if (option == 0) {
-                tdOption.innerHTML = '<input checked type="radio" name="radio_' + radioName + '" value="' + option + '">';
+                tdOption.innerHTML = '<input checked="true" type="radio" name="radio_' + radioName + '" value="' + option + '">';
             } else {
                 tdOption.innerHTML = '<input type="radio" name="radio_' + radioName + '" value="' + option + '">';
             }
@@ -121,16 +121,16 @@
             td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" id="konsekvensgrad_a' + count + '" /> <label for="konsekvensgrad_a' + count + '"> Mindre allvarliga</label> <br/>'
                 + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" id="konsekvensgrad_b' + count + '" /> <label for="konsekvensgrad_b' + count + '">Varierande</label><br/>'
                 + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" id="konsekvensgrad_c' + count + '" /><label for="konsekvensgrad_c' + count + '"> Allvarliga</label> <br/>'
-                + '<input class="konsekvensgradValue" checked  type="radio" name="konsekvensgrad' + count + '" value="0" id="konsekvensgrad_d' + count + '" /><label for="konsekvensgrad_d' + count + '"> Oklart</label>';
+                + '<input class="konsekvensgradValue" checked="true"  type="radio" name="konsekvensgrad' + count + '" value="0" id="konsekvensgrad_d' + count + '" /><label for="konsekvensgrad_d' + count + '"> Oklart</label>';
             td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" id="andelklientergrad_a' + count + '"/><label for="andelklientergrad_a' + count + '"> Liten andel</label><br/>'
                + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="2" id="andelklientergrad_b' + count + '" /><label for="andelklientergrad_b' + count + '"> Varierande</label> <br/>'
                + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" id="andelklientergrad_c' + count + '" /><label for="andelklientergrad_c' + count + '"> Stor andel</label> <br/>'
-               + '<input class="andelklientergradValue" checked type="radio" name="andelklientergrad' + count + '" value="0" id="andelklientergrad_d' + count + '" /><label for="andelklientergrad_d' + count + '">Oklart</label>';
+               + '<input class="andelklientergradValue" checked="true" type="radio" name="andelklientergrad' + count + '" value="0" id="andelklientergrad_d' + count + '" /><label for="andelklientergrad_d' + count + '">Oklart</label>';
             td4.innerHTML = '<textarea class="comment"/>'
             td5.innerHTML = '<label><input disabled class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" /> Mycket hög</label> <br/>'
                 + '<label><input disabled class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög</label><br/>'
                 + '<label><input disabled class="insatsergradValue" type="radio" name="insatsergrad' + count + '"  value="1" /> Låg</label> <br/>'
-                + '<label><input disabled class="insatsergradValue" checked type="radio" name="insatsergrad' + count + '" value="0" /> Ingen</label>';
+                + '<label><input disabled class="insatsergradValue" checked="true" type="radio" name="insatsergrad' + count + '" value="0" /> Ingen</label>';
 
             td.innerHTML += sortedChosenSubareas[i].title;
             tr.appendChild(td);
@@ -142,13 +142,13 @@
             if (sortedChosenSubareas[count].value == 2) {
                 $(tr).addClass('storbehovTr');
                 if (!$('.storHeader').length) {
-                    $('#prioriteringsTable > tbody').append('<tr><td class="storHeader" colspan="5">Stort Behov</td></tr>');
+                    $('#prioriteringsTable > tbody').append('<tr><td class="storHeader" colspan="5">Stort behov</td></tr>');
                 }
                 $('#prioriteringsTable > tbody').append(tr);
             } else {
                 $(tr).addClass('litetbehovTr');
                 if (!$('.litetHeader').length) {
-                    $('#prioriteringsTable > tbody').append('<tr><td class="litetHeader" colspan="5">Litet Behov</td></tr>');
+                    $('#prioriteringsTable > tbody').append('<tr><td class="litetHeader" colspan="5">Litet behov</td></tr>');
                 }
                 $('#prioriteringsTable > tbody').append(tr);
             }
@@ -156,7 +156,7 @@
         //make textarea autogrow
         $('.comment').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
     }
-    
+
     $('#btn_printChosenSubareas').click(function (e) {
         e.preventDefault();
         window.print();
@@ -195,7 +195,7 @@
         return finalChosenSubareas;
     }
     function getSortedFinalChosenSubareasWithTotalValues(finalChosenSubareas) {
-        var value_bedomning = 0;
+        //var value_bedomning = 0;
         var value_gradKonsekvens = 0;
         var value_gradAndelKlienter = 0;
         var value_gradInsatser = 0;
@@ -204,14 +204,18 @@
         subareasWithTotalValue.length = 0;
 
         for (var i = 0; i < finalChosenSubareas.length; i++) {
-            value_bedomning = finalChosenSubareas[i].subarea.value;
+            //value_bedomning = finalChosenSubareas[i].subarea.value;
             value_gradKonsekvens = finalChosenSubareas[i].konsekvensValue;
             value_gradAndelKlienter = finalChosenSubareas[i].andelklienterValue;
             value_gradInsatser = finalChosenSubareas[i].insatserValue;
 
             var totalValue = 0;
-            totalValue = parseInt(value_bedomning, 10)
-                + parseInt(value_gradKonsekvens, 10)
+            //totalValue = parseInt(value_bedomning, 10)
+            //    + parseInt(value_gradKonsekvens, 10)
+            //    + parseInt(value_gradAndelKlienter, 10)
+            //    + parseInt(value_gradInsatser, 10);
+
+            totalValue = parseInt(value_gradKonsekvens, 10)
                 + parseInt(value_gradAndelKlienter, 10)
                 + parseInt(value_gradInsatser, 10);
 
@@ -234,30 +238,19 @@
     $(document).on('click', '#prioriteringsTable input[type="radio"]', function () {
         var tr = $(this).closest('tr');
         var td = $(this).closest('tr').find('td:last-child');
-        //var konsekvensLabel = $(tr).find('td:nth-child(2)').find('input[type="radio"]:checked').next().text();
-        //var andelklienterLabel = $(tr).find('td:nth-child(3)').find('input[type="radio"]:checked').next().text();
-        
-        ////$.each(td, function (index, data) {
-        ////    console.log(data);
-        ////});
-
-        console.log(td);
-        console.log($('.konsekvensgradValue:checked').val());
         var k = $(tr).find('td').find($('.konsekvensgradValue:checked')).val();
         var a = $(tr).find('td').find($('.andelklientergradValue:checked')).val()
 
         if (k > 0 || a > 0) {
-            console.log(td);
+            //console.log(td);
             $(td).find('input').removeAttr('disabled', 'disabled');
             $(td).css('opacity', '1');
-        } else  if (k == 0 && a == 0){
-            console.log(td);
+        } else if (k == 0 && a == 0) {
+            //console.log(td);
             $(td).find('input').attr('disabled', 'disabled');
             $(td).find('input').val(0).prop('checked', 'true');
             $(td).css('opacity', '0.2');
         }
-
-
     });
 
     function hideRadioButtonGroup() {
@@ -291,11 +284,11 @@
         //console.log(sorted_subareasWithTotalValue);
 
         createBehovsbedomningReportTable(sorted_subareasWithTotalValue);
-
-        window.print();
-        //createPDF();
-
     });
+
+    $('#btn_printBedomningsReport').click(function (e) {
+        window.print();
+    })
 
     //creating the report 
     function hideElements() {
