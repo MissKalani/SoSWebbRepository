@@ -71,7 +71,6 @@
     <Content Include="Content\icon\socialstyrelsen-logo20130601.png" />
     <Content Include="Content\mycss\print.css" />
     <Content Include="Content\mycss\site2.css" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="insatsprioritering.html" />
     <Content Include="myscripts\app2.js" />
@@ -82,11 +81,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
     <None Include="data\data.json" />
     <None Include="data\data2.json" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
@@ -104,7 +98,9 @@
     <Content Include="index.html" />
     <Content Include="myscripts\app.js" />
     <Content Include="Scripts\jquery.ns-autogrow.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

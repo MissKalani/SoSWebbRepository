@@ -281,7 +281,7 @@
       },
       {
         "id": 3,
-        "title": "Nätverks-/ parterapi vid alkohol-/ narkotikaproblem",
+        "title": "Nätverks-/parterapi vid alkohol-/ narkotikaproblem",
         "values_bedomning": [
           0,
           1,
@@ -331,7 +331,7 @@
       },
       {
         "id": 2,
-        "title": "Boendeinsatser",
+        "title": "Boendestöd",
         "values_bedomning": [
           0,
           1,
@@ -353,7 +353,29 @@
       },
       {
         "id": 3,
-        "title": "Samording i form av case management",
+        "title": "Boendeinsatser vid hemlöshet",
+        "values_bedomning": [
+          0,
+          1,
+          2
+        ],
+        "values_konsekvens": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "values_andelklienter": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insatslist": null
+      },
+      {
+        "id": 3,
+        "title": "Samordning av vård- och stödinsatser",
         "values_bedomning": [
           0,
           1,
@@ -425,7 +447,7 @@
     "subarea": [
       {
         "id": 1,
-        "title": "Integrerad behandlingsmetod (Psykologiska och psykosociala behandlingsmetoder i kombination med farmalogisk behandling)",
+        "title": "Integrerad behandlingsmetod (Psykologiska och psykosociala behandlingsmetoder i kombination med farmalogiskbehandling)",
         "values_bedomning": [
           0,
           1,
@@ -447,7 +469,7 @@
       },
       {
         "id": 2,
-        "title": "Samordning (case management)",
+        "title": "Samordning av vårdinsatser vid samsjuklighet",
         "values_bedomning": [
           0,
           1,
@@ -471,11 +493,11 @@
   },
   {
     "id": 6,
-    "title": "Ungdomar - Psykologisk och psykosocial behandling",
+    "title": "Ungdomar",
     "subarea": [
       {
         "id": 1,
-        "title": "Korta insatser (BI)",
+        "title": "Korta insatser (BI) för ungdomar",
         "values_bedomning": [
           0,
           1,
@@ -497,7 +519,7 @@
       },
       {
         "id": 2,
-        "title": "Familjeinterventioner",
+        "title": "Familjeinterventioner för ungdomar",
         "values_bedomning": [
           0,
           1,

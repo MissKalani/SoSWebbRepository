@@ -31,7 +31,7 @@ namespace SoSWebb.JsonSerializer
 
         }
 
-        //create areas and subareas with resp. "insatser"
+        //create areas and subareas with resp. "insatser"  
         private static Area2 createAreaWithSubareaInsatser_Area1()
         {
             Area2 area = new Area2();
@@ -52,7 +52,7 @@ namespace SoSWebb.JsonSerializer
             List<Subarea2> subareaListWithInsatser = new List<Subarea2>();
             subareaListWithInsatser.Add(createInsatser_Subarea5());
             subareaListWithInsatser.Add(createInsatser_Subarea6());
-            subareaListWithInsatser.Add(createInsatser_Subarea7());        
+            subareaListWithInsatser.Add(createInsatser_Subarea7());
             area.Subareas = subareaListWithInsatser;
 
             return area;
@@ -92,7 +92,7 @@ namespace SoSWebb.JsonSerializer
             area.Area = "Behandling vid samsjuklighet";
             List<Subarea2> subareaListWithInsatser = new List<Subarea2>();
             subareaListWithInsatser.Add(createInsatser_Subarea20());
-            subareaListWithInsatser.Add(createInsatser_Subarea21());           
+            subareaListWithInsatser.Add(createInsatser_Subarea21());
             area.Subareas = subareaListWithInsatser;
             return area;
         }
@@ -108,20 +108,26 @@ namespace SoSWebb.JsonSerializer
         }
 
         //create the list of "insatser" in every subarea
+        //Bedomninginstrument
         private static Subarea2 createInsatser_Subarea1()
         {
             Subarea2 subarea1 = new Subarea2();
             subarea1.Title = "Identifiering av alkohol- och narkotikaproblem";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "AUDIT (alkohol)";
+            insats1.Title = "AUDIT (alkoholproblem)";
 
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "DUDIT (narkotika). DUDIT-E för bedömning av narkotikaproblem";
+            insats2.Title = "DUDIT (narkotikaproblem)";
+
+
+            Insatsen insats3 = new Insatsen();
+            insats3.Title = "DUDIT-E (narkotikaproblem)";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
             insatsList.Add(insats2);
+            insatsList.Add(insats3);
             subarea1.insatslist = insatsList;
 
             return subarea1;
@@ -132,13 +138,13 @@ namespace SoSWebb.JsonSerializer
             subarea2.Title = "Diagnostik av skadligt bruk, missbruk eller beroende";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "MINI";
+            insats1.Title = "ADDIS";
 
             Insatsen insats2 = new Insatsen();
             insats2.Title = "SCID I";
 
             Insatsen insats3 = new Insatsen();
-            insats3.Title = "ADDIS";
+            insats3.Title = "MINI";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -180,20 +186,22 @@ namespace SoSWebb.JsonSerializer
 
             return subarea4;
         }
+
+        //Medicinska test
         private static Subarea2 createInsatser_Subarea5()
         {
             Subarea2 subarea5 = new Subarea2();
-            subarea5.Title = "Pågående eller nyligt intag av alkohol";
+            subarea5.Title = "Nyligt intag av alkohol";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "Mätning av alkoholhalten i utandningsluft";
-            
+            insats1.Title = "EtG eller EtS i urin";
+
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "Mätning av EtG eller EtS i urin";
+            insats2.Title = "Mätning av alkoholhalten i urin";
 
 
             Insatsen insats3 = new Insatsen();
-            insats3.Title = "Mätning av alkoholhalten i urin";
+            insats3.Title = "Matning av alkoholhalten i utandningsluft";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -209,10 +217,10 @@ namespace SoSWebb.JsonSerializer
             subarea6.Title = "Långvarigt högt intag av alkohol";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "CDT eller PEth i blodprov";
+            insats1.Title = "Mätning av CDT eller PEth i blodprov";
 
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "GT i blodprov";
+            insats2.Title = "Mätning av GT i blodprov";
 
             Insatsen insats3 = new Insatsen();
             insats3.Title = "Mätning av ASAT och ALAT i blodprov";
@@ -225,7 +233,8 @@ namespace SoSWebb.JsonSerializer
 
             return subarea6;
         }
-        private static Subarea2 createInsatser_Subarea7() {
+        private static Subarea2 createInsatser_Subarea7()
+        {
             Subarea2 subarea7 = new Subarea2();
             subarea7.Title = "Pågående eller nyligt intag av narkotika";
 
@@ -233,7 +242,7 @@ namespace SoSWebb.JsonSerializer
             insats1.Title = "Urinprov";
 
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "Patientnära drogtest med urinprov (snabbtest)";
+            insats2.Title = "Patientnära drogtest (snabbtest) med urinprov";
 
 
             Insatsen insats3 = new Insatsen();
@@ -248,28 +257,29 @@ namespace SoSWebb.JsonSerializer
             return subarea7;
         }
 
+        //Psykologisk och psykosocial behandling
         private static Subarea2 createInsatser_Subarea8()
         {
             Subarea2 subarea8 = new Subarea2();
             subarea8.Title = "Missbruk eller beroende av alkohol";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "MET";
+            insats1.Title = "Motivationshöjande behandling (MET)";
 
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "KBT";
+            insats2.Title = "Kognitiv beteendeterapi (KBT)";
 
             Insatsen insats3 = new Insatsen();
-            insats3.Title = "ÅP";
+            insats3.Title = "Återfallsprevention (ÅP)";
 
             Insatsen insats4 = new Insatsen();
-            insats4.Title = "CRA";
+            insats4.Title = "Community reinforcement approach (CRA)";
 
             Insatsen insats5 = new Insatsen();
             insats5.Title = "12-stegsbehandling";
 
             Insatsen insats6 = new Insatsen();
-            insats6.Title = "SBNT";
+            insats6.Title = "Social behaviour network therapy (SBNT)";
 
             Insatsen insats7 = new Insatsen();
             insats7.Title = "Psykodynamisk terapi";
@@ -290,35 +300,36 @@ namespace SoSWebb.JsonSerializer
 
             return subarea8;
         }
-
         private static Subarea2 createInsatser_Subarea9()
         {
             Subarea2 subarea9 = new Subarea2();
             subarea9.Title = "Långvarigt bruk av bensodiazepiner";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "Kognitiv beteendeterapi alt återfallsprevention, KBT (*)";
+            insats1.Title = "Kognitiv beteendeterapi (KBT) (1)(2)";
+
+            Insatsen insats2 = new Insatsen();
+            insats2.Title = "Återfallsprevention (ÅP) (1)(2)";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
+            insatsList.Add(insats2);
 
             subarea9.insatslist = insatsList;
 
             return subarea9;
         }
-
         private static Subarea2 createInsatser_Subarea10()
         {
             Subarea2 subarea10 = new Subarea2();
             subarea10.Title = "Missbruk eller beroende av cannabis";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "KBT + MI/MET";
+            insats1.Title = "Kognitiv beteendeterapi (KBT) + MI/MET";
 
 
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "ÅP + MI/MET";
-
+            insats2.Title = "Återfallsprevention (ÅP) + MI/MET";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -328,26 +339,25 @@ namespace SoSWebb.JsonSerializer
 
             return subarea10;
         }
-
         private static Subarea2 createInsatser_Subarea11()
         {
             Subarea2 subarea11 = new Subarea2();
             subarea11.Title = "Missbruk eller beroende av centralstimulantia";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "12-stegsbehandling";
+            insats1.Title = "MATRIX-programmet";
 
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "MATRIX";
+            insats2.Title = "12-stegsbehandling";
 
             Insatsen insats3 = new Insatsen();
-            insats3.Title = "CRA";
+            insats3.Title = "Community reinforcement approach (CRA)";
 
             Insatsen insats4 = new Insatsen();
-            insats4.Title = "ÅP";
+            insats4.Title = "Kognitiv beteendeterapi (KBT)";
 
             Insatsen insats5 = new Insatsen();
-            insats5.Title = "KBT";
+            insats5.Title = "Återfallsprevention (ÅP)";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -360,23 +370,22 @@ namespace SoSWebb.JsonSerializer
 
             return subarea11;
         }
-
         private static Subarea2 createInsatser_Subarea12()
         {
             Subarea2 subarea12 = new Subarea2();
             subarea12.Title = "Missbruk eller beroende av opiater";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "KBT (*)";
+            insats1.Title = "Kognitiv beteendeterapi (KBT) (2)";
 
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "ÅP (*)";
+            insats2.Title = "Återfallsprevention (ÅP) (2)";
 
             Insatsen insats3 = new Insatsen();
-            insats3.Title = "CRA (*)";
+            insats3.Title = "Community reinforcement approach (CRA) (2)";
 
             Insatsen insats4 = new Insatsen();
-            insats4.Title = "Psykodynamisk terapi (*)";
+            insats4.Title = "Psykodynamisk terapi (2)";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -388,17 +397,16 @@ namespace SoSWebb.JsonSerializer
 
             return subarea12;
         }
-
         private static Subarea2 createInsatser_Subarea13()
         {
             Subarea2 subarea13 = new Subarea2();
-            subarea13.Title = "Nätverks- och parterapi vid alkohol- eller narkotikaproblem";
+            subarea13.Title = "Nätverks-/parterapi vid alkohol- eller narkotikaproblem";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "Parterapi (*)";
+            insats1.Title = "Parterapi (2)";
 
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "Nätverksterapi (*)";
+            insats2.Title = "Nätverksterapi (2)";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -409,13 +417,14 @@ namespace SoSWebb.JsonSerializer
             return subarea13;
         }
 
+        //Psykosociala stödinsatser
         private static Subarea2 createInsatser_Subarea14()
         {
             Subarea2 subarea14 = new Subarea2();
-            subarea14.Title = "Arbetsförberedande träningsmodeller";
+            subarea14.Title = "Arbetslivsinriktad rehabilitering";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "Arbetslivsinriktad rehabilitering enligt IPS-modellen";
+            insats1.Title = "Arbetslivsinriktad rehabilitering enligt IPS";
 
             Insatsen insats2 = new Insatsen();
             insats2.Title = "Arbetsförberedande träningsmodeller";
@@ -427,7 +436,6 @@ namespace SoSWebb.JsonSerializer
 
             return subarea14;
         }
-
         private static Subarea2 createInsatser_Subarea15()
         {
             Subarea2 subarea15 = new Subarea2();
@@ -444,7 +452,6 @@ namespace SoSWebb.JsonSerializer
 
             return subarea15;
         }
-
         private static Subarea2 createInsatser_Subarea16()
         {
 
@@ -458,7 +465,7 @@ namespace SoSWebb.JsonSerializer
             insats2.Title = "Bostad först";
 
             Insatsen insats3 = new Insatsen();
-            insats3.Title = "Boendetrappa";
+            insats3.Title = "Boendetrappa (3)";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -472,22 +479,17 @@ namespace SoSWebb.JsonSerializer
         private static Subarea2 createInsatser_Subarea17()
         {
             Subarea2 subarea17 = new Subarea2();
-            subarea17.Title = "Samordning av vård- och stödåtgärder";
+            subarea17.Title = "Samordning av vård- och stödinsatser";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "Individuell case management enligt strengths model";
-
-            Insatsen insats2 = new Insatsen();
-            insats2.Title = "Case management i form av integrerade eller samverkande team (vid samsjuklighet)";
+            insats1.Title = "Individuell case management - strengths model";
 
             List<Insatsen> insatsList = new List<Insatsen>();
-            insatsList.Add(insats1);
-            insatsList.Add(insats2);
+            insatsList.Add(insats1);    
             subarea17.insatslist = insatsList;
 
             return subarea17;
         }
-
         private static Subarea2 createInsatser_Subarea18()
         {
 
@@ -495,7 +497,7 @@ namespace SoSWebb.JsonSerializer
             subarea18.Title = "Psykosocialt stöd till vuxna anhöriga";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "Al- eller Naranon inspirerade stödprogram";
+            insats1.Title = "Al- eller Nar-anon-inspirerade stödprogram";
 
             Insatsen insats2 = new Insatsen();
             insats2.Title = "Coping skills training";
@@ -509,7 +511,6 @@ namespace SoSWebb.JsonSerializer
 
             return subarea18;
         }
-
         private static Subarea2 createInsatser_Subarea19()
         {
 
@@ -517,10 +518,10 @@ namespace SoSWebb.JsonSerializer
             subarea19.Title = "Stöd till anhöriga som vill motivera narstående till behandling";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "CRAFT";
+            insats1.Title = "Community reinforcement approach and family traning (CRAFT)";
 
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "ARISE[1]";
+            insats2.Title = "ARISE (1)";
 
 
             List<Insatsen> insatsList = new List<Insatsen>();
@@ -531,31 +532,31 @@ namespace SoSWebb.JsonSerializer
 
             return subarea19;
         }
+
+        //Behandling vid samsjuklighet
         private static Subarea2 createInsatser_Subarea20()
         {
-
             Subarea2 subarea20 = new Subarea2();
-            subarea20.Title = "Psykologisk och psykosocial behandling";
+            subarea20.Title = "Integrerad behandlingsmetod vid samsjuklighet (Psykologiska och psykosociala behandlingsmetoder i kombination med farmakologisk behandling)";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "Integrerad behandlingsmetod. MI / KBT vid missbruk/ beroendet och samtidig depression eller integrerad behandling med KBT eller MI/ KBT vid missbruk/ beroendet och annan samtidig svår psykisk sjukdom.";
-            
+            insats1.Title = "KBT med eller utan tillägg av motiverande samtal.";
+
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
-            
+
             subarea20.insatslist = insatsList;
 
             return subarea20;
         }
-
         private static Subarea2 createInsatser_Subarea21()
         {
 
             Subarea2 subarea21 = new Subarea2();
-            subarea21.Title = "Samordning av vård- och stödåtgärder";
+            subarea21.Title = "Samordning av vårdinsatser vid samsjuklighet";
 
             Insatsen insats1 = new Insatsen();
-            insats1.Title = "Case management i form av integrerade eller sam- verkande team";
+            insats1.Title = "Case management i form av integrerade eller samverkande team";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -564,21 +565,22 @@ namespace SoSWebb.JsonSerializer
             return subarea21;
         }
 
+        //Ungdomar
         private static Subarea2 createInsatser_Subarea22()
         {
             Subarea2 subarea22 = new Subarea2();
-            subarea22.Title = "Korta insatser (BI)";
+            subarea22.Title = "Korta insatser (BI) för ungdomar";
 
             Insatsen insats1 = new Insatsen();
             insats1.Title = "Motivationshöjande behandling (MET)";
             Insatsen insats2 = new Insatsen();
-            insats2.Title = "MET + KBT";
+            insats2.Title = "Motivationshöjande behandling (MET) + Kog-nitiv beteendeterapi (KBT)";
             Insatsen insats3 = new Insatsen();
             insats3.Title = "Adolescent community reinforcement approach (ACRA) ";
             Insatsen insats4 = new Insatsen();
             insats4.Title = "Assertive continuing care (ACC)";
             Insatsen insats5 = new Insatsen();
-            insats5.Title = "Haschavvänjningsprogrammet (HAP)[1]";
+            insats5.Title = "Hash avvänjningsprogrammet (HAP) (1)";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -590,13 +592,12 @@ namespace SoSWebb.JsonSerializer
 
             return subarea22;
         }
-
         private static Subarea2 createInsatser_Subarea23()
         {
 
             Subarea2 subarea23 = new Subarea2();
-            subarea23.Title = "Familjeinterventioner";
-            
+            subarea23.Title = "Familjeinterventioner för ungdomar";
+
             Insatsen insats1 = new Insatsen();
             insats1.Title = "Functional family treatment (FFT)";
             Insatsen insats2 = new Insatsen();
@@ -604,7 +605,7 @@ namespace SoSWebb.JsonSerializer
             Insatsen insats3 = new Insatsen();
             insats3.Title = "Brief strategic family treatment (BSFT)";
             Insatsen insats4 = new Insatsen();
-            insats4.Title = "Multisystemisk terapi";
+            insats4.Title = "Multisystemisk terapi (MST)";
 
             List<Insatsen> insatsList = new List<Insatsen>();
             insatsList.Add(insats1);
@@ -615,6 +616,9 @@ namespace SoSWebb.JsonSerializer
 
             return subarea23;
         }
+
+
+        //Steg A data
         private static List<Area> createAreas()
         {
             Area area1 = new Area();
@@ -733,7 +737,7 @@ namespace SoSWebb.JsonSerializer
 
             Subarea bedomningsinstrument_subarea6_3 = new Subarea();
             bedomningsinstrument_subarea6_3.Id = 3;
-            bedomningsinstrument_subarea6_3.Title = "Nätverks-/ parterapi vid alkohol-/ narkotikaproblem";
+            bedomningsinstrument_subarea6_3.Title = "Nätverks-/parterapi vid alkohol-/ narkotikaproblem";
             bedomningsinstrument_subarea6_3.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea6_3.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea6_3.Values_andelklienter = new int[] { 0, 1, 2, 3 };
@@ -762,7 +766,7 @@ namespace SoSWebb.JsonSerializer
 
             Subarea bedomningsinstrument_subarea2_4 = new Subarea();
             bedomningsinstrument_subarea2_4.Id = 2;
-            bedomningsinstrument_subarea2_4.Title = "Boendeinsatser";
+            bedomningsinstrument_subarea2_4.Title = "Boendestöd";
             bedomningsinstrument_subarea2_4.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea2_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea2_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
@@ -770,26 +774,31 @@ namespace SoSWebb.JsonSerializer
 
             Subarea bedomningsinstrument_subarea3_4 = new Subarea();
             bedomningsinstrument_subarea3_4.Id = 3;
-            bedomningsinstrument_subarea3_4.Title = "Samording i form av case management";
+            bedomningsinstrument_subarea3_4.Title = "Boendeinsatser vid hemlöshet";
             bedomningsinstrument_subarea3_4.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea3_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea3_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
 
             Subarea bedomningsinstrument_subarea4_4 = new Subarea();
             bedomningsinstrument_subarea4_4.Id = 3;
-            bedomningsinstrument_subarea4_4.Title = "Psykosocialt stöd till vuxna anhöriga";
+            bedomningsinstrument_subarea4_4.Title = "Samordning av vård- och stödinsatser";
             bedomningsinstrument_subarea4_4.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea4_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea4_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
 
             Subarea bedomningsinstrument_subarea5_4 = new Subarea();
             bedomningsinstrument_subarea5_4.Id = 3;
-            bedomningsinstrument_subarea5_4.Title = "Stöd till anhöriga som vill motivera närstående till behandling";
+            bedomningsinstrument_subarea5_4.Title = "Psykosocialt stöd till vuxna anhöriga";
             bedomningsinstrument_subarea5_4.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea5_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea5_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
 
-
+            Subarea bedomningsinstrument_subarea6_4 = new Subarea();
+            bedomningsinstrument_subarea6_4.Id = 3;
+            bedomningsinstrument_subarea6_4.Title = "Stöd till anhöriga som vill motivera närstående till behandling";
+            bedomningsinstrument_subarea6_4.Values_bedomning = new int[] { 0, 1, 2 };
+            bedomningsinstrument_subarea6_4.Values_konsekvens = new int[] { 0, 1, 2, 3 };
+            bedomningsinstrument_subarea6_4.Values_andelklienter = new int[] { 0, 1, 2, 3 };
 
             List<Subarea> subareaList4 = new List<Subarea>();
             subareaList4.Add(bedomningsinstrument_subarea1_4);
@@ -797,7 +806,7 @@ namespace SoSWebb.JsonSerializer
             subareaList4.Add(bedomningsinstrument_subarea3_4);
             subareaList4.Add(bedomningsinstrument_subarea4_4);
             subareaList4.Add(bedomningsinstrument_subarea5_4);
-
+            subareaList4.Add(bedomningsinstrument_subarea6_4);
             area4.Subarea = subareaList4;
 
             Area area5 = new Area();
@@ -806,14 +815,14 @@ namespace SoSWebb.JsonSerializer
 
             Subarea bedomningsinstrument_subarea1_5 = new Subarea();
             bedomningsinstrument_subarea1_5.Id = 1;
-            bedomningsinstrument_subarea1_5.Title = "Integrerad behandlingsmetod (Psykologiska och psykosociala behandlingsmetoder i kombination med farmalogisk behandling)";
+            bedomningsinstrument_subarea1_5.Title = "Integrerad behandlingsmetod (Psykologiska och psykosociala behandlingsmetoder i kombination med farmalogiskbehandling)";
             bedomningsinstrument_subarea1_5.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea1_5.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea1_5.Values_andelklienter = new int[] { 0, 1, 2, 3 };
 
             Subarea bedomningsinstrument_subarea2_5 = new Subarea();
             bedomningsinstrument_subarea2_5.Id = 2;
-            bedomningsinstrument_subarea2_5.Title = "Samordning (case management)";
+            bedomningsinstrument_subarea2_5.Title = "Samordning av vårdinsatser vid samsjuklighet";
             bedomningsinstrument_subarea2_5.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea2_5.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea2_5.Values_andelklienter = new int[] { 0, 1, 2, 3 };
@@ -826,18 +835,18 @@ namespace SoSWebb.JsonSerializer
 
             Area area6 = new Area();
             area6.Id = 6;
-            area6.Title = "Ungdomar - Psykologisk och psykosocial behandling";
+            area6.Title = "Ungdomar";
 
             Subarea bedomningsinstrument_subarea1_6 = new Subarea();
             bedomningsinstrument_subarea1_6.Id = 1;
-            bedomningsinstrument_subarea1_6.Title = "Korta insatser (BI)";
+            bedomningsinstrument_subarea1_6.Title = "Korta insatser (BI) för ungdomar";
             bedomningsinstrument_subarea1_6.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea1_6.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea1_6.Values_andelklienter = new int[] { 0, 1, 2, 3 };
 
             Subarea bedomningsinstrument_subarea2_6 = new Subarea();
             bedomningsinstrument_subarea2_6.Id = 2;
-            bedomningsinstrument_subarea2_6.Title = "Familjeinterventioner";
+            bedomningsinstrument_subarea2_6.Title = "Familjeinterventioner för ungdomar";
             bedomningsinstrument_subarea2_6.Values_bedomning = new int[] { 0, 1, 2 };
             bedomningsinstrument_subarea2_6.Values_konsekvens = new int[] { 0, 1, 2, 3 };
             bedomningsinstrument_subarea2_6.Values_andelklienter = new int[] { 0, 1, 2, 3 };
@@ -859,48 +868,6 @@ namespace SoSWebb.JsonSerializer
             return areaList;
         }
 
-
-        //private static List<Question> createQuestions()
-        //{
-        //    Question question1 = new Question();
-        //    question1.QuestionStatement = "Kan insatsen möta behoven?";
-        //    question1.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
-
-        //    Question question2 = new Question();
-        //    question2.QuestionStatement = "vilken prioritering har insatsen i NR?";
-        //    question2.QuestionValues = new string[] { "1", "2", "3", "4", "5", "Annan" };
-
-        //    Question question3 = new Question();
-        //    question3.QuestionStatement = "Är insatsen värderingsmässigt acceptabel för de flesta aktörer?";
-        //    question3.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
-
-        //    Question question4 = new Question();
-        //    question4.QuestionStatement = "Är de förväntade oönskade effekterna av insatsen små?";
-        //    question4.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
-
-        //    Question question5 = new Question();
-        //    question5.QuestionStatement = "Är insatsen möjlig att implementera utan anpassning?";
-        //    question5.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
-
-        //    Question question6 = new Question();
-        //    question6.QuestionStatement = "Är behovet av resurser (tid, pengar, kunskap, personal) för att genomföra insatsen lågt?";
-        //    question6.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
-
-        //    Question question7 = new Question();
-        //    question7.QuestionStatement = "Är insatsen hållbar på lång sikt?";
-        //    question7.QuestionValues = new string[] { "Nej", "Sannolikt inte", "Osäkert", "Sannolikt Ja", "Ja", "Varierar" };
-
-        //    List<Question> questionlist = new List<Question>();
-        //    questionlist.Add(question1);
-        //    questionlist.Add(question2);
-        //    questionlist.Add(question3);
-        //    questionlist.Add(question4);
-        //    questionlist.Add(question5);
-        //    questionlist.Add(question6);
-        //    questionlist.Add(question7);
-
-        //    return questionlist;
-        //}
 
     }
 }

@@ -413,45 +413,39 @@
     }
 
     $('#btn_printInsatsReport').click(function (e) {
+        copyToPrintHelper();
         window.print();
     });
-    
+
     function createTextField(counter) {
         //if textfield and p element does not exist then create them
         if (!$('#textfield' + counter).length && !$('#textfieldP' + counter).length) {
             //alert('inside createTextfield');
-            var p = document.createElement('p');
-            p.setAttribute('class', 'textfieldP');
-            p.setAttribute('id', 'textfieldP' + counter);
-            $(p).text(counter);
-            $('#reportStorage').append(p);
             var textfield = document.createElement('textarea');
             textfield.setAttribute('id', 'textfield' + counter);
             textfield.setAttribute('type', 'text');
             textfield.setAttribute('class', 'insatserReportTextfield');
-            $('#reportStorage').append(textfield);
+            $('.container .center-block').before(textfield);
+
+            var p = document.createElement('p');
+            p.setAttribute('class', 'textfieldP');
+            p.setAttribute('id', 'textfieldP' + counter);
+            $(p).text(counter);
+            $(p).insertBefore(textfield);
             $('.insatserReportTextfield').css('overflow', 'hidden').autogrow({ vertical: true, horizontal: false });
         }
     }
 
-    function deleteTextField(counter) {
-        if ($('#textfield' + counter).length && $('#textfieldP' + counter).length) {
-            alert('element to delete exists');
-            var textfield = document.getElementById('textfield' + counter);
-            var p = document.getElementById('textfieldP' + counter);
-            if (textfield != null && p != null) {
-                textfield.parentNode.removeChild(textfield);
-                p.parentNode.removeChild(p);
-            }
+    function copyToPrintHelper() {
+        $('#printHelper').empty();
+        var textfields = document.getElementsByClassName('insatserReportTextfield');
+
+        for (var i = 0; i < textfields.length; i++) {
+            var contents = $(textfields[i]).val();
+            $('#printHelper').append('<p class="printTextfieldP">' + (i + 1) + '</p><div class="printTextfield">' + contents + '</div>');
         }
 
     }
-
-    function clearTextfields() {
-        $('#reportStorage textarea').remove();
-        $('#reportStorage p').remove();
-    }
-
 
 });
 

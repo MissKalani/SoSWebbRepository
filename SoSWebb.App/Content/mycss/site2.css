@@ -59,66 +59,25 @@ ul#insatserlist li {
     background-color: #ccc;
 }
 
-/*.collapse.in {
-    display: block;
-}
-
-div.list-group {
-    height: auto;
-    border-style: none;
-    margin-bottom: 0;
-}
-
-.list-group > ul {
-    list-style: none;
-    margin-bottom: 0;
-    font-size: 12px;
-    position: relative;
-    right: 2%;
-}
-    .list-group > ul > li  {
-        display:inline-block;
-    }
-
-    .list-group > ul > li > div {
-        padding-top: 1%;
-    }*/
-
 
 #q2, #q3, #q4, #q5, #q6, #q7 {
     opacity: 0.2;
 }
 
 div.question {   
-    /*height: auto;*/
     text-align: left;
-    /*width: 30%;*/
 }
 
-/*div.qoptions {
-    width: 70%;
-}
-
-.checkboxDiv {
-    width: 16%;
-}*/
 .checkboxDiv {
     white-space: nowrap;
 }
     .checkboxDiv label {
-        /*display: list-item;*/
         cursor: pointer;
         font-size: .8em;
         padding-left: 5px;
         font-weight: normal;
-        /*position: relative;*/
-        /*bottom: 20px;
-        padding-left: 20px;*/
     }
 
-    /*.panel-heading{
-        padding:0;
-    }*/
 .insatserListBtn {
     color: #000;
     width: 100%;
