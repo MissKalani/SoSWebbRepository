@@ -72,8 +72,11 @@
             $('#insatserDivP2').show();
         }
         if (insatsTitle.indexOf('(3)') > -1) {
-            $('#insatserDivP2').show();
+            $('#insatserDivP3').show();
         }
+        if ($('#chosenDelomrade').text() == "Integrerad behandlingsmetod vid samsjuklighet") {   
+            $('#chosenDelomrade').append('<br/>(Psykologiska och psykosociala behandlingsmetoder i kombination med farmakologisk behandling)');
+        }           
     }
     function appendQuestionList(i) {
         $('.list-group #questionlist' + i + '').append('<div class="row row-padding" id="q1"><div id="question' + i + '" class="question col-xs-12 col-md-3"><strong>Kan insatsen möta behoven? </strong></div>'

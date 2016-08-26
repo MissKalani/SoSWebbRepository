@@ -479,7 +479,7 @@ namespace SoSWebb.JsonSerializer
         private static Subarea2 createInsatser_Subarea17()
         {
             Subarea2 subarea17 = new Subarea2();
-            subarea17.Title = "Samordning av vård- och stödinsatser";
+            subarea17.Title = "Samordning av vård-och stödinsatser";
 
             Insatsen insats1 = new Insatsen();
             insats1.Title = "Individuell case management - strengths model";
@@ -537,7 +537,7 @@ namespace SoSWebb.JsonSerializer
         private static Subarea2 createInsatser_Subarea20()
         {
             Subarea2 subarea20 = new Subarea2();
-            subarea20.Title = "Integrerad behandlingsmetod vid samsjuklighet (Psykologiska och psykosociala behandlingsmetoder i kombination med farmakologisk behandling)";
+            subarea20.Title = "Integrerad behandlingsmetod vid samsjuklighet";
 
             Insatsen insats1 = new Insatsen();
             insats1.Title = "KBT med eller utan tillägg av motiverande samtal.";

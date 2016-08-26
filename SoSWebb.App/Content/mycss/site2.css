@@ -24,6 +24,15 @@
 
 
 /*tab-insatser css*/
+.row-padding {
+    padding: 5px 0;
+    border-bottom: 1px solid #CCC;
+}
+
+    .row-padding:last-child {
+        border-bottom: none;
+    }
+
 .insatserDiv {
     text-align: left;
 }
@@ -64,13 +73,14 @@ ul#insatserlist li {
     opacity: 0.2;
 }
 
-div.question {   
+div.question {
     text-align: left;
 }
 
 .checkboxDiv {
     white-space: nowrap;
 }
+
     .checkboxDiv label {
         cursor: pointer;
         font-size: .8em;
@@ -115,9 +125,9 @@ div.question {
         }
 
 td.comment {
-    color:#1086ec;
-    text-decoration:underline;
-    cursor:pointer;
+    color: #1086ec;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .insatserReportTextfield {
