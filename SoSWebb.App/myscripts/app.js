@@ -118,8 +118,8 @@
 
             var count = i;
 
-            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" id="konsekvensgrad_a' + count + '" /><label for="konsekvensgrad_a' + count + '">Mindre allvarliga</label><br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" id="konsekvensgrad_b' + count + '" /><label for="konsekvensgrad_b' + count + '">Varierande</label><br/>'
+            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" id="konsekvensgrad_a' + count + '" /><label for="konsekvensgrad_a' + count + '"> Mindre allvarliga</label><br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" id="konsekvensgrad_b' + count + '" /><label for="konsekvensgrad_b' + count + '"> Varierande</label><br/>'
                 + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" id="konsekvensgrad_c' + count + '" /><label for="konsekvensgrad_c' + count + '"> Allvarliga</label><br/>'
                 + '<input class="konsekvensgradValue" checked="true"  type="radio" name="konsekvensgrad' + count + '" value="0" id="konsekvensgrad_d' + count + '" /><label for="konsekvensgrad_d' + count + '"> Oklart</label>';
             td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" id="andelklientergrad_a' + count + '"/><label for="andelklientergrad_a' + count + '"> Liten andel</label><br/>'

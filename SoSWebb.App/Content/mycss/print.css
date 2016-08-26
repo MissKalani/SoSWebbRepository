@@ -58,4 +58,8 @@
     a#btn_goToIndex {
         display: none;
     }
+    
+    .helpText{
+        display: none;
+    }
 }
