@@ -118,18 +118,18 @@
 
             var count = i;
 
-            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" id="konsekvensgrad_a' + count + '" /> <label for="konsekvensgrad_a' + count + '"> Mindre allvarliga</label> <br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" id="konsekvensgrad_b' + count + '" /> <label for="konsekvensgrad_b' + count + '">Varierande</label><br/>'
-                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" id="konsekvensgrad_c' + count + '" /><label for="konsekvensgrad_c' + count + '"> Allvarliga</label> <br/>'
+            td2.innerHTML = '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="1" id="konsekvensgrad_a' + count + '" /><label for="konsekvensgrad_a' + count + '">Mindre allvarliga</label><br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '" value="2" id="konsekvensgrad_b' + count + '" /><label for="konsekvensgrad_b' + count + '">Varierande</label><br/>'
+                + '<input class="konsekvensgradValue" type="radio" name="konsekvensgrad' + count + '"  value="3" id="konsekvensgrad_c' + count + '" /><label for="konsekvensgrad_c' + count + '"> Allvarliga</label><br/>'
                 + '<input class="konsekvensgradValue" checked="true"  type="radio" name="konsekvensgrad' + count + '" value="0" id="konsekvensgrad_d' + count + '" /><label for="konsekvensgrad_d' + count + '"> Oklart</label>';
             td3.innerHTML = '<input class="andelklientergradValue"  type="radio" name="andelklientergrad' + count + '" value="1" id="andelklientergrad_a' + count + '"/><label for="andelklientergrad_a' + count + '"> Liten andel</label><br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="2" id="andelklientergrad_b' + count + '" /><label for="andelklientergrad_b' + count + '"> Varierande</label> <br/>'
-               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" id="andelklientergrad_c' + count + '" /><label for="andelklientergrad_c' + count + '"> Stor andel</label> <br/>'
-               + '<input class="andelklientergradValue" checked="true" type="radio" name="andelklientergrad' + count + '" value="0" id="andelklientergrad_d' + count + '" /><label for="andelklientergrad_d' + count + '">Oklart</label>';
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="2" id="andelklientergrad_b' + count + '" /><label for="andelklientergrad_b' + count + '"> Varierande</label><br/>'
+               + '<input class="andelklientergradValue" type="radio" name="andelklientergrad' + count + '" value="3" id="andelklientergrad_c' + count + '" /><label for="andelklientergrad_c' + count + '"> Stor andel</label><br/>'
+               + '<input class="andelklientergradValue" checked="true" type="radio" name="andelklientergrad' + count + '" value="0" id="andelklientergrad_d' + count + '" /><label for="andelklientergrad_d' + count + '"> Oklart</label>';
             td4.innerHTML = '<textarea class="comment"/>'
-            td5.innerHTML = '<label><input disabled class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" /> Mycket hög</label> <br/>'
+            td5.innerHTML = '<label><input disabled class="insatsergradValue"  type="radio" name="insatsergrad' + count + '" value="3" /> Mycket hög</label><br/>'
                 + '<label><input disabled class="insatsergradValue" type="radio" name="insatsergrad' + count + '" value="2" /> Hög</label><br/>'
-                + '<label><input disabled class="insatsergradValue" type="radio" name="insatsergrad' + count + '"  value="1" /> Låg</label> <br/>'
+                + '<label><input disabled class="insatsergradValue" type="radio" name="insatsergrad' + count + '"  value="1" /> Låg</label><br/>'
                 + '<label><input disabled class="insatsergradValue" checked="true" type="radio" name="insatsergrad' + count + '" value="0" /> Ingen</label>';
 
             td.innerHTML += sortedChosenSubareas[i].title;
