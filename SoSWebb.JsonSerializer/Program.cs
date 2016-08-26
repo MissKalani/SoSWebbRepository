@@ -400,7 +400,7 @@ namespace SoSWebb.JsonSerializer
         private static Subarea2 createInsatser_Subarea13()
         {
             Subarea2 subarea13 = new Subarea2();
-            subarea13.Title = "Nätverks-/parterapi vid alkohol- eller narkotikaproblem";
+            subarea13.Title = "Nätverks-/parterapi vid alkohol eller narkotikaproblem";
 
             Insatsen insats1 = new Insatsen();
             insats1.Title = "Parterapi (2)";
