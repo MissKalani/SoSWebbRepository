@@ -65,7 +65,13 @@
 
     //bedömning av insatser functions
     function checkTitle(insatsTitle) {
-        if (insatsTitle.indexOf('*') > -1) {
+        if (insatsTitle.indexOf('(1)') > -1) {
+            $('#insatserDivP1').show();
+        }
+        if (insatsTitle.indexOf('(2)') > -1) {
+            $('#insatserDivP2').show();
+        }
+        if (insatsTitle.indexOf('(3)') > -1) {
             $('#insatserDivP2').show();
         }
     }
@@ -277,16 +283,16 @@
 
     $(document).on('show.bs.collapse', '#accordion .collapse', function () {
         console.log('this is span!');
-        console.log($(this));
-        $(this).prev().find('span:first-child').addClass('glyphicon-arrow-up').removeClass('glyphicon-arrow-down');
+        console.log($(this).prev().prev().find('span:first-child'));
+        var glyphicon = $(this).prev().prev().find('span:first-child');
+        $(glyphicon).addClass('glyphicon-arrow-up').removeClass('glyphicon-arrow-down');
     });
 
     $(document).on('hide.bs.collapse', '#accordion .collapse', function (e) {
-        var div = $(this).prev();
-        $(div).find('span:first-child').addClass('glyphicon-arrow-down').removeClass('glyphicon-arrow-up');
+        var glyphicon = $(this).prev().prev().find('span:first-child');
+        $(glyphicon).addClass('glyphicon-arrow-down').removeClass('glyphicon-arrow-up');
 
         var insatsTitle = $(this).prev().val();
-        //console.log(insatsTitle);
 
         var listgroup = $(this).find('.list-group div').first();
         var answers = getAnswers(insatsTitle, listgroup);

@@ -3,49 +3,46 @@
     padding: 0;
     border: 0;
 }
+
 body {
     min-height: 101%;
     padding-bottom: 4em;
 }
+
 label {
     cursor: pointer;
 }
+
 .container {
     width: 90%;
     max-width: 1200px;
-}
-h1 {
-    font-size: 2em;
-}
-.page-header {
-    margin: 0;
-    padding: 1em;
-    border-bottom: none;
-}
-.page-header img {
-    max-width: 70%;
-    width: 280px;
-    vertical-align: top;
-}
-table, figure {
-    page-break-inside: avoid;
-}
-
-/*a:link, a:visited{
-    background-color:transparent;
-}
-a:hover, a:active{
-    background-color:
-}*/
-
-/*Starter page css*/
-
-.container {
     background-color: #fff;
     margin: 0 auto;
     padding: 0 1em;
     text-align: center;
 }
+
+h1 {
+    font-size: 2em;
+}
+
+.page-header {
+    margin: 0;
+    padding: 1em;
+    border-bottom: none;
+}
+
+    .page-header img {
+        max-width: 70%;
+        width: 280px;
+        vertical-align: top;
+    }
+
+table, figure {
+    page-break-inside: avoid;
+}
+
+/*Starter page css*/
 
 .div-starter {
     margin-bottom: 10px;
@@ -90,21 +87,21 @@ table {
 
 /*.nav.nav-tabs {
     /*border-bottom: 2px solid #00263e;*/
-    /*margin-left: 20px;*/
+/*margin-left: 20px;*/
 /*}**/
 
 /*ul.nav.nav-tabs > li {
     margin-bottom: -3px;
 }*/
 
-    ul.nav.nav-tabs > li > a {
-        color: black;
-        pointer-events: none;
-        border: none;
-        font-size: large;
-    }
+ul.nav.nav-tabs > li > a {
+    color: black;
+    pointer-events: none;
+    border: none;
+    font-size: large;
+}
 
-    /*ul.nav.nav-tabs > li.active a {
+/*ul.nav.nav-tabs > li.active a {
         text-decoration: none;
     }*/
 
@@ -128,10 +125,12 @@ table.table {
 .table-container {
     position: relative;
     border: 2px solid #00263e;
-    /*border-right: 2px solid #00263e;
-    border-bottom: 2px solid #00263e;*/
     bottom: 22px;
     left: 0.4px;
+}
+
+#behovsbedomningTable{
+    width:100%;
 }
 
 .trHeader {
@@ -188,6 +187,10 @@ table.table {
         background-color: #10374f;
     }
 
+    a.button:hover{
+        text-decoration:none;
+        color:#fff;
+    }
 
 /*prioriteringsTable css*/
 .storHeader, .litetHeader {
@@ -200,6 +203,10 @@ table.table {
 
 .prioriteringsTableTd {
     text-align: left;
+}
+
+.prioriteringsTableTr td:nth-child(5) {
+    opacity:0.2;
 }
 
 /*behovsbedomningReport css*/
@@ -242,35 +249,44 @@ td.extraKommentarReportTd > textarea {
     h1 {
         font-size: 1.5em;
     }
+
     h3 {
         font-size: 1.2em;
     }
+
     .table > thead > tr > th {
         font-size: 1em;
     }
 }
+
 @media all and (max-width: 800px) {
     .container {
         width: 98%;
     }
-    #behovsbedomningTable .trHeader>th:first-child,
-    #behovsbedomningTable .item>td:first-child {
-    display: none;
-  }
-   #behovsbedomningTable th.subareaHeadTitle:before {
-    content: "Område/";
-  }
-  .page-header {
-    text-align: center;
-  }
-  .page-header img {
-    max-width: 280px;
-    width: 50%;
-    vertical-align: top;
+
+    #behovsbedomningTable .trHeader > th:first-child,
+    #behovsbedomningTable .item > td:first-child {
+        display: none;
     }
+
+    #behovsbedomningTable th.subareaHeadTitle:before {
+        content: "Område/";
+    }
+
+    .page-header {
+        text-align: center;
+    }
+
+        .page-header img {
+            max-width: 280px;
+            width: 50%;
+            vertical-align: top;
+        }
+
     .table > thead > tr > th {
         font-size: .8em;
     }
+
     .container .container {
         width: 100%;
     }
@@ -280,9 +296,11 @@ td.extraKommentarReportTd > textarea {
     padding: 0;
     width: 100%;
 }
+
 #reportStorage .reportColumnHeader th {
     padding: 5px 0;
 }
+
 .table > thead > tr > td {
     vertical-align: top;
 }

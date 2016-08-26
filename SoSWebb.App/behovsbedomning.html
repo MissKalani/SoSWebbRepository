@@ -29,6 +29,7 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="tab-behovsbedomning">
                     <div class="table-container">
+                        <div><p>Om verksamheten har ett stort behov av nya insatser inom flera delområden blir nästa steg att prioritera ett delområde där behovet är störst. Gör prioriteringen genom att besvara frågorna i detta formulär. Avsluta prioriteringssteget genom att väga ihop dina svar i en sammanfattande bedömning för respektive delområde.</p></div>
                         <table id="behovsbedomningTable" class="table">
                             <thead>
                                 <tr class="trHeader">
@@ -74,9 +75,30 @@
                             <thead>
                                 <tr class="trHeader">
                                     <th scope="row" class="chosenSubareaTitle">Delområde</th>
-                                    <th class="options gradering_insatskonsekvens">Gradering av konsekvens av om insats(er) uteblir</th>
-                                    <th class="options gradering_andelklienter">Gradering för andel klienter som berörs om insats(er) uteblir</th>
-                                    <th class="options gradering_kommentar">Beskrivning av VH-specifika omständighet(er)</th>
+                                    <th class="options gradering_insatskonsekvens">
+                                        Bedömning av konsekvens av om insats(er) uteblir<span>
+                                            <a href="#">
+                                                <i class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" data-html="true"
+                                                   data-content="Hur allvarliga är konsekvenserna för klienterna av att tillstånd inte åtgärdas eftersom effektiva insatser saknas? Ju allvarligare konsekvenserna bedöms, desto högre prioritet för nya insatser inom delområdet."></i>
+                                            </a>
+                                        </span>
+                                    </th>
+                                    <th class="options gradering_andelklienter">
+                                        Bedömning av andel klienter som berörs om insats(er) uteblir<span>
+                                            <a href="#">
+                                                <i class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" data-html="true"
+                                                   data-content="Hur många klienter har tillstånd som inte åtgärdas eftersom effektiva insatser saknas? Här ges delområden där många klienter berörs högre prioritet än delområden som berör få."></i>
+                                            </a>
+                                        </span>
+                                    </th>
+                                    <th class="options gradering_kommentar">
+                                        Beskrivning av verksamhetsspecifik omständighet(er)<span>
+                                            <a href="#">
+                                                <i class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" data-html="true"
+                                                   data-content="Annan omständighet som gör att delområdet har hög prioritet för nya insatser."></i>
+                                            </a>
+                                        </span>
+                                    </th>
                                     <th class="options gradering_insatser">Prioritering av nya insatser</th>
                                 </tr>
                             </thead>
@@ -114,6 +136,7 @@
                 </div>
                 <div class="center-block">
                     <input class="button" id="btn_printBedomningsReport" type="submit" name="bedomningsReport" value="Skriv ut">
+                    <a id="btn_goToIndex" href="index.html" class="button">Till Startsidan</a>
                 </div>
             </div>
         </div>
